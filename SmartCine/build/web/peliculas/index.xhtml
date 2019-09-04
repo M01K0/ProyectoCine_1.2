@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:body>
+        <header>
+            <h1>Funciones</h1>
+            <h2>Listar</h2>
+        </header>
+        
+        <h:link outcome="/peliculas/ingresar" value="Ingresar" />
+        
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Duracion</th>
+                    <th>Sinopis</th>
+                    <th>Clasificacion</th>
+                    <th>Genero</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ui:repeat value="#{peliculas.listar()}" var="pel">
+                    <tr>
+                        <td>
+                            <h:outputText value="#{pel.titulo}" />
+                        </td>
+                        <td>
+                            <h:outputText value="#{pel.duracion}" />
+                        </td>
+                        <td>
+                            <h:outputText value="#{pel.sinopsis}" />
+                        </td>
+                        <td>
+                            <h:outputText value="#{pel.idClasificacion.nombre}" />
+                        </td>
+                        <td>
+                            <h:outputText value="#{pel.idGenero.descripcion}" />
+                        </td>
+                        <td>
+                            <h:form>
+                                <h:commandLink action="#{funciones.destruir(fun)}" value="Eliminar" />
+                                <h:commandLink action="#{funciones.editar(fun)}" value="Editar" />
+                                <h:commandLink action="#{funciones.ver(fun)}" value="Detalle" />
+                            </h:form>
+                            
+                        </td>
+                    </tr>
+                </ui:repeat>
+            </tbody>
+        </table>
+    </h:body>
+</html>
+

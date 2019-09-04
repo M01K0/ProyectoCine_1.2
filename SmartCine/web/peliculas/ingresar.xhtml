@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Funciones - Ingresar</title>
+    </h:head>
+    <h:body>
+        <header>
+            <h1>Funcion</h1>
+            <h2>Ingresar</h2>
+        </header>
+        
+        <h:form>
+            Fecha Inicio: <p:calendar id="fecha_hora_inicio" value="#{funciones.fun.fechaHoraInicio}" pattern="MM/dd/yyyy HH:mm:ss"/><br />
+            Fecha Fin: <p:calendar id="fecha_hora_fin" value="#{funciones.fun.fechaHoraFin}" pattern="MM/dd/yyyy HH:mm:ss"/><br />
+            HHHHH: <h:selectOneMenu id="formato" value="#{ControlFunciones.funciones.fun.formato}">
+                <f:selectItems value="#{formato.itemsAvailableSelectOne}"/>
+            </h:selectOneMenu><br />
+            Precio: <h:inputText id="precio" value="#{funciones.fun.precio}"/><br />
+            Pelicula: <h:selectOneMenu id="id_pelicula" value="#{ControlFunciones.funciones.fun.idPelicula.titulo}">
+                <f:selectItems />
+            </h:selectOneMenu><br />
+            Sala: <h:selectOneMenu id="id_sala" value="#{funciones.fun.idSala.numero}">
+            <f:selectItems />
+            </h:selectOneMenu><br />
+            <h:commandButton action="#{funciones.ingresar()}" value="Ingresar" />
+        </h:form>
+    </h:body>
+</html>
+
