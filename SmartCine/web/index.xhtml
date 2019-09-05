@@ -1,18 +1,236 @@
-<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <title>SmartCine</title>
-    </h:head>
-    <h:body>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+
+        <meta charset="UTF-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <title>Document</title>
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+        <!-- Custom styles for this template -->
+        <link href="recursos/css/modern-business.css" rel="stylesheet" />
+    </head>
+
+    <body>
+
+        <!-- Navigation -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+            <div class="container">
+                <a class="navbar-brand" href="index.html">SmartCine</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" />
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="vistas/estrenos.html">Estrenos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="vistas/proximamente.html">Proximamente</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="vistas/sucursales.html">Sucursales</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <header>
-            <h1>Inicio</h1>
+
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+                <ol class="carousel-indicators">
+
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" />
+
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1" />
+
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2" />
+
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3" />
+
+                    <li data-target="#carouselExampleIndicators" data-slide-to="4" />
+
+                    <li data-target="#carouselExampleIndicators" data-slide-to="5" />
+                </ol>
+
+                <div class="carousel-inner" role="listbox">
+                    <!-- Slide One - Set the background image for this slide in the line below -->
+
+                    <div class="carousel-item active" style="background-image: url(recursos/img/img1.jpg);">
+                        <img src="" alt="" />
+
+                        <div class="carousel-caption d-none d-md-block">
+
+                            <h3>IT Capitulo Final</h3>
+                        </div>
+                    </div>
+                    <!-- Slide Two - Set the background image for this slide in the line below -->
+
+                    <div class="carousel-item" style="background-image: url(recursos/img/img2.jpg);">
+
+                        <div class="carousel-caption d-none d-md-block">
+
+                            <h3>Rapido y Furioso 8</h3>
+                        </div>
+                    </div>
+                    <!-- Slide Three - Set the background image for this slide in the line below -->
+
+                    <div class="carousel-item" style="background-image: url(recursos/img/img3.jpg);">
+
+                        <div class="carousel-caption d-none d-md-block">
+
+                        </div>
+                    </div>
+                    <!-- Slide Three - Set the background image for this slide in the line below -->
+
+                    <div class="carousel-item" style="background-image: url(recursos/img/img4.jpg);">
+
+                        <div class="carousel-caption d-none d-md-block">
+
+                        </div>
+                    </div>
+                    <!-- Slide Three - Set the background image for this slide in the line below -->
+
+                    <div class="carousel-item" style="background-image: url(recursos/img/img5.jpg);">
+
+                        <div class="carousel-caption d-none d-md-block">
+
+                        </div>
+                    </div>
+                    <!-- Slide Three - Set the background image for this slide in the line below -->
+
+                    <div class="carousel-item" style="background-image: url(recursos/img/img6.jpg);">
+
+                        <div class="carousel-caption d-none d-md-block">
+
+                            <h3>John Wick 3</h3>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true" />
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true" />
+                    <span class="sr-only">Next</span>
+                </a>
+            </div> <br /><br />
         </header>
-        <h:link outcome="/usuarios/index" value="Usuarios" /><br/><br/>
-        <h:link outcome="/funciones/index" value="Fucniones" /><br/><br/>
-        <h:link outcome="/salas/index" value="Salas" /><br/><br/>
-        <h:link outcome="/peliculas/index" value="Peliculas" />
-        HOIOLALLALALALALALLALALLLLALALLLAL
-    </h:body>
+
+
+        <div class="container">
+
+            <h1>Promociones: </h1><br />
+            <!-- Content Row -->
+
+            <div class="row">
+
+                <div class="col-lg-4 mb-4">
+
+                    <div class="card h-100">
+
+                        <h3 class="card-header bg-primary text-white">Combo Basic</h3>
+
+                        <div class="card-body">
+
+                            <div class="display-4"><img src="recursos/img/combos/1.jpg" alt="" /></div>   
+
+                            <div class="display-4">$5.00</div>
+                        </div>
+
+                        <ul class="list-group list-group-flush">
+
+                            <li class="list-group-item">Pepsi 16 onz.</li>
+
+                            <li class="list-group-item">Refil Gratis</li>
+
+                            <li class="list-group-item">Hot-Dog</li>
+
+                            <li class="list-group-item">
+                                <a href="#" class="btn btn-secondary">Cupon</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+
+                    <div class="card card-outline-primary h-100">
+
+                        <h3 class="card-header bg-primary text-white">Combo Plus</h3>
+
+                        <div class="card-body">
+
+                            <div class="display-4"><img src="recursos/img/combos/2.jpg" alt="" /></div>
+
+                            <div class="display-4">12.50</div>
+                        </div>
+
+                        <ul class="list-group list-group-flush">
+
+                            <li class="list-group-item">2 Pepsi 16 onz</li>
+
+                            <li class="list-group-item">2 Hot-Dog</li>
+
+                            <li class="list-group-item">Palomitas Medianas y 2 Chocolates</li>
+
+                            <li class="list-group-item">
+                                <a href="#" class="btn btn-secondary">Cupon</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+
+                    <div class="card h-100">
+
+                        <h3 class="card-header bg-primary text-white">Combo Ultra</h3>
+
+                        <div class="card-body">
+
+                            <div class="display-4"><img src="recursos/img/combos/3.jpg" width="100%" alt="" /></div>
+
+                            <div class="display-4">$15.50</div>
+                        </div>
+
+                        <ul class="list-group list-group-flush">
+
+                            <li class="list-group-item">Pepsi 16 onz</li>
+
+                            <li class="list-group-item">2 Hot-Dog XL</li>
+
+                            <li class="list-group-item">Palomitas XXL y 2 Chocolates</li>
+
+                            <li class="list-group-item">
+                                <a href="" class="btn btn-secondary">Cupon</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+
+        <!-- Bootstrap core JavaScript -->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 </html>
