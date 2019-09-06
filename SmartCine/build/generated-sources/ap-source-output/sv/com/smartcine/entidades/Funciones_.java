@@ -10,7 +10,7 @@ import sv.com.smartcine.entidades.Peliculas;
 import sv.com.smartcine.entidades.Reservaciones;
 import sv.com.smartcine.entidades.Salas;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2019-09-03T15:53:32")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2019-09-05T22:17:42")
 @StaticMetamodel(Funciones.class)
 public class Funciones_ { 
 
