@@ -22,10 +22,10 @@
                 <f:selectItem itemValue="XD"/>
             </h:selectOneMenu><br />
             Precio: <h:inputText id="precio" value="#{fs.precio}"/><br />
-            Pelicula: <h:selectOneMenu value="#{funciones.pelicula.id}">
+            Pelicula: <h:selectOneMenu value="#{fs.idPelicula.id}">
                 <f:selectItems value="#{peliculas.listar()}" var="pelicula" itemLabel="#{pelicula.titulo}" itemValue="#{pelicula.id}" />
             </h:selectOneMenu><br />
-            Sala: <h:selectOneMenu id="id_sala" value="#{funciones.sala.id}">
+            Sala: <h:selectOneMenu id="id_sala" value="#{fs.idSala.id}">
                 <f:selectItems value="${salas.listar()}" var="sala" itemLabel="${sala.numero}" itemValue="${sala.id}" />
             </h:selectOneMenu><br />
             <h:commandButton action="${funciones.actualizar(fs)}" value="Editar" />
