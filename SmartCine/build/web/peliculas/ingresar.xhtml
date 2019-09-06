@@ -5,28 +5,25 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Funciones - Ingresar</title>
+        <title>Películas - Ingresar</title>
     </h:head>
     <h:body>
         <header>
-            <h1>Funcion</h1>
+            <h1>Películas</h1>
             <h2>Ingresar</h2>
         </header>
         
         <h:form>
-            Fecha Inicio: <p:calendar id="fecha_hora_inicio" value="#{funciones.fun.fechaHoraInicio}" pattern="MM/dd/yyyy HH:mm:ss"/><br />
-            Fecha Fin: <p:calendar id="fecha_hora_fin" value="#{funciones.fun.fechaHoraFin}" pattern="MM/dd/yyyy HH:mm:ss"/><br />
-            HHHHH: <h:selectOneMenu id="formato" value="#{ControlFunciones.funciones.fun.formato}">
-                <f:selectItems value="#{formato.itemsAvailableSelectOne}"/>
+            Título: <h:inputText id="titulo" value="#{peliculas.pel.titulo}" /><br />
+            Duración: <p:calendar id="duración" value="#{peliculas.pel.duracion}" pattern="MM/dd/yyyy HH:mm:ss"/><br />
+            Sinopsis: <h:inputText id="sinopsis" value="#{peliculas.pel.sinopsis}" /><br />
+            Clasificación: <h:selectOneMenu id="id_clasificacion" value="#{peliculas.pel.idClasificacion}">
+                <f:selectItems value="#{clasificaciones.listar()}" var="clasifi" itemLabel="#{clasifi.nombre}" itemValue="#{clasifi.id}" />
             </h:selectOneMenu><br />
-            Precio: <h:inputText id="precio" value="#{funciones.fun.precio}"/><br />
-            Pelicula: <h:selectOneMenu id="id_pelicula" value="#{ControlFunciones.funciones.fun.idPelicula.titulo}">
-                <f:selectItems />
+            Género: <h:selectOneMenu id="id_genero" value="#{peliculas.pel.idGenero}">
+                <f:selectItems value="#{genero.listar}" var="generos" itemLabel="#{generos.descripcion}" itemValue="#{generos.id}" />
             </h:selectOneMenu><br />
-            Sala: <h:selectOneMenu id="id_sala" value="#{funciones.fun.idSala.numero}">
-            <f:selectItems />
-            </h:selectOneMenu><br />
-            <h:commandButton action="#{funciones.ingresar()}" value="Ingresar" />
+            <h:commandButton action="#{peliculas.ingresar()}" value="Ingresar" />
         </h:form>
     </h:body>
 </html>

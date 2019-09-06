@@ -22,7 +22,7 @@ import sv.com.smartcine.entidades.Salas;
  */
 @ManagedBean(name = "funciones")
 @RequestScoped
-public class ControlFunciones {
+public class ControladorFunciones {
     FuncionesJpaController funDAO;
     private Funciones fun;
     private Peliculas pelicula;
@@ -36,7 +36,7 @@ public class ControlFunciones {
         this.sala = sala;
     }
     
-    public ControlFunciones() {
+    public ControladorFunciones() {
         funDAO = new FuncionesJpaController(Persistence.createEntityManagerFactory("SmartCinePU"));
         fun = new Funciones();
     }
