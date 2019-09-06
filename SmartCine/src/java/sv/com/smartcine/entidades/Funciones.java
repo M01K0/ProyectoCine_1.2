@@ -72,6 +72,8 @@ public class Funciones implements Serializable {
     private List<Reservaciones> reservacionesList;
 
     public Funciones() {
+        idPelicula = new Peliculas();
+        idSala = new Salas();
     }
 
     public Funciones(Long id) {
