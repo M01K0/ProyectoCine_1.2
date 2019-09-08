@@ -38,7 +38,7 @@ public class ControladorUsuario {
         return "index?faces-redirect=true";
     }
     
-    //
+    
     public String editar(Usuarios s){
         Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
         objetos.put("ss", s);

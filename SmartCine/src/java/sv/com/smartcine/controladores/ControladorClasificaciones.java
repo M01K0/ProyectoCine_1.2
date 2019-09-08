@@ -10,9 +10,9 @@ import java.util.Map;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
+import javax.persistence.Persistence;
 import sv.com.smartcine.dao.ClasificacionesJpaController;
 import sv.com.smartcine.entidades.Clasificaciones;
-import sv.com.smartcine.entidades.Genero;
 
 /**
  *
@@ -25,15 +25,9 @@ public class ControladorClasificaciones {
     ClasificacionesJpaController clasificDAO;
     private Clasificaciones clasi;
 
-    private Clasificaciones getClasi() {
-        return clasi;
-    }
-
-    private void setClasi(Clasificaciones clasi) {
-        this.clasi = clasi;
-    }
-    
     public ControladorClasificaciones() {
+        clasificDAO = new ClasificacionesJpaController(Persistence.createEntityManagerFactory("SmartCinePU"));
+        clasi = new Clasificaciones();
     }
     
     public List<Clasificaciones> listar(){
@@ -45,7 +39,7 @@ public class ControladorClasificaciones {
         return "index?faces-redirect=true";
     }
     
-    //
+    
     public String editar(Clasificaciones c){
         Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
         objetos.put("cl", c);
@@ -74,6 +68,14 @@ public class ControladorClasificaciones {
         } catch (Exception e) {
             return null;
         }
+    }
+    
+    public Clasificaciones getClasi() {
+        return clasi;
+    }
+
+    public void setClasi(Clasificaciones clasi) {
+        this.clasi = clasi;
     }
     
 }

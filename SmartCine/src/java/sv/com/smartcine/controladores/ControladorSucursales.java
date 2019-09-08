@@ -41,7 +41,7 @@ public class ControladorSucursales {
     //
     public String editar(Sucursales s){
         Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
-        objetos.put("sal", s);
+        objetos.put("sc", s);
         return "editar?faces-redirect=true"; 
     }
     

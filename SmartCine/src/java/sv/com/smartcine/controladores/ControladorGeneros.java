@@ -25,14 +25,6 @@ public class ControladorGeneros {
     GeneroJpaController generoDAO;
     private Genero gener;
 
-    private Genero getGener() {
-        return gener;
-    }
-
-    private void setGener(Genero gener) {
-        this.gener = gener;
-    }
-    
     public ControladorGeneros() {
         generoDAO = new GeneroJpaController(Persistence.createEntityManagerFactory("SmartCinePU"));
         gener = new Genero();
@@ -79,6 +71,12 @@ public class ControladorGeneros {
         }
     }
 
-   
+   public Genero getGener() {
+        return gener;
+    }
+
+    public void setGener(Genero gener) {
+        this.gener = gener;
+    }
     
 }

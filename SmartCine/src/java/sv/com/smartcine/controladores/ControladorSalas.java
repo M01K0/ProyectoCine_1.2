@@ -26,14 +26,6 @@ public class ControladorSalas {
     private Salas sala;
     private Sucursales sucu;
 
-    public Sucursales getSucu() {
-        return sucu;
-    }
-
-    public void setSucu(Sucursales sucu) {
-        this.sucu = sucu;
-    }
-
     public ControladorSalas() {
         salaDAO = new SalasJpaController(Persistence.createEntityManagerFactory("SmartCinePU"));
         sala = new Salas();
@@ -77,7 +69,7 @@ public class ControladorSalas {
             return null;
         }
     }
-
+    
     public Salas getSala() {
         return sala;
     }
@@ -85,4 +77,13 @@ public class ControladorSalas {
     public void setSala(Salas sala) {
         this.sala = sala;
     }
+    
+    public Sucursales getSucu() {
+        return sucu;
+    }
+
+    public void setSucu(Sucursales sucu) {
+        this.sucu = sucu;
+    }
+
 }

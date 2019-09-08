@@ -21,7 +21,7 @@
                 <f:selectItems value="#{clasificaciones.listar()}" var="clasifi" itemLabel="#{clasifi.nombre}" itemValue="#{clasifi.id}" />
             </h:selectOneMenu><br />
             Género: <h:selectOneMenu id="id_genero" value="#{peliculas.pel.idGenero}">
-                <f:selectItems value="#{genero.listar}" var="generos" itemLabel="#{generos.descripcion}" itemValue="#{generos.id}" />
+                <f:selectItems value="#{genero.listar()}" var="generos" itemLabel="#{generos.descripcion}" itemValue="#{generos.id}" />
             </h:selectOneMenu><br />
             <h:commandButton action="#{peliculas.ingresar()}" value="Ingresar" />
         </h:form>

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <header>
+            <h1>Asientos</h1>
+            <h2>Listar</h2> <br/>
+        </header>
+        
+        <h:link outcome="/asientos/ingresar" value="Ingresar"/>
+        
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Estado</th>
+                    <th>Sala</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ui:repeat value="#{asientos.listar()}" var="asien">
+                    <tr>
+                        <td>#{asien.codigo}</td>
+                        <td>#{asien.estado}</td>
+                        <td>#{asien.idSala.numero}</td>
+                        <td>
+                            <h:form>
+                                <h:commandLink action="#{asientos.destruir(asien)}" value="Eliminar"/>
+                            </h:form>
+                        </td>
+                    </tr>
+                </ui:repeat>
+            </tbody>
+        </table>
+
+    </h:body>
+</html>
+

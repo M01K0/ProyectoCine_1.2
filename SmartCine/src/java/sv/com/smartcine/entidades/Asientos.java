@@ -55,6 +55,7 @@ public class Asientos implements Serializable {
     private Salas idSala;
 
     public Asientos() {
+        idSala = new Salas();
     }
 
     public Asientos(Long id) {

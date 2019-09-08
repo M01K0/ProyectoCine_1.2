@@ -12,6 +12,8 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.persistence.Persistence;
 import sv.com.smartcine.dao.PeliculasJpaController;
+import sv.com.smartcine.entidades.Clasificaciones;
+import sv.com.smartcine.entidades.Genero;
 import sv.com.smartcine.entidades.Peliculas;
 
 /**
@@ -23,6 +25,8 @@ import sv.com.smartcine.entidades.Peliculas;
 public class CotroladorPeliculas {
     PeliculasJpaController pelDAO;
     private Peliculas pel;
+    private Genero gener;
+    private Clasificaciones clasif;
     
     public CotroladorPeliculas() {
         pelDAO = new PeliculasJpaController(Persistence.createEntityManagerFactory("SmartCinePU"));
@@ -76,5 +80,22 @@ public class CotroladorPeliculas {
     public void setPel(Peliculas pel) {
         this.pel = pel;
     }
+
+    public Genero getGener() {
+        return gener;
+    }
+
+    public void setGener(Genero gener) {
+        this.gener = gener;
+    }
+
+    public Clasificaciones getClasif() {
+        return clasif;
+    }
+
+    public void setClasif(Clasificaciones clasif) {
+        this.clasif = clasif;
+    }
+    
 
 }
