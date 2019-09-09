@@ -2,45 +2,32 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <header>
-            <h1>Clasificaciones</h1>
-            <h2>Listar</h2> <br/>
-        </header>
-        
-        <h:link outcome="/clasificaciones/ingresar" value="Ingresar"/>
-        
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Edad Minima</th>
-                    <th>Descripcion</th>
-                    <th>Opciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <ui:repeat value="#{clasificaciones.listar()}" var="clas">
-                    <tr>
-                        <td>#{clas.nombre}</td>
-                        <td>#{clas.edadMinima}</td>
-                        <td>#{clas.descripcion}</td>
-                        <td>
-                            <h:form>
-                                <h:commandLink action="#{clasificaciones.destruir(clas)}" value="Eliminar"/>
-                                <h:commandLink action="#{clasificaciones.editar(clas)}" value="Editar"/>
-                            </h:form>
-                        </td>
-                    </tr>
-                </ui:repeat>
+        <b:container>
+            <header>
+                <h1>Clasificaciones</h1>
+                <h2>Listar</h2> <br/>
+            </header>
 
-            </tbody>
-        </table>
+            <h:form>
+                <b:dataTable value="#{clasificaciones.listar()}" var="clas">
+                    <b:dataTableColumn value="#{clas.nombre}" label="Nombre"/>
+                    <b:dataTableColumn value="#{clas.edadMinima}" label="Edad Minima"/>
+                    <b:dataTableColumn value="#{clas.descripcion}" label="Descripcion" />
+                    <b:dataTableColumn label="Opciones">
+                        <b:button outcome="/clasificaciones/ingresar" value="Ingresar" look="success" /> &nbsp;
+                        <b:commandButton action="#{clasificaciones.editar(clas)}" value="Editar"  look="warning"/> &nbsp;
+                        <b:commandButton action="#{clasificaciones.destruir(clas)}" value="Eliminar" look="danger"/> &nbsp;
+                    </b:dataTableColumn>
+                </b:dataTable>
+            </h:form>
 
+        </b:container>
     </h:body>
 </html>
 

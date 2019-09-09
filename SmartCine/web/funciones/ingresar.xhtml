@@ -12,26 +12,26 @@
         <b:container>
             <header>
                 <h1>Funcion</h1>
-                <h2>Ingresar</h2> <br/>
+                <h2>Ingresar</h2> <br/><br/>
             </header>
 
             <b:container>
                 <h:form>
                     <b:row>
-                        Fecha Inicio: <p:calendar id="fecha_hora_inicio" value="#{funciones.fun.fechaHoraInicio}" pattern="MM/dd/yyyy HH:mm:ss"/> <br/><br/>
-                        Fecha Fin: <p:calendar id="fecha_hora_fin" value="#{funciones.fun.fechaHoraFin}" pattern="MM/dd/yyyy HH:mm:ss"/> <br/><br/>
+                        Fecha Inicio: <p:calendar id="fecha_hora_inicio" value="#{funciones.fun.fechaHoraInicio}" pattern="MM/dd/yyyy HH:mm:ss"/> <br/><br/><br/>
+                        Fecha Fin: <p:calendar id="fecha_hora_fin" value="#{funciones.fun.fechaHoraFin}" pattern="MM/dd/yyyy HH:mm:ss"/> <br/><br/><br/>
                         Formato: <h:selectOneMenu id="formato" value="#{funciones.fun.formato}">
                             <f:selectItem itemValue="2D"/>
                             <f:selectItem itemValue="3D"/>
                             <f:selectItem itemValue="XD"/>
-                        </h:selectOneMenu> <br/><br/>
-                        Precio: <h:inputText id="precio" value="#{funciones.fun.precio}" /> <br/><br/>
+                        </h:selectOneMenu> <br/><br/><br/>
+                        Precio: <h:inputText id="precio" value="#{funciones.fun.precio}" /> <br/><br/><br/>
                         Pelicula: <h:selectOneMenu id="id_pelicula" value="#{funciones.fun.idPelicula.id}">
                             <f:selectItems value="#{peliculas.listar()}" var="pelicula" itemLabel="#{pelicula.titulo}" itemValue="#{pelicula.id}" />
-                        </h:selectOneMenu> <br/><br/>
+                        </h:selectOneMenu> <br/><br/><br/>
                         Sala: <h:selectOneMenu id="id_sala" value="#{funciones.fun.idSala.id}">
                             <f:selectItems value="#{salas.listar()}" var="sala" itemLabel="#{sala.numero}" itemValue="#{sala.id}" />
-                        </h:selectOneMenu> <br/><br/>
+                        </h:selectOneMenu> <br/><br/><br/>
                         <b:commandButton action="#{funciones.ingresar()}" value="Ingresar" look="success" />
                     </b:row>
 

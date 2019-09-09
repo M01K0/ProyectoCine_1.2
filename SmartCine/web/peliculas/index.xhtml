@@ -2,56 +2,30 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
     <h:body>
-        <header>
-            <h1>Películas</h1>
-            <h2>Listar</h2>
-        </header>
-        
-        <h:link outcome="/peliculas/ingresar" value="Ingresar" />
-        
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Titulo</th>
-                    <th>Duracion</th>
-                    <th>Sinopis</th>
-                    <th>Clasificacion</th>
-                    <th>Genero</th>
-                    <th>Opciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <ui:repeat value="#{peliculas.listar()}" var="pel">
-                    <tr>
-                        <td>
-                            <h:outputText value="#{pel.titulo}" />
-                        </td>
-                        <td>
-                            <h:outputText value="#{pel.duracion}" />
-                        </td>
-                        <td>
-                            <h:outputText value="#{pel.sinopsis}" />
-                        </td>
-                        <td>
-                            <h:outputText value="#{pel.idClasificacion.nombre}" />
-                        </td>
-                        <td>
-                            <h:outputText value="#{pel.idGenero.descripcion}" />
-                        </td>
-                        <td>
-                            <h:form>
-                                <h:commandLink action="#{peliculas.destruir(fun)}" value="Eliminar" />
-                                <h:commandLink action="#{peliculas.editar(fun)}" value="Editar" />
-                                <h:commandLink action="#{peliculas.ver(fun)}" value="Detalle" />
-                            </h:form>
-                            
-                        </td>
-                    </tr>
-                </ui:repeat>
-            </tbody>
-        </table>
+        <b:container>
+            <header>
+                <h1>Películas</h1>
+                <h2>Listar</h2>
+            </header>
+            <h:form>
+                <b:dataTable value="#{peliculas.listar()}" var="pel">
+                    <b:dataTableColumn value="#{pel.titulo}" label="Titulo"/>
+                    <b:dataTableColumn value="#{pel.duracion}" label="Duracion"/>
+                    <b:dataTableColumn value="#{pel.sinopsis}" label="Sinopsis" />
+                    <b:dataTableColumn value="#{pel.idClasificacion.nombre}" label="Clasificacion"/>
+                    <b:dataTableColumn value="#{pel.idGenero.descripcion}" label="Genero" />
+                    <b:dataTableColumn label="Opciones">
+                        <b:button outcome="/peliculas/ingresar" value="Ingresar" look="success" /> &nbsp;
+                        <b:commandButton action="#{peliculas.editar(pel)}" value="Editar"  look="warning"/> &nbsp;
+                        <b:commandButton action="#{peliculas.destruir(pel)}" value="Eliminar" look="danger"/> &nbsp;
+                    </b:dataTableColumn>
+                </b:dataTable>
+            </h:form>
+        </b:container>
+
     </h:body>
 </html>
 

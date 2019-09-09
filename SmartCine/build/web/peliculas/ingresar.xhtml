@@ -3,28 +3,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
     <h:head>
         <title>Películas - Ingresar</title>
     </h:head>
     <h:body>
-        <header>
-            <h1>Películas</h1>
-            <h2>Ingresar</h2>
-        </header>
-        
-        <h:form>
-            Título: <h:inputText id="titulo" value="#{peliculas.pel.titulo}" /><br />
-            Duración: <p:calendar id="duración" value="#{peliculas.pel.duracion}" pattern="MM/dd/yyyy HH:mm:ss"/><br />
-            Sinopsis: <h:inputText id="sinopsis" value="#{peliculas.pel.sinopsis}" /><br />
-            Clasificación: <h:selectOneMenu id="id_clasificacion" value="#{peliculas.pel.idClasificacion}">
-                <f:selectItems value="#{clasificaciones.listar()}" var="clasifi" itemLabel="#{clasifi.nombre}" itemValue="#{clasifi.id}" />
-            </h:selectOneMenu><br />
-            Género: <h:selectOneMenu id="id_genero" value="#{peliculas.pel.idGenero}">
-                <f:selectItems value="#{genero.listar()}" var="generos" itemLabel="#{generos.descripcion}" itemValue="#{generos.id}" />
-            </h:selectOneMenu><br />
-            <h:commandButton action="#{peliculas.ingresar()}" value="Ingresar" />
-        </h:form>
+        <b:container>
+            <header>
+                <h1>Películas</h1>
+                <h2>Ingresar</h2> <br/><br/>
+            </header>
+            <b:container>
+                <b:row>
+                    <h:form>
+                        Título: <h:inputText id="titulo" value="#{peliculas.pel.titulo}" /> <br/><br/><br/>
+                        Duración: <h:inputText id="duración" value="#{peliculas.pel.duracion}"/> <br/><br/><br/>
+                        Sinopsis: <h:inputText id="sinopsis" value="#{peliculas.pel.sinopsis}" /> <br/><br/><br/>
+                        Clasificación: <h:selectOneMenu id="id_clasificacion" value="#{peliculas.pel.idClasificacion}">
+                            <f:selectItems value="#{clasificaciones.listar()}" var="clasifi" itemLabel="#{clasifi.nombre}" itemValue="#{clasifi.id}" />
+                        </h:selectOneMenu> <br/><br/><br/>
+                        Género: <h:selectOneMenu id="id_genero" value="#{peliculas.pel.idGenero}">
+                            <f:selectItems value="#{genero.listar()}" var="generos" itemLabel="#{generos.descripcion}" itemValue="#{generos.id}" />
+                        </h:selectOneMenu> <br/><br/><br/>
+                        <b:commandButton action="#{peliculas.ingresar()}" value="Ingresar" look="success" />
+                    </h:form>
+                </b:row>
+            </b:container>
+        </b:container>
     </h:body>
 </html>
 
