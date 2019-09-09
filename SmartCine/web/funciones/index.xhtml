@@ -23,12 +23,19 @@
                     <b:dataTableColumn value="#{fun.precio}"/>
                     <b:dataTableColumn value="#{fun.idPelicula.titulo}" label="Titulo" />
                     <b:dataTableColumn value="#{fun.idSala.numero}" label="Numero Sala" />
-                    <b:dataTableColumn label="Opciones">
+                    
+                    <b:dataTableColumn label="" orderable="false">
                         <b:button outcome="/funciones/ingresar" value="Ingresar" look="success" /> &nbsp;
-                        <b:commandButton action="#{funciones.editar(fun)}" value="Editar"  look="warning"/> &nbsp;
-                        <b:commandButton action="#{funciones.destruir(fun)}" value="Eliminar" look="danger"/> &nbsp;
-                        <b:commandButton action="#{funciones.ver(fun)}" value="Detalle" look="info"/> 
                     </b:dataTableColumn>
+                    
+                    <b:dataTableColumn label="Opciones" orderable="false">
+                        <b:commandButton action="#{funciones.editar(fun)}" value="Editar"  look="warning"/> &nbsp;
+                    </b:dataTableColumn>
+                    
+                    <b:dataTableColumn label="" orderable="false">
+                        <b:commandButton action="#{funciones.destruir(fun)}" value="Eliminar" look="danger"/> &nbsp;
+                    </b:dataTableColumn>
+
                 </b:dataTable>
             </h:form>
         </b:container>
