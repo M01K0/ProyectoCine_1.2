@@ -14,7 +14,8 @@
                 <h1>Funciones</h1>
                 <h2>Listar</h2> <br/>
             </header>
-
+            
+            
             <h:form>
                 <b:dataTable value="#{funciones.listar()}" var="fun">
                     <b:dataTableColumn value="#{fun.fechaHoraInicio}" label="Fecha y Hora Inicio"/>
@@ -24,20 +25,17 @@
                     <b:dataTableColumn value="#{fun.idPelicula.titulo}" label="Titulo" />
                     <b:dataTableColumn value="#{fun.idSala.numero}" label="Numero Sala" />
                     
-                    <b:dataTableColumn label="" orderable="false">
-                        <b:button outcome="/funciones/ingresar" value="Ingresar" look="success" /> &nbsp;
+                    <b:dataTableColumn label="Opcion 1" orderable="false">
+                        <b:commandButton action="#{funciones.editar(fun)}" value="Editar"  look="warning"/> 
                     </b:dataTableColumn>
                     
-                    <b:dataTableColumn label="Opciones" orderable="false">
-                        <b:commandButton action="#{funciones.editar(fun)}" value="Editar"  look="warning"/> &nbsp;
-                    </b:dataTableColumn>
-                    
-                    <b:dataTableColumn label="" orderable="false">
-                        <b:commandButton action="#{funciones.destruir(fun)}" value="Eliminar" look="danger"/> &nbsp;
+                    <b:dataTableColumn label="Opcion 2" orderable="false">
+                        <b:commandButton action="#{funciones.destruir(fun)}" value="Eliminar" look="danger"/>
                     </b:dataTableColumn>
 
                 </b:dataTable>
             </h:form>
+            <b:button outcome="/funciones/ingresar" value="Ingresar" look="success" />
         </b:container>
     </h:body>
 </html>

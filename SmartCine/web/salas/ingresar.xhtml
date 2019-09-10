@@ -3,25 +3,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
     <h:head>
         <title>Sala - Ingresar</title>
     </h:head>
     <h:body>
-        <header>
-            <h1>Sala</h1>
-            <h2>Ingresar</h2>
-        </header>
-        
-        <h:form>
-            Numero de Sala: <h:inputText id="numero" value="#{salas.sala.numero}"/><br />
-            <!-- salas.sala.idSucursal.id -->
-            Sucursal: <h:selectOneMenu id="idSucursal" value="#{salas.sala.idSucursal.id}">
-                <f:selectItems value="#{sucursales.listar()}" var="sucu" itemLabel="#{sucu.nombre}" itemValue="#{sucu.id}" />
-            </h:selectOneMenu><br />
-            
-            <h:commandButton action="#{salas.ingresar()}" value="Ingresar" />
-        </h:form>
+        <b:container>
+            <header>
+                <h1>Sala</h1>
+                <h2>Ingresar</h2> <br/><br/>
+            </header>
+            <b:container>
+                <h:form>
+                    <b:row>
+                        Numero de Sala: <h:inputText id="numero" value="#{salas.sala.numero}"/> <br/><br/><br/>
+                        Sucursal: <h:selectOneMenu id="idSucursal" value="#{salas.sala.idSucursal.id}">
+                            <f:selectItems value="#{sucursales.listar()}" var="sucu" itemLabel="#{sucu.nombre}" itemValue="#{sucu.id}" />
+                        </h:selectOneMenu> <br/><br/><br/>
+
+                        <b:commandButton action="#{salas.ingresar()}" value="Ingresar" look="success" />
+                    </b:row>
+
+                </h:form>
+            </b:container>
+        </b:container>
+
+
+
     </h:body>
 </html>
 

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <b:container>
+            <header>
+                <h1>Asientos</h1>
+                <h2>Editar</h2> <br/><br/>
+            </header>
+            <b:container>
+                <h:form>
+                    <b:row>
+                        Codigo: <h:inputText value="#{as.codigo}"/> <br/><br/><br/>
+                        Estado: <h:selectOneMenu value="#{as.estado}">
+                            <f:selectItem itemValue="Disponible" />
+                            <f:selectItem itemValue="Ocupado" />
+                        </h:selectOneMenu> <br/><br/><br/>
+                        Sala:   <h:inputText value="#{as.idSala.id}"/> <br/><br/><br/>
+                        <b:commandButton action="#{asientos.actualizar(as)}" value="Editar" look="success" />
+                    </b:row>
+                </h:form>
+            </b:container>
+        </b:container>
+    </h:body>
+</html>
+

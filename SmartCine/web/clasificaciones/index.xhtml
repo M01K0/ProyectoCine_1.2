@@ -19,12 +19,14 @@
                     <b:dataTableColumn value="#{clas.nombre}" label="Nombre"/>
                     <b:dataTableColumn value="#{clas.edadMinima}" label="Edad Minima"/>
                     <b:dataTableColumn value="#{clas.descripcion}" label="Descripcion" />
-                    <b:dataTableColumn label="Opciones">
-                        <b:button outcome="/clasificaciones/ingresar" value="Ingresar" look="success" /> &nbsp;
-                        <b:commandButton action="#{clasificaciones.editar(clas)}" value="Editar"  look="warning"/> &nbsp;
-                        <b:commandButton action="#{clasificaciones.destruir(clas)}" value="Eliminar" look="danger"/> &nbsp;
+                    <b:dataTableColumn label="Opcion 1" orderable="false">
+                          <b:commandButton action="#{clasificaciones.editar(clas)}" value="Editar"  look="warning"/>
+                    </b:dataTableColumn> 
+                    <b:dataTableColumn label="Opcion 2" orderable="false">
+                        <b:commandButton action="#{clasificaciones.destruir(clas)}" value="Eliminar" look="danger"/>
                     </b:dataTableColumn>
                 </b:dataTable>
+                <b:button outcome="/clasificaciones/ingresar" value="Ingresar" look="success" />
             </h:form>
 
         </b:container>

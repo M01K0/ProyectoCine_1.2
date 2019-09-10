@@ -3,24 +3,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
     <h:head>
         <title>Funciones - Actualizar</title>
     </h:head>
     <h:body>
-        <header>
-            <h1>Sala</h1>
-            <h2>Ingresar</h2>
-        </header>
-        
-        <h:form>
-            Numero de Sala: <h:inputText value="#{sal.numero}"/><br />
-            <!-- salas.sala.idSucursal.id -->
-            Sucursal: <h:selectOneMenu value="#{sal.idSucursal.id}">
-                <f:selectItems value="#{sucursales.listar()}" var="sucu" itemLabel="#{sucu.nombre}" itemValue="#{sucu.id}" />
-            </h:selectOneMenu><br />
-            <h:commandButton action="${salas.actualizar(sal)}" value="Editar" />
-        </h:form>
+        <b:container>
+            <header>
+                <h1>Sala</h1>
+                <h2>Editar</h2> <br/><br/>
+            </header>
+            <b:container>
+                <h:form>
+                    <b:row>
+                        Numero de Sala: <h:inputText value="#{sal.numero}"/> <br/><br/><br/>
+                        Sucursal: <h:selectOneMenu value="#{sal.idSucursal.id}">
+                            <f:selectItems value="#{sucursales.listar()}" var="sucu" itemLabel="#{sucu.nombre}" itemValue="#{sucu.id}" />
+                        </h:selectOneMenu><br/><br/><br/>
+                        <b:commandButton action="${salas.actualizar(sal)}" value="Editar" look="success" />
+                    </b:row>
+
+                </h:form>
+            </b:container>
+        </b:container>
+
+
+
     </h:body>
 </html>
 

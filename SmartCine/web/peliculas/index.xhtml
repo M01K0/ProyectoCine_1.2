@@ -14,23 +14,23 @@
                 <h1>Películas</h1>
                 <h2>Listar</h2> <br/><br/>
             </header>
-            <b:button outcome="/peliculas/ingresar" value="Ingresar" look="success" /> <br/><br/>
+            
             <h:form>
-                
                 <b:dataTable value="#{peliculas.listar()}" var="pel">
                     <b:dataTableColumn value="#{pel.titulo}" label="Titulo" />
                     <b:dataTableColumn value="#{pel.duracion}" label="Duracion"/>
                     <b:dataTableColumn value="#{pel.sinopsis}" label="Sinopsis"  />
                     <b:dataTableColumn value="#{pel.idClasificacion.nombre}" label="Clasificacion"/>
                     <b:dataTableColumn value="#{pel.idGenero.descripcion}" label="Genero" />
-                    <b:dataTableColumn label="Opciones" orderable="false" >
+                    <b:dataTableColumn label="Opcion 1" orderable="false" >
                         <b:commandButton action="#{peliculas.editar(pel)}" value="Editar"  look="warning"/>
                     </b:dataTableColumn>
-                    <b:dataTableColumn label="" orderable="false">
+                    <b:dataTableColumn label="Opcion 2" orderable="false">
                         <b:commandButton action="#{peliculas.destruir(pel)}" value="Eliminar" look="danger"/>
                     </b:dataTableColumn>
                 </b:dataTable>
             </h:form>
+            <b:button outcome="/peliculas/ingresar" value="Ingresar" look="success" />
         </b:container><br/>
 
     </h:body>

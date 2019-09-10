@@ -16,15 +16,18 @@
             <b:container>
                 <h:form>
                     <b:dataTable value="#{asientos.listar()}" var="asien">
-                    <b:dataTableColumn value="#{asien.codigo}" label="Código"/>
-                    <b:dataTableColumn value="#{asien.estado}" label="Estado"/>
-                    <b:dataTableColumn value="#{asien.idSala.numero}" label="Sala" />
-                    <b:dataTableColumn label="Opciones">
-                        <b:button outcome="/asientos/ingresar" value="Ingresar" look="success" /> &nbsp;
-                        <b:commandButton action="#{asientos.destruir(asien)}" value="Eliminar" look="danger"/> &nbsp;
-                    </b:dataTableColumn>
-                </b:dataTable>
-            </h:form>
+                        <b:dataTableColumn value="#{asien.codigo}" label="Código"/>
+                        <b:dataTableColumn value="#{asien.estado}" label="Estado"/>
+                        <b:dataTableColumn value="#{asien.idSala.numero}" label="Sala" />
+                        <b:dataTableColumn label="Opcion 1">
+                            <b:commandButton action="#{asientos.editar(asien)}" value="Editar" look="warning"/>
+                        </b:dataTableColumn>
+                        <b:dataTableColumn label="Opcion 2">
+                            <b:commandButton action="#{asientos.destruir(asien)}" value="Eliminar" look="danger"/> 
+                        </b:dataTableColumn>
+                    </b:dataTable>
+                </h:form>
+                <b:button outcome="/asientos/ingresar" value="Ingresar" look="success" />
             </b:container>
         </b:container>
     </h:body>
