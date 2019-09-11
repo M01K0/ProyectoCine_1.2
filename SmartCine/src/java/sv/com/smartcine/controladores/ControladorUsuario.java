@@ -11,6 +11,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.persistence.Persistence;
+import javax.servlet.http.HttpSession;
 import sv.com.smartcine.dao.UsuariosJpaController;
 import sv.com.smartcine.entidades.Usuarios;
 
@@ -22,7 +23,7 @@ import sv.com.smartcine.entidades.Usuarios;
 @RequestScoped
 public class ControladorUsuario {
     UsuariosJpaController usuDAO;
-    private Usuarios usu;
+    Usuarios usu;
     
     public ControladorUsuario() {
         usuDAO = new UsuariosJpaController(Persistence.createEntityManagerFactory("SmartCinePU"));
@@ -69,6 +70,7 @@ public class ControladorUsuario {
         }
     }
     
+  
     public Usuarios getUsu() {
         return usu;
     }

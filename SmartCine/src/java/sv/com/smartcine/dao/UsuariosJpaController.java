@@ -121,6 +121,15 @@ public class UsuariosJpaController implements Serializable {
             }
         }
     }
+    
+    public Usuarios buscarUsuario(String usuario, String clave) {
+        EntityManager em = getEntityManager();
+        try {
+            return (Usuarios) em.createNamedQuery("Usuarios.BuscarporUsuarioClave", Usuarios.class).setParameter("usuario", usuario).setParameter("clave", clave).getSingleResult();
+        } finally {
+            em.close();
+        }
+    }
 
     public void destroy(Long id) throws IllegalOrphanException, NonexistentEntityException {
         EntityManager em = null;

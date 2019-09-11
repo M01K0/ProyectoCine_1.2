@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
     <head>
 
         <meta charset="UTF-8" />
@@ -42,9 +43,16 @@
                             <a class="nav-link" href="recursos/sucursales.xhtml">Sucursales</a>
                         </li>
                     </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li><img src="recursos/icon/person-2x.png"><a data-toggle="modal" data-target="#exampleModal2" style="color:white"><span></span> Sign Up  </a></img></li> &nbsp;&nbsp;&nbsp;
+                        <li><img src="recursos/icon/account-login-2x.png"><a data-toggle="modal" data-target="#exampleModal" style="color:white"><span></span> Login</a></img></li> 
+                    </ul>
                 </div>
+
             </div>
+
         </nav>
+
         <header>
 
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -222,6 +230,112 @@
                 </div>
             </div>
             <!-- /.row -->
+        </div>
+
+        <!-- Modal Iniciar Sesion -->
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+            <div class="modal-dialog" role="document">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesion</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span class="stop" aria-hidden="true">x</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <h:form class="form-horizontal">
+
+
+                            <div class="col-auto">
+                                <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                <label for="exampleInputText1">Usuario</label>
+                                <div class="input-group mb-2">
+
+                                    <div class="input-group-prepend">
+
+                                        <div class="input-group-text">@</div>
+                                        <h:inputText value="${login.usu.usuario}" class="form-control" id="inlineFormInputGroup" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-7 mb-3">
+                                <label for="exampleInputPassword1">Clave</label>
+                                <h:inputSecret value="${login.usu.clave}" class="form-control" id="validationCustom05"/> <br />
+                            </div>        
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
+                                <h:commandButton action="${login.validar()}" value="Iniciar Sesion" class="btn btn-primary" />
+                            </div>
+
+                        </h:form>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Registrarse -->
+
+        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+            <div class="modal-dialog" role="document">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="exampleModalLabel">Registrate</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span class="stop" aria-hidden="true">x</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <h:form class="form-horizontal">
+
+
+                            <div class="col-auto">
+                                <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                <label for="exampleInputText1">Usuario</label>
+                                <div class="input-group mb-2">
+
+                                    <div class="input-group-prepend">
+
+                                        <div class="input-group-text">@</div>
+                                        <h:inputText value="${login.usu.usuario}" class="form-control" id="inlineFormInputGroup" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-7 mb-3">
+                                <label for="exampleInputPassword1">Clave</label>
+                                <h:inputSecret value="${login.usu.clave}" class="form-control" id="validationCustom05"/> <br />
+                            </div>
+           
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
+                                <h:commandButton action="${login.validar()}" value="Registrar" class="btn btn-primary" />
+                            </div>
+
+                        </h:form>
+
+                    </div>
+
+
+                </div>
+            </div>
         </div>
 
         <!-- Bootstrap core JavaScript -->

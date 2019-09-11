@@ -33,7 +33,8 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Usuarios.findById", query = "SELECT u FROM Usuarios u WHERE u.id = :id")
     , @NamedQuery(name = "Usuarios.findByUsuario", query = "SELECT u FROM Usuarios u WHERE u.usuario = :usuario")
     , @NamedQuery(name = "Usuarios.findByClave", query = "SELECT u FROM Usuarios u WHERE u.clave = :clave")
-    , @NamedQuery(name = "Usuarios.findByRol", query = "SELECT u FROM Usuarios u WHERE u.rol = :rol")})
+    , @NamedQuery(name = "Usuarios.findByRol", query = "SELECT u FROM Usuarios u WHERE u.rol = :rol")
+    , @NamedQuery(name = "Usuarios.BuscarporUsuarioClave", query = "SELECT u FROM Usuarios u WHERE u.usuario =:usuario AND u.clave = :clave")})
 public class Usuarios implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -123,5 +124,5 @@ public class Usuarios implements Serializable {
     public String toString() {
         return "sv.com.smartcine.entidades.Usuarios[ id=" + id + " ]";
     }
-    
+
 }
