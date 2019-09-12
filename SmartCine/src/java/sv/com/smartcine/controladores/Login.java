@@ -57,10 +57,14 @@ public class Login implements Serializable {
         this.usu = usu;
     }
     
+    public boolean existSession(){
+        return (SesionUtil.getUserId() != null);
+    }
+    
     public String cerrar() {
         HttpSession session = SesionUtil.getSession();
         session.invalidate();
-        return "index";
+        return "index.xhtml";
     }
     
 }

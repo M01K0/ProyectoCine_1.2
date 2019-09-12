@@ -9,35 +9,93 @@
     <h:body>
         <b:container>
             <h1 style="font-family: monospace">Mantenimiento SmartCine</h1> <br/>
-            
-            <b:panel look="primary" title="Navigation">
-                <b:listLinks>
-                    <ul>
-                        <li>
-                            
-                        </li>
-                            
-                        <ul>
-                            <li>
-                                
-                            </li>
-                            <li>
-                                
-                            </li>
-                        </ul>
-                    </ul>
-                    <b:navLink value="Vista de Usuario" href="index.xhtml" />
-                    <b:navLink value="Mantenimiento Usuarios" href="usuarios/index.xhtml" />
-                    <b:navLink value="Mantenimiento Sucursales" href="sucursales/index.xhtml" />
-                    <b:navLink value="Mantenimiento Salas" href="salas/index.xhtml" />
-                    <b:navLink value="Mantenimiento Peliculas" href="peliculas/index.xhtml" />
-                    <b:navLink value="Mantenimiento Funciones" href="funciones/index.xhtml" />
-                    <b:navLink value="Mantenimiento Asientos" href="asientos/index.xhtml" />
-                    <b:navLink value="Mantenimiento Clasificaciones" href="clasificaciones/index.xhtml" />
-                    
-                </b:listLinks>
-            </b:panel>
-        
+
+            <b:panelGrid colSpans="6,6" columns="2">
+                <b:panel look="primary" title="Navigation">
+                    <b:listLinks>
+                        <b:panel title="Vista" >
+                            <ul>
+                                <li><b:navLink value="Vista de Usuario" href="index.xhtml" /> </li> <br/>
+                                <ul>
+                                    <li><b:navLink value="Estrenos" href="recursos/estrenos.xhtml" /></li> <br/>
+                                    <li><b:navLink value="Proximamente" href="recursos/proximamente.xhtml" /></li> <br/>
+                                    <li><b:navLink value="Sucursales" href="recursos/sucursales.xhtml" /></li> <br/>
+                                </ul>
+                            </ul>
+                        </b:panel>
+
+                        <b:panel  title="Usuarios">
+                            <ul>
+                                <li><b:navLink value="Mantenimiento Usuarios" href="usuarios/index.xhtml" /></li> <br/>
+                                <ul>
+                                    <li><b:navLink value="Ingresar Usuarios" href="usuarios/ingresar.xhtml" /></li> <br/>
+                                    
+                                </ul>
+                            </ul>
+                        </b:panel>    
+
+                        <b:panel title="Sucursales">
+                            <ul>
+                                <li><b:navLink value="Mantenimiento Sucursales" href="sucursales/index.xhtml" /></li> <br/>
+                                <ul>
+                                    <li><b:navLink value="Ingresar Sucursales" href="sucursales/ingresar.xhtml" /></li> <br/>
+                                    
+                                </ul>
+                            </ul>
+                        </b:panel>
+
+                        <b:panel title="Salas">
+                            <ul>
+                                <li><b:navLink value="Mantenimiento Salas" href="salas/index.xhtml" /></li> <br/>
+                                <ul>
+                                    <li><b:navLink value="Ingresar Salas" href="salas/ingresar.xhtml" /></li> <br/>
+                                    
+                                </ul>
+                            </ul>
+                        </b:panel>
+
+                        <b:panel title="Peliculas">
+                            <ul>
+                                <li><b:navLink value="Mantenimiento Peliculas" href="peliculas/index.xhtml" /></li> <br/>
+                                <ul>
+                                    <li><b:navLink value="Ingresar Peliculas" href="peliculas/ingresar.xhtml" /></li> <br/>
+                                    
+                                </ul>
+                            </ul>
+                        </b:panel>
+
+                        <b:panel title="Funciones">
+                            <ul>
+                                <li><b:navLink value="Mantenimiento Funciones" href="funciones/index.xhtml" /></li> <br/>
+                                <ul>
+                                    <li><b:navLink value="Ingresar Funciones" href="funciones/ingresar.xhtml" /></li> <br/>
+                                    
+                                </ul>
+                            </ul>
+                        </b:panel>
+
+                        <b:panel title="Asientos">
+                            <ul>
+                                <li><b:navLink value="Mantenimiento Asientos" href="asientos/index.xhtml" /></li> <br/>
+                                <ul>
+                                    <li><b:navLink value="Ingresar Asientos" href="asientos/ingresar.xhtml" /></li> <br/>
+                                    
+                                </ul>
+                            </ul>
+                        </b:panel>
+
+                        <b:panel title="Clasificaciones">
+                            <ul>
+                                <li><b:navLink value="Mantenimiento Clasificaciones" href="clasificaciones/index.xhtml" /></li> <br/>
+                                <ul>
+                                    <li><b:navLink value="Ingresar Clasificaciones" href="clasificaciones/ingresar.xhtml" /></li> <br/>
+                                    
+                                </ul>
+                            </ul>
+                        </b:panel>    
+                    </b:listLinks>
+                </b:panel>      
+            </b:panelGrid>
         </b:container>  
     </h:body>
 </html>

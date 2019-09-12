@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
     <head>
 
         <meta charset="UTF-8" />
@@ -45,7 +46,20 @@
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li><img src="recursos/icon/person-2x.png"><a data-toggle="modal" data-target="#exampleModal2" style="color:white"><span></span> Sign Up  </a></img></li> &nbsp;&nbsp;&nbsp;
-                        <li><img src="recursos/icon/account-login-2x.png"><a data-toggle="modal" data-target="#exampleModal" style="color:white"><span></span> Login</a></img></li> 
+                        <li>
+                        
+                        <c:choose>
+                            <c:when test="#{login.existSession()}">
+                                <img src="recursos/icon/account-logout-2x.png"><a href="${login.cerrar()}" action="" style="color:white"><span></span>&nbsp;LogOut</a></img> 
+                            </c:when>
+                            <c:otherwise>
+                                <img src="recursos/icon/account-login-2x.png"><a data-toggle="modal" data-target="#exampleModal" style="color:white"><span></span> Login</a></img>
+                            </c:otherwise>
+                        </c:choose>
+                        
+                        
+                        </li> 
+                         
                     </ul>
                 </div>
 
