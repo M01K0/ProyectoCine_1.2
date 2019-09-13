@@ -50,7 +50,10 @@
                         
                         <c:choose>
                             <c:when test="#{login.existSession()}">
-                                <img src="recursos/icon/account-logout-2x.png"><a href="${login.cerrar()}" action="" style="color:white"><span></span>&nbsp;LogOut</a></img> 
+                                <h:form>
+                                    <img src="recursos/icon/account-logout-2x.png"><h:commandLink style="color:white" action="#{login.cerrar()}" value="LogOut" /></img>
+                                </h:form>
+                                
                             </c:when>
                             <c:otherwise>
                                 <img src="recursos/icon/account-login-2x.png"><a data-toggle="modal" data-target="#exampleModal" style="color:white"><span></span> Login</a></img>
