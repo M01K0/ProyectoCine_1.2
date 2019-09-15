@@ -1,7 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:c="http://java.sun.com/jsp/jstl/core">
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
     <head>
 
         <meta charset="UTF-8" />
@@ -331,21 +333,28 @@
                                     <div class="input-group-prepend">
 
                                         <div class="input-group-text">@</div>
-                                        <h:inputText value="${login.usu.usuario}" class="form-control" id="inlineFormInputGroup" />
+                                        <h:inputText value="${usuario.usu.usuario}" class="form-control" id="inlineFormInputGroup" />
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-md-7 mb-3">
                                 <label for="exampleInputPassword1">Clave</label>
-                                <h:inputSecret value="${login.usu.clave}" class="form-control" id="validationCustom05"/> <br />
+                                <h:inputSecret value="${usuario.usu.clave}" class="form-control" id="validationCustom05"/>
                             </div>
-           
+                            <!-- 
+                            <div class="col-md-7 mb-3">
+                                <label for="exampleInputPassword2">Rol</label>
+                                <b:selectOneMenu value="${usuario.usu.rol}">
+                                    <f:selectItem itemValue="Estandar"/>
+                                </b:selectOneMenu>
+                            </div>
+                            -->
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
-                                <h:commandButton action="${login.validar()}" value="Registrar" class="btn btn-primary" />
+                                <h:commandButton action="${usuario.ingresar()}" value="Registrar" class="btn btn-primary" />
                             </div>
-
+                            
                         </h:form>
 
                     </div>
