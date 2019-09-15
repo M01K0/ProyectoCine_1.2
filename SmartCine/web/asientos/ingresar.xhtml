@@ -21,7 +21,9 @@
                             <f:selectItem itemValue="Disponible" />
                             <f:selectItem itemValue="Ocupado" />
                         </h:selectOneMenu> <br/><br/><br/>
-                        Sala:   <h:inputText value="#{asientos.asient.idSala.id}"/> <br/><br/><br/>
+                        Sala: <h:selectOneMenu value="#{asientos.asient.idSala.id}">
+                            <f:selectItems value="#{salas.listar()}" var="sala" itemLabel="#{sala.numero}" itemValue="#{sala.id}" />
+                        </h:selectOneMenu> <br/><br/><br/>
                         <b:commandButton action="#{asientos.ingresar()}" value="Ingresar" look="success" />
                     </b:row>
                 </h:form>
