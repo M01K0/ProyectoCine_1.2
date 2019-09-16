@@ -3,18 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/recursos/cartelera/pelicula5.xhtml</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/sv/com/smartcine/controladores/Login.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/recursos/cartelera/pelicula4.xhtml</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/recursos/cartelera/pelicula2.xhtml</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/sv/com/smartcine/entidades/Usuarios.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/funciones/index.xhtml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/peliculas/index.xhtml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/clasificaciones/index.xhtml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/sucursales/index.xhtml</file>
             <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/admin.xhtml</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/recursos/cartelera/pelicula6.xhtml</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/sv/com/smartcine/controladores/ControladorAsientos.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/recursos/cartelera/pelicula1.xhtml</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/index.xhtml</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/recursos/sucursales.xhtml</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/recursos/cartelera/pelicula3.xhtml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/asientos/index.xhtml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/usuarios/index.xhtml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/salas/index.xhtml</file>
         </group>
     </open-files>
 </project-private>

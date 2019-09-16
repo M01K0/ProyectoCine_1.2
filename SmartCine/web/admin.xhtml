@@ -2,11 +2,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:b="http://bootsfaces.net/ui">
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Administrador</title>
     </h:head>
     <h:body>
+        <b:navBar brand="SmartCine" brand-href="admin.xhtml" fluid="false">
+            <!-- Following line is needed for TBS 3.0.1 (panel content overflow issue) -->
+            <b:navbarLinks pull="right"><b:navLink value="    " href="#"></b:navLink></b:navbarLinks>
+            <b:navbarLinks pull="right" styleClass="hidden-xs">
+                <b:navbarLinks>
+                    <c:choose>
+                        <c:when test="#{login.existSession()}">
+                            <h:form>
+                                <br/><img src="recursos/icon/account-logout-2x.png"><h:commandLink action="#{login.cerrar()}" value="&nbsp;LogOut" /></img> <br/>
+                            </h:form>
+
+                        </c:when>
+                        <c:otherwise>
+                           
+                        </c:otherwise>
+                    </c:choose>
+                </b:navbarLinks>
+
+            </b:navbarLinks>
+        </b:navBar>
         <b:container>
             <h1 style="font-family: monospace">Mantenimiento SmartCine</h1> <br/>
 
@@ -17,16 +39,16 @@
                             <ul>
                                 <li>Vista de Estandar</li> <br/>
                                 <ul>
-                                    <li><b:navLink value="Home" href="index.xhtml" /></li> <br/>
-                                    <li><b:navLink value="Estrenos" href="recursos/estrenos.xhtml" /></li> <br/>
-                                    <li><b:navLink value="Proximamente" href="recursos/proximamente.xhtml" /></li> <br/>
-                                    <li><b:navLink value="Sucursales" href="recursos/sucursales.xhtml" /></li> <br/>
-                                    <li><b:navLink value="Pelicula 1" href="recursos/cartelera/pelicula1.xhtml" /></li> <br/>
-                                    <li><b:navLink value="Pelicula 2" href="recursos/cartelera/pelicula2.xhtml" /></li> <br/>
-                                    <li><b:navLink value="Pelicula 3" href="recursos/cartelera/pelicula3.xhtml" /></li> <br/>
-                                    <li><b:navLink value="Pelicula 4" href="recursos/cartelera/pelicula4.xhtml" /></li> <br/>
-                                    <li><b:navLink value="Pelicula 5" href="recursos/cartelera/pelicula5.xhtml" /></li> <br/>
-                                    <li><b:navLink value="Pelicula 6" href="recursos/cartelera/pelicula6.xhtml" /></li> <br/>
+                                    <li><b:navLink value="Home" href="index.xhtml" target="blank" /></li> <br/>
+                                    <li><b:navLink value="Estrenos" href="recursos/estrenos.xhtml" target="blank" /></li> <br/>
+                                    <li><b:navLink value="Proximamente" href="recursos/proximamente.xhtml" target="blank" /></li> <br/>
+                                    <li><b:navLink value="Sucursales" href="recursos/sucursales.xhtml" target="blank" /></li> <br/>
+                                    <li><b:navLink value="Pelicula 1" href="recursos/cartelera/pelicula1.xhtml" target="blank" /></li> <br/>
+                                    <li><b:navLink value="Pelicula 2" href="recursos/cartelera/pelicula2.xhtml" target="blank" /></li> <br/>
+                                    <li><b:navLink value="Pelicula 3" href="recursos/cartelera/pelicula3.xhtml" target="blank" /></li> <br/>
+                                    <li><b:navLink value="Pelicula 4" href="recursos/cartelera/pelicula4.xhtml" target="blank" /></li> <br/>
+                                    <li><b:navLink value="Pelicula 5" href="recursos/cartelera/pelicula5.xhtml" target="blank" /></li> <br/>
+                                    <li><b:navLink value="Pelicula 6" href="recursos/cartelera/pelicula6.xhtml" target="blank" /></li> <br/>
                                 </ul>
                             </ul>
                         </b:panel>
@@ -37,7 +59,7 @@
                                 <ul>
                                     <li><b:navLink value="Listar Usuarios" href="usuarios/index.xhtml" /></li> <br/>
                                     <li><b:navLink value="Ingresar Usuarios" href="usuarios/ingresar.xhtml" /></li> <br/>
-                                    
+
                                 </ul>
                             </ul>
                         </b:panel>    
@@ -48,7 +70,7 @@
                                 <ul>
                                     <li><b:navLink value="Listar Sucursales" href="sucursales/index.xhtml" /></li> <br/>
                                     <li><b:navLink value="Ingresar Sucursales" href="sucursales/ingresar.xhtml" /></li> <br/>
-                                    
+
                                 </ul>
                             </ul>
                         </b:panel>
@@ -59,7 +81,7 @@
                                 <ul>
                                     <li><b:navLink value="Listar Salas" href="salas/index.xhtml" /></li> <br/>
                                     <li><b:navLink value="Ingresar Salas" href="salas/ingresar.xhtml" /></li> <br/>
-                                    
+
                                 </ul>
                             </ul>
                         </b:panel>
@@ -70,7 +92,7 @@
                                 <ul>
                                     <li><b:navLink value="Listar Peliculas" href="peliculas/index.xhtml" /></li> <br/>
                                     <li><b:navLink value="Ingresar Peliculas" href="peliculas/ingresar.xhtml" /></li> <br/>
-                                    
+
                                 </ul>
                             </ul>
                         </b:panel>
@@ -81,7 +103,7 @@
                                 <ul>
                                     <li><b:navLink value="Listar Funciones" href="funciones/index.xhtml" /></li> <br/>
                                     <li><b:navLink value="Ingresar Funciones" href="funciones/ingresar.xhtml" /></li> <br/>
-                                    
+
                                 </ul>
                             </ul>
                         </b:panel>
@@ -92,7 +114,7 @@
                                 <ul>
                                     <li><b:navLink value="Listar Asientos" href="asientos/index.xhtml" /></li> <br/>
                                     <li><b:navLink value="Ingresar Asientos" href="asientos/ingresar.xhtml" /></li> <br/>
-                                    
+
                                 </ul>
                             </ul>
                         </b:panel>
@@ -103,7 +125,7 @@
                                 <ul>
                                     <li><b:navLink value="Listar Clasificaciones" href="clasificaciones/index.xhtml" /></li> <br/>
                                     <li><b:navLink value="Ingresar Clasificaciones" href="clasificaciones/ingresar.xhtml" /></li> <br/>
-                                    
+
                                 </ul>
                             </ul>
                         </b:panel>    
