@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
     <head>
 
         <meta charset="UTF-8" />
@@ -53,321 +57,62 @@
             <h1>Estrenos</h1> <br />
 
             <div class="row">
+                <ui:repeat value="#{peliculas.listar()}" var="pelicula">
+                    <div class="col-lg-4 col-sm-6 portfolio-item">
 
-                <div class="col-lg-4 col-sm-6 portfolio-item">
+                        <div class="card h-100">
+                            <a href="#"><img class="card-img-top" src="${pelicula.imagen}" alt="" /></a>
 
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="img/img2/img1.jpg" alt="" /></a>
+                            <div class="card-body">
 
-                        <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="reservacion.html">#{pelicula.titulo}</a>
+                                </h4>
 
-                            <h4 class="card-title">
-                                <a href="reservacion.html">IT Capitulo Final</a>
-                            </h4>
+                                <p class="card-text">#{pelicula.sinopsis}</p>
+                                
+                                <h:form>
+                                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">Trailer</button>&nbsp;
+                                    <h:commandButton action="#{peliculas.mostrar(pelicula)}" value="Reservar" class="btn btn-primary"/>
+                                </h:form>
 
-                            <p class="card-text">En el misterioso pueblo de Derry, un malvado payaso llamado Pennywise vuelve 27 años después para atormentar a los ya adultos miembros del Club de los Perdedores, que ahora están más alejados unos de otros. Secuela de IT.</p>
-                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">Trailer</button>
-                            <button type="button" class="btn btn-primary" onclick="location.href = 'cartelera/pelicula1.xhtml'">Reservar</button>
+                                <!-- Modal -->
 
-                            <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
 
-                                <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
 
-                                    <div class="modal-content">
+                                            <div class="modal-header">
 
-                                        <div class="modal-header">
-
-                                            <h5 class="modal-title" id="exampleModalLabel">IT Capitulo Final Trailer</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span class="stop" aria-hidden="true">x</span>
-                                            </button>
-                                        </div>
-
-                                        <div class="modal-body">
-
-                                            <!-- 16:9 aspect ratio -->
-
-                                            <div class="embed-responsive embed-responsive-16by9">
-                                                <iframe class="embed-responsive-item popup-youtube-player" src="https://www.youtube.com/embed/woh3bk8DXVo?enablejsapi=1&amp;version=3&amp;playerapiid=ytplayer " frameborder="0" allowfullscreen="true" allowscriptaccess="always" />
+                                                <h5 class="modal-title" id="exampleModalLabel">IT Capitulo Final Trailer</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span class="stop" aria-hidden="true">x</span>
+                                                </button>
                                             </div>
 
-                                        </div>
+                                            <div class="modal-body">
 
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
-                                            <button type="button" class="btn btn-primary" onclick="location.href = 'cartelera/pelicula1.xhtml'">Reservar</button>
+                                                <!-- 16:9 aspect ratio -->
+
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe class="embed-responsive-item popup-youtube-player" src="https://www.youtube.com/embed/woh3bk8DXVo?enablejsapi=1&amp;version=3&amp;playerapiid=ytplayer " frameborder="0" allowfullscreen="true" allowscriptaccess="always" />
+                                                </div>
+
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-                <div class="col-lg-4 col-sm-6 portfolio-item">
-
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="img/img2/img2.jpg" alt="" /></a>
-
-                        <div class="card-body">
-
-                            <h4 class="card-title">
-                                <a href="reservacion.html">Rapido y Furioso 8</a>
-                            </h4>
-
-                            <p class="card-text">Con Dominic y Letty de luna de miel, Brian y Mia retirados y el resto de la pandilla viviendo en paz, parece que todo está tranquilo. Sin embargo, una misteriosa mujer seducirá a Dominic para adentrarlo en el mundo del crimen y traicionar a la pandilla.</p>
-
-                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal2">Trailer</button>
-                            <button type="button" class="btn btn-primary" onclick="location.href = 'cartelera/pelicula2.xhtml'">Reservar</button>  
-                            <!-- Modal -->
-
-                            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-                                <div class="modal-dialog" role="document">
-
-                                    <div class="modal-content">
-
-                                        <div class="modal-header">
-
-                                            <h5 class="modal-title" id="exampleModalLabel">Rapido y Furioso 8 Trailer</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span class="stop1" aria-hidden="true">x</span>
-                                            </button>
-                                        </div>
-
-                                        <div class="modal-body">
-
-                                            <!-- 16:9 aspect ratio -->
-
-                                            <div class="embed-responsive embed-responsive-16by9">
-                                                <iframe class="embed-responsive-item popup-youtube-player1" width="640" height="360" src="https://www.youtube.com/embed/3KuazYQ1JuE?enablejsapi=1&amp;version=3&amp;playerapiid=ytplayer" frameborder="0" allowfullscreen="true" allowscriptaccess="always" />
-                                            </div>
-
-                                        </div>
-
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary stop1" data-dismiss="modal">Cerrar</button>
-                                            <button type="button" class="btn btn-primary" onclick="location.href = 'cartelera/pelicula2.xhtml'">Reservar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6 portfolio-item">
-
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="img/img2/img3.jpg" alt="" /></a>
-
-                        <div class="card-body">
-
-                            <h4 class="card-title">
-                                <a href="reservacion.html">Avengers EndGame</a>
-                            </h4>
-
-                            <p class="card-text">Los Vengadores restantes deben encontrar una manera de recuperar a sus aliados para un enfrentamiento épico con Thanos, el malvado que diezmó el planeta y el universo.</p>
-
-                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal3">Trailer</button>
-                            <button type="button" class="btn btn-primary" onclick="location.href = 'cartelera/pelicula3.xhtml'">Reservar</button>
-                            <!-- Modal -->
-
-                            <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-                                <div class="modal-dialog" role="document">
-
-                                    <div class="modal-content">
-
-                                        <div class="modal-header">
-
-                                            <h5 class="modal-title" id="exampleModalLabel">Avengers EndGame Trailer</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">x</span>
-                                            </button>
-                                        </div>
-
-                                        <div class="modal-body">
-
-                                            <!-- 16:9 aspect ratio -->
-
-                                            <div class="embed-responsive embed-responsive-16by9">
-                                                <iframe class="embed-responsive-item popup-youtube-player" src="https://www.youtube.com/embed/TcMBFSGVi1c?enablejsapi=1&amp;version=3&amp;playerapiid=ytplayer" />
-                                            </div>
-
-                                        </div>
-
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
-                                            <button type="button" class="btn btn-primary" onclick="location.href = 'cartelera/pelicula3.xhtml'">Reservar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6 portfolio-item">
-
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="img/img2/img4.jpg" alt="" /></a>
-
-                        <div class="card-body">
-
-                            <h4 class="card-title">
-                                <a href="reservacion.html">Nosotros</a>
-                            </h4>
-
-                            <p class="card-text">Adelaide y su esposo viajan a la casa en la que ella creció junto a la playa. Tiene un presentimiento siniestro que precede a un encuentro espeluznante: cuatro enmascarados se presentan ante su casa. Lo aterrador viene cuando muestran sus rostros.</p>
-
-
-                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal4">Trailer</button>
-                            <button type="button" class="btn btn-primary" onclick="location.href = 'cartelera/pelicula4.xhtml'">Reservar</button>
-                            <!-- Modal -->
-
-                            <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-                                <div class="modal-dialog" role="document">
-
-                                    <div class="modal-content">
-
-                                        <div class="modal-header">
-
-                                            <h5 class="modal-title" id="exampleModalLabel">Nosotros Trailer</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">�</span>
-                                            </button>
-                                        </div>
-
-                                        <div class="modal-body">
-
-                                            <!-- 16:9 aspect ratio -->
-
-                                            <div class="embed-responsive embed-responsive-16by9">
-                                                <iframe class="embed-responsive-item popup-youtube-player" src="https://www.youtube.com/embed/nzCyY_fTowA?enablejsapi=1&amp;version=3&amp;playerapiid=ytplayer" />
-                                            </div>
-
-                                        </div>
-
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" onclick="location.href = 'cartelera/pelicula4.xhtml'">Reservar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6 portfolio-item">
-
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="img/img2/img5.jpg" alt="" /></a>
-
-                        <div class="card-body">
-
-                            <h4 class="card-title">
-                                <a href="#">Capitana Marvel</a>
-                            </h4>
-
-                            <p class="card-text">Una guerrera extraterrestre de la civilización Kree se encuentra atrapada en medio de una batalla. Con la ayuda de Nick Fury trata de descubrir los secretos de su pasado mientras aprovecha sus poderes para terminar la guerra.</p>
-                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal5">Trailer</button>
-                            <button type="button" class="btn btn-primary" onclick="location.href = 'cartelera/pelicula5.xhtml'">Reservar</button>
-
-                            <!-- Modal -->
-
-                            <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-                                <div class="modal-dialog" role="document">
-
-                                    <div class="modal-content">
-
-                                        <div class="modal-header">
-
-                                            <h5 class="modal-title" id="exampleModalLabel">Capitana Marvel Trailer</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">�</span>
-                                            </button>
-                                        </div>
-
-                                        <div class="modal-body">
-
-                                            <!-- 16:9 aspect ratio -->
-
-                                            <div class="embed-responsive embed-responsive-16by9">
-                                                <iframe class="embed-responsive-item popup-youtube-player" src="https://www.youtube.com/embed/0LHxvxdRnYc?enablejsapi=1&amp;version=3&amp;playerapiid=ytplayer" />
-                                            </div>
-
-                                        </div>
-
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
-                                            <button type="button" class="btn btn-primary" onclick="location.href = 'cartelera/pelicula5.xhtml'">Reservar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6 portfolio-item">
-
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="img/img6.jpg" alt="" /></a>
-
-                        <div class="card-body">
-
-                            <h4 class="card-title">
-                                <a href="reservacion.html">John Wick 3</a>
-                            </h4>
-
-                            <p class="card-text">John Wick regresa de nuevo pero con una recompensa sobre su cabeza que persigue unos mercenarios. Tras asesinar a uno de los miembros de su gremio, Wick es expulsado y se convierte en el foco de atención de todos los sicarios de la organización.</p>
-
-                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal6">Trailer</button>
-                            <button type="button" class="btn btn-primary" onclick="location.href = 'cartelera/pelicula6.xhtml'">Reservar</button>
-                            <!-- Modal -->
-
-                            <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-                                <div class="modal-dialog" role="document">
-
-                                    <div class="modal-content">
-
-                                        <div class="modal-header">
-
-                                            <h5 class="modal-title" id="exampleModalLabel">John Wick 3 Trailer</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">�</span>
-                                            </button>
-                                        </div>
-
-                                        <div class="modal-body">
-
-                                            <!-- 16:9 aspect ratio -->
-
-                                            <div class="embed-responsive embed-responsive-16by9">
-                                                <iframe class="embed-responsive-item popup-youtube-player" src="https://www.youtube.com/embed/pU8-7BX9uxs?enablejsapi=1&amp;version=3&amp;playerapiid=ytplayer" />
-                                            </div>
-
-                                        </div>
-
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
-                                            <button type="button" class="btn btn-primary" onclick="location.href = 'cartelera/pelicula6.xhtml'">Reservar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
-                </div>
+                </ui:repeat>
             </div>
         </div>
         <!-- Bootstrap core JavaScript -->
@@ -380,7 +125,7 @@
 
 
         <script>
-            
+
             $('.stop').on('click', function () {
                 //$('#popup-youtube-player').stopVideo();
                 $('.popup-youtube-player')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');

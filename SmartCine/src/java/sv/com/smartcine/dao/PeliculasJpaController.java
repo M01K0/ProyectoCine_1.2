@@ -245,4 +245,13 @@ public class PeliculasJpaController implements Serializable {
         }
     }
     
+    public Peliculas porid(Integer d){
+        EntityManager em = getEntityManager();
+        try {
+            return em.createNamedQuery("Peliculas.findById", Peliculas.class).setParameter("id", d).getSingleResult();
+        } finally {
+            em.close();
+        }
+    }
+    
 }

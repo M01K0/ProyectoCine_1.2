@@ -23,54 +23,67 @@ import sv.com.smartcine.entidades.Peliculas;
 @ManagedBean(name = "peliculas")
 @RequestScoped
 public class CotroladorPeliculas {
+
     PeliculasJpaController pelDAO;
     private Peliculas pel;
+    private int id;
     private Genero gener;
     private Clasificaciones clasif;
-    
+
     public CotroladorPeliculas() {
         pelDAO = new PeliculasJpaController(Persistence.createEntityManagerFactory("SmartCinePU"));
         pel = new Peliculas();
     }
-    
-    public List<Peliculas> listar(){
+
+    public List<Peliculas> listar() {
         return pelDAO.findPeliculasEntities();
     }
-    
-    public String ingresar(){
+
+    public String ingresar() {
         pelDAO.create(pel);
         return "index?faces-redirect=true";
     }
-    
+
     //
-    public String editar(Peliculas p){
+    public String editar(Peliculas p) {
         Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
         objetos.put("ps", p);
-        return "editar?faces-redirect=true"; 
+        return "editar?faces-redirect=true";
     }
-    
-    public String actualizar(Peliculas p){
+
+    public String actualizar(Peliculas p) {
         try {
             pelDAO.edit(p);
             return "index?faces-redirect=true";
         } catch (Exception e) {
-            
+
             return null;
         }
     }
-    
-    public String ver(Peliculas p){
+
+    public String ver(Peliculas p) {
         pel = p;
         return "ver?faces-redirect=true";
     }
-    
-    public String destruir(Peliculas p){
+
+    public String destruir(Peliculas p) {
         try {
             pelDAO.destroy(p.getId());
-        return "index?faces-redirect=true";
+            return "index?faces-redirect=true";
         } catch (Exception e) {
             return null;
         }
+    }
+
+    public String mostrar(Peliculas u) {
+        Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+        objetos.put("pel", u);
+        return "/faces/recursos/cartelera/pelicula?faces-redirect=true";
+    }
+
+    public Peliculas listPe() {
+        id = getId();
+        return pelDAO.porid(id);
     }
 
     public Peliculas getPel() {
@@ -95,6 +108,14 @@ public class CotroladorPeliculas {
 
     public void setClasif(Clasificaciones clasif) {
         this.clasif = clasif;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
 

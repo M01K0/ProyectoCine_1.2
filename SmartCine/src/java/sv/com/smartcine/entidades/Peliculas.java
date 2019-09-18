@@ -60,6 +60,8 @@ public class Peliculas implements Serializable {
     @JoinColumn(name = "id_clasificacion", referencedColumnName = "id")
     @ManyToOne
     private Clasificaciones idClasificacion;
+    @Column(name = "imagen")
+    private String imagen;
 
     public Peliculas() {
     }
@@ -105,6 +107,16 @@ public class Peliculas implements Serializable {
     public void setSinopsis(String sinopsis) {
         this.sinopsis = sinopsis;
     }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+    
+    
 
     @XmlTransient
     public List<Funciones> getFuncionesList() {
