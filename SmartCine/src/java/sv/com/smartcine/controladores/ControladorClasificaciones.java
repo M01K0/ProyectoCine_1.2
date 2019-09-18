@@ -36,7 +36,7 @@ public class ControladorClasificaciones {
     
     public String ingresar(){
         clasificDAO.create(clasi);
-        return "index?faces-redirect=true";
+        return "listar?faces-redirect=true";
     }
     
     
@@ -49,7 +49,7 @@ public class ControladorClasificaciones {
     public String actualizar(Clasificaciones c){
         try {
             clasificDAO.edit(c);
-            return "index?faces-redirect=true";
+            return "listar?faces-redirect=true";
         } catch (Exception e) {
             
             return null;
@@ -64,7 +64,7 @@ public class ControladorClasificaciones {
     public String destruir(Clasificaciones c){
         try {
             clasificDAO.destroy(c.getId());
-        return "index?faces-redirect=true";
+        return "listar?faces-redirect=true";
         } catch (Exception e) {
             return null;
         }

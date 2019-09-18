@@ -35,7 +35,7 @@ public class ControladorSucursales {
     
     public String ingresar(){
         suDAO.create(sucu);
-        return "index?faces-redirect=true";
+        return "listar?faces-redirect=true";
     }
     
     //
@@ -48,7 +48,7 @@ public class ControladorSucursales {
     public String actualizar(Sucursales s){
         try {
             suDAO.edit(s);
-            return "index?faces-redirect=true";
+            return "listar?faces-redirect=true";
         } catch (Exception e) {
             return null;
         }
@@ -62,7 +62,7 @@ public class ControladorSucursales {
     public String destruir(Sucursales s){
         try {
             suDAO.destroy(s.getId());
-        return "index?faces-redirect=true";
+        return "listar?faces-redirect=true";
         } catch (Exception e) {
             return null;
         }

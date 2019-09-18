@@ -37,7 +37,7 @@ public class ControladorSalas {
     
     public String ingresar(){
         salaDAO.create(sala);
-        return "index?faces-redirect=true";
+        return "listar?faces-redirect=true";
     }
     
     //
@@ -50,7 +50,7 @@ public class ControladorSalas {
     public String actualizar(Salas s){
         try {
             salaDAO.edit(s);
-            return "index?faces-redirect=true";
+            return "listar?faces-redirect=true";
         } catch (Exception e) {
             return null;
         }
@@ -64,7 +64,7 @@ public class ControladorSalas {
     public String destruir(Salas s){
         try {
             salaDAO.destroy(s.getId());
-        return "index?faces-redirect=true";
+        return "listar?faces-redirect=true";
         } catch (Exception e) {
             return null;
         }

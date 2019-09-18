@@ -36,7 +36,7 @@ public class ControladorUsuario {
     
     public String ingresar(){
         usuDAO.create(usu);
-        return "index?faces-redirect=true";
+        return "listar?faces-redirect=true";
     }
     
     
@@ -49,7 +49,7 @@ public class ControladorUsuario {
     public String actualizar(Usuarios s){
         try {
             usuDAO.edit(s);
-            return "index?faces-redirect=true";
+            return "listar?faces-redirect=true";
         } catch (Exception e) {
             
             return null;
@@ -64,7 +64,7 @@ public class ControladorUsuario {
     public String destruir(Usuarios s){
         try {
             usuDAO.destroy(s.getId());
-        return "index?faces-redirect=true";
+        return "listar?faces-redirect=true";
         } catch (Exception e) {
             return null;
         }

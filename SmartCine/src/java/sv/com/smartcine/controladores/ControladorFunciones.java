@@ -47,7 +47,7 @@ public class ControladorFunciones {
     
     public String ingresar(){
         funDAO.create(fun);
-        return "index?faces-redirect=true";
+        return "listar?faces-redirect=true";
     }
     
     //
@@ -60,7 +60,7 @@ public class ControladorFunciones {
     public String actualizar(Funciones f){
         try {
             funDAO.edit(f);
-            return "index?faces-redirect=true";
+            return "listar?faces-redirect=true";
         } catch (Exception e) {
             return null;
         }
@@ -74,7 +74,7 @@ public class ControladorFunciones {
     public String destruir(Funciones f){
         try {
             funDAO.destroy(f.getId());
-        return "index?faces-redirect=true";
+        return "listar?faces-redirect=true";
         } catch (Exception e) {
             return null;
         }

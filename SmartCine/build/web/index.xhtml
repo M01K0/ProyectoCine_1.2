@@ -3,7 +3,8 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:c="http://java.sun.com/jsp/jstl/core"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:b="http://bootsfaces.net/ui">
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <head>
 
         <meta charset="UTF-8" />
@@ -33,38 +34,44 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
 
                     <ul class="navbar-nav ml-auto">
+                        <c:choose>
+                            <c:when test="#{login.existSession()}">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="recursos/estrenos.xhtml">Estrenos</a>
+                                </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="recursos/estrenos.xhtml">Estrenos</a>
-                        </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="recursos/proximamente.xhtml">Proximamente</a>
+                                </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="recursos/proximamente.xhtml">Proximamente</a>
-                        </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="recursos/sucursales.xhtml">Sucursales</a>
+                                </li>
+                            </c:when>
+                            <c:otherwise>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="recursos/sucursales.xhtml">Sucursales</a>
-                        </li>
+                            </c:otherwise>
+                        </c:choose>
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li><img src="recursos/icon/person-2x.png"><a data-toggle="modal" data-target="#exampleModal2" style="color:white"><span></span> Sign Up  </a></img></li> &nbsp;&nbsp;&nbsp;
                         <li>
-                        
-                        <c:choose>
-                            <c:when test="#{login.existSession()}">
-                                <h:form>
-                                    <img src="recursos/icon/account-logout-2x.png"><h:commandLink style="color:white" action="#{login.cerrar()}" value="LogOut" /></img>
-                                </h:form>
-                                
-                            </c:when>
-                            <c:otherwise>
-                                <img src="recursos/icon/account-login-2x.png"><a data-toggle="modal" data-target="#exampleModal" style="color:white"><span></span> Login</a></img>
-                            </c:otherwise>
-                        </c:choose>
-                        
-                        
+
+                            <c:choose>
+                                <c:when test="#{login.existSession()}">
+                                    <h:form>
+                                        <img src="recursos/icon/account-logout-2x.png"><h:commandLink style="color:white" action="#{login.cerrar()}" value="LogOut" /></img>
+                                    </h:form>
+
+                                </c:when>
+                                <c:otherwise>
+                                    <img src="recursos/icon/account-login-2x.png"><a data-toggle="modal" data-target="#exampleModale" style="color:white"><span></span> Login</a></img>
+                                </c:otherwise>
+                            </c:choose>
+
+
                         </li> 
-                         
+
                     </ul>
                 </div>
 
@@ -99,7 +106,7 @@
 
                         <div class="carousel-caption d-none d-md-block">
 
-                            <h3>IT Capitulo Final</h3>
+                            <h3></h3>
                         </div>
                     </div>
                     <!-- Slide Two - Set the background image for this slide in the line below -->
@@ -108,7 +115,7 @@
 
                         <div class="carousel-caption d-none d-md-block">
 
-                            <h3>Rapido y Furioso 8</h3>
+                            <h3></h3>
                         </div>
                     </div>
                     <!-- Slide Three - Set the background image for this slide in the line below -->
@@ -141,7 +148,7 @@
 
                         <div class="carousel-caption d-none d-md-block">
 
-                            <h3>John Wick 3</h3>
+                            <h3></h3>
                         </div>
                     </div>
                 </div>
@@ -153,107 +160,174 @@
                     <span class="carousel-control-next-icon" aria-hidden="true" />
                     <span class="sr-only">Next</span>
                 </a>
-            </div> <br /><br />
+            </div> <br/><br/>
         </header>
 
+        <c:choose>
+            <c:when test="#{login.existSession()}">
+                <div class="container">
 
-        <div class="container">
+                    <h1 style="font-family: cursive">Promociones: </h1><br />
+                    <!-- Content Row -->
 
-            <h1>Promociones: </h1><br />
-            <!-- Content Row -->
+                    <div class="row">
 
-            <div class="row">
+                        <div class="col-lg-4 mb-4">
 
-                <div class="col-lg-4 mb-4">
+                            <div class="card h-100">
 
-                    <div class="card h-100">
+                                <h3 class="card-header bg-primary text-white">Combo Basic</h3>
 
-                        <h3 class="card-header bg-primary text-white">Combo Basic</h3>
+                                <div class="card-body">
 
-                        <div class="card-body">
+                                    <div class="display-4"><img src="recursos/img/combos/1.jpg" alt="" /></div>   
 
-                            <div class="display-4"><img src="recursos/img/combos/1.jpg" alt="" /></div>   
+                                    <div class="display-4">$5.00</div>
+                                </div>
 
-                            <div class="display-4">$5.00</div>
+                                <ul class="list-group list-group-flush">
+
+                                    <li class="list-group-item">Pepsi 16 onz.</li>
+
+                                    <li class="list-group-item">Refil Gratis</li>
+
+                                    <li class="list-group-item">Hot-Dog</li>
+
+                                    <li class="list-group-item">
+                                        <a href="#" class="btn btn-secondary">Cupon</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
 
-                        <ul class="list-group list-group-flush">
+                        <div class="col-lg-4 mb-4">
 
-                            <li class="list-group-item">Pepsi 16 onz.</li>
+                            <div class="card card-outline-primary h-100">
 
-                            <li class="list-group-item">Refil Gratis</li>
+                                <h3 class="card-header bg-primary text-white">Combo Plus</h3>
 
-                            <li class="list-group-item">Hot-Dog</li>
+                                <div class="card-body">
 
-                            <li class="list-group-item">
-                                <a href="#" class="btn btn-secondary">Cupon</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                                    <div class="display-4"><img src="recursos/img/combos/2.jpg" alt="" /></div>
 
-                <div class="col-lg-4 mb-4">
+                                    <div class="display-4">12.50</div>
+                                </div>
 
-                    <div class="card card-outline-primary h-100">
+                                <ul class="list-group list-group-flush">
 
-                        <h3 class="card-header bg-primary text-white">Combo Plus</h3>
+                                    <li class="list-group-item">2 Pepsi 16 onz</li>
 
-                        <div class="card-body">
+                                    <li class="list-group-item">2 Hot-Dog</li>
 
-                            <div class="display-4"><img src="recursos/img/combos/2.jpg" alt="" /></div>
+                                    <li class="list-group-item">Palomitas Medianas y 2 Chocolates</li>
 
-                            <div class="display-4">12.50</div>
+                                    <li class="list-group-item">
+                                        <a href="#" class="btn btn-secondary">Cupon</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
 
-                        <ul class="list-group list-group-flush">
+                        <div class="col-lg-4 mb-4">
 
-                            <li class="list-group-item">2 Pepsi 16 onz</li>
+                            <div class="card h-100">
 
-                            <li class="list-group-item">2 Hot-Dog</li>
+                                <h3 class="card-header bg-primary text-white">Combo Ultra</h3>
 
-                            <li class="list-group-item">Palomitas Medianas y 2 Chocolates</li>
+                                <div class="card-body">
 
-                            <li class="list-group-item">
-                                <a href="#" class="btn btn-secondary">Cupon</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                                    <div class="display-4"><img src="recursos/img/combos/3.jpg" width="100%" alt="" /></div>
 
-                <div class="col-lg-4 mb-4">
+                                    <div class="display-4">$15.50</div>
+                                </div>
 
-                    <div class="card h-100">
+                                <ul class="list-group list-group-flush">
 
-                        <h3 class="card-header bg-primary text-white">Combo Ultra</h3>
+                                    <li class="list-group-item">Pepsi 16 onz</li>
 
-                        <div class="card-body">
+                                    <li class="list-group-item">2 Hot-Dog XL</li>
 
-                            <div class="display-4"><img src="recursos/img/combos/3.jpg" width="100%" alt="" /></div>
+                                    <li class="list-group-item">Palomitas XXL y 2 Chocolates</li>
 
-                            <div class="display-4">$15.50</div>
+                                    <li class="list-group-item">
+                                        <a href="" class="btn btn-secondary">Cupon</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-
-                        <ul class="list-group list-group-flush">
-
-                            <li class="list-group-item">Pepsi 16 onz</li>
-
-                            <li class="list-group-item">2 Hot-Dog XL</li>
-
-                            <li class="list-group-item">Palomitas XXL y 2 Chocolates</li>
-
-                            <li class="list-group-item">
-                                <a href="" class="btn btn-secondary">Cupon</a>
-                            </li>
-                        </ul>
                     </div>
+                    <!-- /.row -->
                 </div>
-            </div>
-            <!-- /.row -->
-        </div>
+            </c:when>
+            <c:otherwise>
+                <div class="container">
+                    <h1 style="font-family: cursive">Premier:</h1> <br/>
+                    <div class="row">
+                        <ui:repeat value="#{peliculas.listar()}" var="pelicula">
+                            <div class="col-lg-4 col-sm-6 portfolio-item">
+
+                                <div class="card h-100">
+                                    <a href="#"><img class="card-img-top" src="recursos/${pelicula.imagen}" alt="" /></a>
+
+                                    <div class="card-body">
+
+                                        <h4 class="card-title">
+                                            <a href="reservacion.html">#{pelicula.titulo}</a>
+                                        </h4>
+
+                                        <p class="card-text">#{pelicula.sinopsis}</p>
+
+                                        <h:form>
+                                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">Trailer</button>
+                                        </h:form>
+
+                                        <!-- Modal -->
+
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                                            <div class="modal-dialog" role="document">
+
+                                                <div class="modal-content">
+
+                                                    <div class="modal-header">
+
+                                                        <h5 class="modal-title" id="exampleModalLabel">IT Capitulo Final Trailer</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span class="stop" aria-hidden="true">x</span>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="modal-body">
+
+                                                        <!-- 16:9 aspect ratio -->
+
+                                                        <div class="embed-responsive embed-responsive-16by9">
+                                                            <iframe class="embed-responsive-item popup-youtube-player" src="https://www.youtube.com/embed/woh3bk8DXVo?enablejsapi=1&amp;version=3&amp;playerapiid=ytplayer " frameborder="0" allowfullscreen="true" allowscriptaccess="always" />
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ui:repeat>
+                    </div>
+                </div> <br/>
+            </c:otherwise>
+        </c:choose>
+
+
 
         <!-- Modal Iniciar Sesion -->
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exampleModale" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
             <div class="modal-dialog" role="document">
 
@@ -342,6 +416,8 @@
                                 <label for="exampleInputPassword1">Clave</label>
                                 <h:inputSecret value="${usuario.usu.clave}" class="form-control" id="validationCustom05"/>
                             </div>
+                           
+                           
                             <!--
                             <div class="col-md-7 mb-3">
                                 <label for="exampleInputPassword2">Rol</label>
@@ -354,7 +430,7 @@
                                 <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
                                 <h:commandButton action="${usuario.ingresar()}" value="Registrar" class="btn btn-primary" />
                             </div>
-                            
+
                         </h:form>
 
                     </div>
@@ -363,6 +439,7 @@
                 </div>
             </div>
         </div>
+
 
         <!-- Bootstrap core JavaScript -->
 

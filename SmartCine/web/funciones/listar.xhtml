@@ -15,17 +15,7 @@
             <b:navbarLinks pull="right"><b:navLink value="    " href="#"></b:navLink></b:navbarLinks>
             <b:navbarLinks pull="right" styleClass="hidden-xs">
                 <b:navbarLinks>
-                    <c:choose>
-                        <c:when test="#{login.existSession()}">
-                            <h:form>
-                                <br/><img src="../recursos/icon/account-logout-2x.png"><h:commandLink action="#{login.cerrar()}" value="&nbsp;LogOut" /></img> <br/>
-                            </h:form>
-
-                        </c:when>
-                        <c:otherwise>
-
-                        </c:otherwise>
-                    </c:choose>
+                    
                 </b:navbarLinks>
 
             </b:navbarLinks>

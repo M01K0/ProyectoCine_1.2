@@ -41,7 +41,7 @@ public class CotroladorPeliculas {
 
     public String ingresar() {
         pelDAO.create(pel);
-        return "index?faces-redirect=true";
+        return "listar?faces-redirect=true";
     }
 
     //
@@ -54,7 +54,7 @@ public class CotroladorPeliculas {
     public String actualizar(Peliculas p) {
         try {
             pelDAO.edit(p);
-            return "index?faces-redirect=true";
+            return "listar?faces-redirect=true";
         } catch (Exception e) {
 
             return null;
@@ -69,7 +69,7 @@ public class CotroladorPeliculas {
     public String destruir(Peliculas p) {
         try {
             pelDAO.destroy(p.getId());
-            return "index?faces-redirect=true";
+            return "listar?faces-redirect=true";
         } catch (Exception e) {
             return null;
         }

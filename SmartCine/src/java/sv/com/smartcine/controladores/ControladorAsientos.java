@@ -41,7 +41,7 @@ public class ControladorAsientos {
     
     public String ingresar(){
         asientoDAO.create(asient);
-        return "index?faces-redirect=true";
+        return "listar?faces-redirect=true";
     }
     
     
@@ -54,7 +54,7 @@ public class ControladorAsientos {
     public String actualizar(Asientos a){
         try {
             asientoDAO.edit(a);
-            return "index?faces-redirect=true";
+            return "listar?faces-redirect=true";
         } catch (Exception e) {
             
             return null;
@@ -69,7 +69,7 @@ public class ControladorAsientos {
     public String destruir(Asientos a){
         try {
             asientoDAO.destroy(a.getId());
-        return "index?faces-redirect=true";
+        return "listar?faces-redirect=true";
         } catch (Exception e) {
             return null;
         }

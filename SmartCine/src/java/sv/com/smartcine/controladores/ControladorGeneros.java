@@ -37,7 +37,7 @@ public class ControladorGeneros {
     
     public String ingresar(){
         generoDAO.create(gener);
-        return "index?faces-redirect=true";
+        return "listar?faces-redirect=true";
     }
     
     //
@@ -50,7 +50,7 @@ public class ControladorGeneros {
     public String actualizar(Genero g){
         try {
             generoDAO.edit(g);
-            return "index?faces-redirect=true";
+            return "listar?faces-redirect=true";
         } catch (Exception e) {
             
             return null;
@@ -65,7 +65,7 @@ public class ControladorGeneros {
     public String destruir(Genero g){
         try {
             generoDAO.destroy(g.getId());
-        return "index?faces-redirect=true";
+        return "listar?faces-redirect=true";
         } catch (Exception e) {
             return null;
         }

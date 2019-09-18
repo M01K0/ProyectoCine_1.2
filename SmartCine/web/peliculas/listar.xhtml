@@ -4,53 +4,47 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Peliculas - Listar</title>
     </h:head>
     <h:body>
         <b:navBar brand="SmartCine" brand-href="../admin.xhtml" fluid="false">
             <!-- Following line is needed for TBS 3.0.1 (panel content overflow issue) -->
             <b:navbarLinks pull="right"><b:navLink value="    " href="#"></b:navLink></b:navbarLinks>
             <b:navbarLinks pull="right" styleClass="hidden-xs">
-                <b:navbarLinks>
-                    <c:choose>
-                        <c:when test="#{login.existSession()}">
-                            <h:form>
-                                <br/><img src="../recursos/icon/account-logout-2x.png"><h:commandLink action="#{login.cerrar()}" value="&nbsp;LogOut" /></img> <br/>
-                            </h:form>
-
-                        </c:when>
-                        <c:otherwise>
-
-                        </c:otherwise>
-                    </c:choose>
-                </b:navbarLinks>
+                
 
             </b:navbarLinks>
         </b:navBar>
         <b:container>
             <header>
-                <h1>Salas</h1>
+                <h1>Películas</h1>
                 <h2>Listar</h2> <br/>
             </header>
             <b:container>
                 <h:form>
-                    <b:dataTable value="#{salas.listar()}" var="sala">
-                        <b:dataTableColumn value="#{sala.numero}" label="Sala" />
-                        <b:dataTableColumn value="#{sala.idSucursal.nombre}" label="Sucursal"/>
-
+                    <b:dataTable value="#{peliculas.listar()}" var="pel">
+                        <b:dataTableColumn value="#{pel.titulo}" label="Titulo" />
+                        <b:dataTableColumn value="#{pel.duracion}" label="Duracion"/>
+                        <b:dataTableColumn value="#{pel.sinopsis}" label="Sinopsis"  />
+                        <b:dataTableColumn value="#{pel.idClasificacion.nombre}" label="Clasificacion"/>
+                        <b:dataTableColumn value="#{pel.idGenero.descripcion}" label="Genero" />
                         <b:dataTableColumn label="Opcion 1" orderable="false" >
-                            <b:commandButton action="#{salas.editar(sala)}" value="Editar"  look="warning"/>
+                            <b:commandButton action="#{peliculas.editar(pel)}" value="Editar"  look="warning"/>
                         </b:dataTableColumn>
                         <b:dataTableColumn label="Opcion 2" orderable="false">
-                            <b:commandButton action="#{salas.destruir(sala)}" value="Eliminar" look="danger"/>
+                            <b:commandButton action="#{peliculas.destruir(pel)}" value="Eliminar" look="danger"/>
                         </b:dataTableColumn>
                     </b:dataTable>
-                    <b:button outcome="/salas/ingresar" value="Ingresar" look="success" />
+
+                    <b:button outcome="/peliculas/ingresar" value="Ingresar" look="success" />
+
                 </h:form>
             </b:container>
-        </b:container>
+        </b:container><br/>
+
     </h:body>
 </html>
 
