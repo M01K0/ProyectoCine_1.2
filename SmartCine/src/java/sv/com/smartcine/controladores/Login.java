@@ -27,6 +27,7 @@ public class Login implements Serializable {
         usuDAO = new UsuariosJpaController(Persistence.createEntityManagerFactory("SmartCinePU"));
         usu = new Usuarios();
     }
+    
     public String validar(){
         usu = usuDAO.buscarUsuario(usu.getUsuario(), usu.getClave());
         String val = "";
