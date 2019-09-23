@@ -1,147 +1,133 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <h:head>
-        <title>Administrador</title>
-    </h:head>
-    <h:body>
-        <b:navBar brand="SmartCine" brand-href="index.xhtml" fluid="false">
-            <!-- Following line is needed for TBS 3.0.1 (panel content overflow issue) -->
-            <b:navbarLinks pull="right"><b:navLink value="    " href="#"></b:navLink></b:navbarLinks>
-            <b:navbarLinks pull="right" styleClass="hidden-xs">
-                <b:navbarLinks>
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <body>
+
+        <ui:composition template="./layauts/adminNav.xhtml">
+            
+            <ui:define name="title">#{bundle.nameCine}</ui:define>
+
+            <ui:define name="contenido">
+                <b:container>
+                    <h1 style="font-family: monospace">Mantenimiento SmartCine</h1> <br/>
                     <c:choose>
                         <c:when test="#{login.existSession()}">
-                            <h:form>
-                                <br/><img src="recursos/icon/account-logout-2x.png"><h:commandLink action="#{login.cerrar()}" value="&nbsp;LogOut" /></img> <br/>
-                            </h:form>
 
+
+
+
+                            <b:panelGrid colSpans="6,6" columns="2">
+                                <b:panel look="primary" title="Navigation">
+                                    <b:listLinks>
+                                        <b:panel title="Vista de Usuario" collapsed="true"  >
+                                            <ul>
+                                                <li>Vista de Estandar</li> <br/>
+                                                <ul>
+                                                    <li><b:navLink value="Home" href="index.xhtml" target="blank" /></li> <br/>
+                                                    <li><b:navLink value="Estrenos" href="recursos/estrenos.xhtml" target="blank" /></li> <br/>
+                                                    <li><b:navLink value="Proximamente" href="recursos/proximamente.xhtml" target="blank" /></li> <br/>
+                                                    <li><b:navLink value="Sucursales" href="recursos/sucursales.xhtml" target="blank" /></li> <br/>
+
+
+                                                </ul>
+                                            </ul>
+                                        </b:panel>
+
+                                        <b:panel  title="Usuarios" collapsed="true">
+                                            <ul>
+                                                <li>Mantenimiento Usuarios</li> <br/>
+                                                <ul>
+                                                    <li><b:navLink value="Listar Usuarios" href="usuarios/listar.xhtml" /></li> <br/>
+                                                    <li><b:navLink value="Ingresar Usuarios" href="usuarios/ingresar.xhtml" /></li> <br/>
+
+                                                </ul>
+                                            </ul>
+                                        </b:panel>    
+
+                                        <b:panel title="Sucursales" collapsed="true">
+                                            <ul>
+                                                <li>Mantenimiento Sucursales</li> <br/>
+                                                <ul>
+                                                    <li><b:navLink value="Listar Sucursales" href="sucursales/listar.xhtml" /></li> <br/>
+                                                    <li><b:navLink value="Ingresar Sucursales" href="sucursales/ingresar.xhtml" /></li> <br/>
+
+                                                </ul>
+                                            </ul>
+                                        </b:panel>
+
+                                        <b:panel title="Salas" collapsed="true">
+                                            <ul>
+                                                <li>Mantenimiento Salas</li> <br/>
+                                                <ul>
+                                                    <li><b:navLink value="Listar Salas" href="salas/listar.xhtml" /></li> <br/>
+                                                    <li><b:navLink value="Ingresar Salas" href="salas/ingresar.xhtml" /></li> <br/>
+
+                                                </ul>
+                                            </ul>
+                                        </b:panel>
+
+                                        <b:panel title="Peliculas" collapsed="true">
+                                            <ul>
+                                                <li>Mantenimiento Peliculas</li> <br/>
+                                                <ul>
+                                                    <li><b:navLink value="Listar Peliculas" href="peliculas/listar.xhtml" /></li> <br/>
+                                                    <li><b:navLink value="Ingresar Peliculas" href="peliculas/ingresar.xhtml" /></li> <br/>
+
+                                                </ul>
+                                            </ul>
+                                        </b:panel>
+
+                                        <b:panel title="Funciones" collapsed="true">
+                                            <ul>
+                                                <li>Mantenimiento Funciones</li> <br/>
+                                                <ul>
+                                                    <li><b:navLink value="Listar Funciones" href="funciones/listar.xhtml" /></li> <br/>
+                                                    <li><b:navLink value="Ingresar Funciones" href="funciones/ingresar.xhtml" /></li> <br/>
+
+                                                </ul>
+                                            </ul>
+                                        </b:panel>
+
+                                        <b:panel title="Asientos" collapsed="true">
+                                            <ul>
+                                                <li>Mantenimiento Asientos</li> <br/>
+                                                <ul>
+                                                    <li><b:navLink value="Listar Asientos" href="asientos/listar.xhtml" /></li> <br/>
+                                                    <li><b:navLink value="Ingresar Asientos" href="asientos/ingresar.xhtml" /></li> <br/>
+
+                                                </ul>
+                                            </ul>
+                                        </b:panel>
+
+                                        <b:panel title="Clasificaciones" collapsed="true">
+                                            <ul>
+                                                <li>Mantenimiento Clasificaciones</li> <br/>
+                                                <ul>
+                                                    <li><b:navLink value="Listar Clasificaciones" href="clasificaciones/listar.xhtml" /></li> <br/>
+                                                    <li><b:navLink value="Ingresar Clasificaciones" href="clasificaciones/ingresar.xhtml" /></li> <br/>
+
+                                                </ul>
+                                            </ul>
+                                        </b:panel>    
+                                    </b:listLinks>
+                                </b:panel>      
+                            </b:panelGrid>
                         </c:when>
                         <c:otherwise>
-
+                            <h2><a href="index.xhtml">Acceso Denegado</a></h2> <br/>
+                            <p style="color: red">
+                                Si no esta logueado no tendra acceso a este contenido. 
+                            </p>
                         </c:otherwise>
                     </c:choose>
-                </b:navbarLinks>
+                </b:container>
+            </ui:define>
 
-            </b:navbarLinks>
-        </b:navBar>
-        <b:container>
-            <h1 style="font-family: monospace">Mantenimiento SmartCine</h1> <br/>
-            <c:choose>
-                <c:when test="#{login.existSession()}">
+        </ui:composition>
 
-
-
-
-                    <b:panelGrid colSpans="6,6" columns="2">
-                        <b:panel look="primary" title="Navigation">
-                            <b:listLinks>
-                                <b:panel title="Vista de Usuario" collapsed="true"  >
-                                    <ul>
-                                        <li>Vista de Estandar</li> <br/>
-                                        <ul>
-                                            <li><b:navLink value="Home" href="index.xhtml" target="blank" /></li> <br/>
-                                            <li><b:navLink value="Estrenos" href="recursos/estrenos.xhtml" target="blank" /></li> <br/>
-                                            <li><b:navLink value="Proximamente" href="recursos/proximamente.xhtml" target="blank" /></li> <br/>
-                                            <li><b:navLink value="Sucursales" href="recursos/sucursales.xhtml" target="blank" /></li> <br/>
-
-
-                                        </ul>
-                                    </ul>
-                                </b:panel>
-
-                                <b:panel  title="Usuarios" collapsed="true">
-                                    <ul>
-                                        <li>Mantenimiento Usuarios</li> <br/>
-                                        <ul>
-                                            <li><b:navLink value="Listar Usuarios" href="usuarios/listar.xhtml" /></li> <br/>
-                                            <li><b:navLink value="Ingresar Usuarios" href="usuarios/ingresar.xhtml" /></li> <br/>
-
-                                        </ul>
-                                    </ul>
-                                </b:panel>    
-
-                                <b:panel title="Sucursales" collapsed="true">
-                                    <ul>
-                                        <li>Mantenimiento Sucursales</li> <br/>
-                                        <ul>
-                                            <li><b:navLink value="Listar Sucursales" href="sucursales/listar.xhtml" /></li> <br/>
-                                            <li><b:navLink value="Ingresar Sucursales" href="sucursales/ingresar.xhtml" /></li> <br/>
-
-                                        </ul>
-                                    </ul>
-                                </b:panel>
-
-                                <b:panel title="Salas" collapsed="true">
-                                    <ul>
-                                        <li>Mantenimiento Salas</li> <br/>
-                                        <ul>
-                                            <li><b:navLink value="Listar Salas" href="salas/listar.xhtml" /></li> <br/>
-                                            <li><b:navLink value="Ingresar Salas" href="salas/ingresar.xhtml" /></li> <br/>
-
-                                        </ul>
-                                    </ul>
-                                </b:panel>
-
-                                <b:panel title="Peliculas" collapsed="true">
-                                    <ul>
-                                        <li>Mantenimiento Peliculas</li> <br/>
-                                        <ul>
-                                            <li><b:navLink value="Listar Peliculas" href="peliculas/listar.xhtml" /></li> <br/>
-                                            <li><b:navLink value="Ingresar Peliculas" href="peliculas/ingresar.xhtml" /></li> <br/>
-
-                                        </ul>
-                                    </ul>
-                                </b:panel>
-
-                                <b:panel title="Funciones" collapsed="true">
-                                    <ul>
-                                        <li>Mantenimiento Funciones</li> <br/>
-                                        <ul>
-                                            <li><b:navLink value="Listar Funciones" href="funciones/listar.xhtml" /></li> <br/>
-                                            <li><b:navLink value="Ingresar Funciones" href="funciones/ingresar.xhtml" /></li> <br/>
-
-                                        </ul>
-                                    </ul>
-                                </b:panel>
-
-                                <b:panel title="Asientos" collapsed="true">
-                                    <ul>
-                                        <li>Mantenimiento Asientos</li> <br/>
-                                        <ul>
-                                            <li><b:navLink value="Listar Asientos" href="asientos/listar.xhtml" /></li> <br/>
-                                            <li><b:navLink value="Ingresar Asientos" href="asientos/ingresar.xhtml" /></li> <br/>
-
-                                        </ul>
-                                    </ul>
-                                </b:panel>
-
-                                <b:panel title="Clasificaciones" collapsed="true">
-                                    <ul>
-                                        <li>Mantenimiento Clasificaciones</li> <br/>
-                                        <ul>
-                                            <li><b:navLink value="Listar Clasificaciones" href="clasificaciones/listar.xhtml" /></li> <br/>
-                                            <li><b:navLink value="Ingresar Clasificaciones" href="clasificaciones/ingresar.xhtml" /></li> <br/>
-
-                                        </ul>
-                                    </ul>
-                                </b:panel>    
-                            </b:listLinks>
-                        </b:panel>      
-                    </b:panelGrid>
-                </c:when>
-                <c:otherwise>
-                    <h3><a href="index.xhtml">Inicio</a></h3> <br/>
-                    <p style="color: red">
-                        Si no esta logueado no tendra acceso a este contenido. 
-                    </p>
-                </c:otherwise>
-            </c:choose>
-        </b:container>  
-    </h:body>
+    </body>
 </html>
-

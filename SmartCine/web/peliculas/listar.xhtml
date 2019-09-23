@@ -1,50 +1,46 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:b="http://bootsfaces.net/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
-    <h:head>
-        <title>Peliculas - Listar</title>
-    </h:head>
-    <h:body>
-        <b:navBar brand="SmartCine" brand-href="../admin.xhtml" fluid="false">
-            <!-- Following line is needed for TBS 3.0.1 (panel content overflow issue) -->
-            <b:navbarLinks pull="right"><b:navLink value="    " href="#"></b:navLink></b:navbarLinks>
-            <b:navbarLinks pull="right" styleClass="hidden-xs">
-                
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
 
-            </b:navbarLinks>
-        </b:navBar>
-        <b:container>
-            <header>
-                <h1>Películas</h1>
-                <h2>Listar</h2> <br/>
-            </header>
-            <b:container>
-                <h:form>
-                    <b:dataTable value="#{peliculas.listar()}" var="pel">
-                        <b:dataTableColumn value="#{pel.titulo}" label="Titulo" />
-                        <b:dataTableColumn value="#{pel.duracion}" label="Duracion"/>
-                        <b:dataTableColumn value="#{pel.sinopsis}" label="Sinopsis"  />
-                        <b:dataTableColumn value="#{pel.idClasificacion.nombre}" label="Clasificacion"/>
-                        <b:dataTableColumn value="#{pel.idGenero.descripcion}" label="Genero" />
-                        <b:dataTableColumn label="Opcion 1" orderable="false" >
-                            <b:commandButton action="#{peliculas.editar(pel)}" value="Editar"  look="warning"/>
-                        </b:dataTableColumn>
-                        <b:dataTableColumn label="Opcion 2" orderable="false">
-                            <b:commandButton action="#{peliculas.destruir(pel)}" value="Eliminar" look="danger"/>
-                        </b:dataTableColumn>
-                    </b:dataTable>
+    <body>
 
-                    <b:button outcome="/peliculas/ingresar" value="Ingresar" look="success" />
+        <ui:composition template="./../layauts/adminNav.xhtml">
 
-                </h:form>
-            </b:container>
-        </b:container><br/>
+            <ui:define name="title">Peliculas - Listar</ui:define>
 
-    </h:body>
+            <ui:define name="contenido">
+                <b:container>
+                    <header>
+                        <h1>Películas</h1>
+                        <h2>Listar</h2> <br/>
+                    </header>
+                    <b:container>
+                        <h:form>
+                            <b:dataTable value="#{peliculas.listar()}" var="pel">
+                                <b:dataTableColumn value="#{pel.titulo}" label="Titulo" />
+                                <b:dataTableColumn value="#{pel.duracion}" label="Duracion"/>
+                                <b:dataTableColumn value="#{pel.sinopsis}" label="Sinopsis"  />
+                                <b:dataTableColumn value="#{pel.idClasificacion.nombre}" label="Clasificacion"/>
+                                <b:dataTableColumn value="#{pel.idGenero.descripcion}" label="Genero" />
+                                <b:dataTableColumn label="Opcion 1" orderable="false" >
+                                    <b:commandButton action="#{peliculas.editar(pel)}" value="Editar"  look="warning"/>
+                                </b:dataTableColumn>
+                                <b:dataTableColumn label="Opcion 2" orderable="false">
+                                    <b:commandButton action="#{peliculas.destruir(pel)}" value="Eliminar" look="danger"/>
+                                </b:dataTableColumn>
+                            </b:dataTable>
+
+                            <b:button outcome="/peliculas/ingresar" value="Ingresar" look="success" />
+
+                        </h:form>
+                    </b:container>
+                </b:container><br/>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
 </html>
-

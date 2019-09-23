@@ -10,7 +10,7 @@
 
         <ui:composition template="./layauts/nav.xhtml">
 
-            <ui:define name="title">SmartCine</ui:define>
+            <ui:define name="title">#{bundle.nameCine}</ui:define>
 
             <ui:define name="contenido">
                 <header>
@@ -101,7 +101,7 @@
                     <c:when test="#{login.existSession()}">
                         <div class="container">
 
-                            <h1 style="font-family: cursive">Promociones: </h1><br />
+                            <h1 style="font-family: cursive">#{bundle.promo}</h1><br />
                             <!-- Content Row -->
 
                             <div class="row">
@@ -110,7 +110,7 @@
 
                                     <div class="card h-100">
 
-                                        <h3 class="card-header bg-primary text-white">Combo Basic</h3>
+                                        <h3 class="card-header bg-primary text-white">#{bundle.comboB}</h3>
 
                                         <div class="card-body">
 
@@ -138,7 +138,7 @@
 
                                     <div class="card card-outline-primary h-100">
 
-                                        <h3 class="card-header bg-primary text-white">Combo Plus</h3>
+                                        <h3 class="card-header bg-primary text-white">#{bundle.comboP}</h3>
 
                                         <div class="card-body">
 
@@ -166,7 +166,7 @@
 
                                     <div class="card h-100">
 
-                                        <h3 class="card-header bg-primary text-white">Combo Ultra</h3>
+                                        <h3 class="card-header bg-primary text-white">#{bundle.comboU}</h3>
 
                                         <div class="card-body">
 
@@ -195,7 +195,7 @@
                     </c:when>
                     <c:otherwise>
                         <div class="container">
-                            <h1 style="font-family: cursive">Premier:</h1> <br/>
+                            <h1 style="font-family: cursive">#{bundle.cartel}</h1> <br/>
                             <div class="row">
                                 <ui:repeat value="#{peliculas.listar()}" var="pelicula">
                                     <div class="col-lg-4 col-sm-6 portfolio-item">

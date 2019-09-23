@@ -1,54 +1,47 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:b="http://bootsfaces.net/ui"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
 
-    <h:head>
-        <title>Funciones - Listar</title>
-    </h:head>
+    <body>
 
-    <h:body>
-        <b:navBar brand="SmartCine" brand-href="../admin.xhtml" fluid="false">
-            <!-- Following line is needed for TBS 3.0.1 (panel content overflow issue) -->
-            <b:navbarLinks pull="right"><b:navLink value="    " href="#"></b:navLink></b:navbarLinks>
-            <b:navbarLinks pull="right" styleClass="hidden-xs">
-                <b:navbarLinks>
-                    
-                </b:navbarLinks>
+        <ui:composition template="./../layauts/adminNav.xhtml">
 
-            </b:navbarLinks>
-        </b:navBar>
-        <b:container>
-            <header>
-                <h1>Funciones</h1>
-                <h2>Listar</h2> <br/>
-            </header>
-            <b:container>
-                <h:form>
-                    <b:dataTable value="#{funciones.listar()}" var="fun">
-                        <b:dataTableColumn value="#{fun.fechaHoraInicio}" label="Fecha y Hora Inicio"/>
-                        <b:dataTableColumn value="#{fun.fechaHoraFin}" label="Fecha y Hora Fin"/>
-                        <b:dataTableColumn value="#{fun.formato}" />
-                        <b:dataTableColumn value="#{fun.precio}"/>
-                        <b:dataTableColumn value="#{fun.idPelicula.titulo}" label="Titulo" />
-                        <b:dataTableColumn value="#{fun.idSala.numero}" label="Numero Sala" />
+            <ui:define name="title">Funciones - Listar</ui:define>
 
-                        <b:dataTableColumn label="Opcion 1" orderable="false">
-                            <b:commandButton action="#{funciones.editar(fun)}" value="Editar"  look="warning"/> 
-                        </b:dataTableColumn>
+            <ui:define name="contenido">
+                <b:container>
+                    <header>
+                        <h1>Funciones</h1>
+                        <h2>Listar</h2> <br/>
+                    </header>
+                    <b:container>
+                        <h:form>
+                            <b:dataTable value="#{funciones.listar()}" var="fun">
+                                <b:dataTableColumn value="#{fun.fechaHoraInicio}" label="Fecha y Hora Inicio"/>
+                                <b:dataTableColumn value="#{fun.fechaHoraFin}" label="Fecha y Hora Fin"/>
+                                <b:dataTableColumn value="#{fun.formato}" />
+                                <b:dataTableColumn value="#{fun.precio}"/>
+                                <b:dataTableColumn value="#{fun.idPelicula.titulo}" label="Titulo" />
+                                <b:dataTableColumn value="#{fun.idSala.numero}" label="Numero Sala" />
 
-                        <b:dataTableColumn label="Opcion 2" orderable="false">
-                            <b:commandButton action="#{funciones.destruir(fun)}" value="Eliminar" look="danger"/>
-                        </b:dataTableColumn>
+                                <b:dataTableColumn label="Opcion 1" orderable="false">
+                                    <b:commandButton action="#{funciones.editar(fun)}" value="Editar"  look="warning"/> 
+                                </b:dataTableColumn>
 
-                        <b:button outcome="/funciones/ingresar" value="Ingresar" look="success" />
+                                <b:dataTableColumn label="Opcion 2" orderable="false">
+                                    <b:commandButton action="#{funciones.destruir(fun)}" value="Eliminar" look="danger"/>
+                                </b:dataTableColumn>
+                            </b:dataTable>
+                            <b:button outcome="/funciones/ingresar" value="Ingresar" look="success" />
+                        </h:form>
+                    </b:container>
+                </b:container>
+            </ui:define>
 
-                    </b:dataTable>
-                </h:form>
-            </b:container>
-        </b:container>
-    </h:body>
+        </ui:composition>
+
+    </body>
 </html>
-

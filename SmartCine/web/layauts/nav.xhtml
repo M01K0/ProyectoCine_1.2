@@ -19,7 +19,7 @@
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
 
             <div class="container">
-                <h:link class="navbar-brand" outcome="/index.xhtml" value="SmartCine" />
+                <h:link class="navbar-brand" outcome="/index.xhtml" value="#{bundle.nameCine}" />
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon" />
                 </button>
@@ -30,15 +30,15 @@
                         <c:choose>
                             <c:when test="#{login.existSession()}">
                                 <li class="nav-item">
-                                    <h:link class="nav-link" outcome="/recursos/estrenos.xhtml" value="Estrenos" />
+                                    <h:link class="nav-link" outcome="/recursos/estrenos.xhtml" value="#{bundle.cartel}" />
                                 </li>
 
                                 <li class="nav-item">
-                                    <h:link class="nav-link" outcome="/recursos/proximamente.xhtml" value="Proximamente" />
+                                    <h:link class="nav-link" outcome="/recursos/proximamente.xhtml" value="#{bundle.prox}" />
                                 </li>
 
                                 <li class="nav-item">
-                                    <h:link class="nav-link" outcome="/recursos/sucursales.xhtml" value="Sucursales" />
+                                    <h:link class="nav-link" outcome="/recursos/sucursales.xhtml" value="#{bundle.sucu}" />
                                 </li>
                             </c:when>
                             <c:otherwise>
@@ -47,16 +47,16 @@
                         </c:choose>
                     </ul>
                     <ul class="navbar-nav ml-auto">
-                        <li><h:graphicImage url="/resources/icon/person-2x.png"/>&nbsp;<a data-toggle="modal" data-target="#exampleModales" style="color:white">Sign Up</a></li> &nbsp;&nbsp;&nbsp;   
+                        <li><h:graphicImage url="/resources/icon/person-2x.png"/>&nbsp;<a data-toggle="modal" data-target="#exampleModales" style="color:white">#{bundle.regis}</a></li> &nbsp;&nbsp;&nbsp;   
                         <li>                           
                             <c:choose>
                                 <c:when test="#{login.existSession()}">
                                     <h:form>
-                                        <h:graphicImage url="/resources/icon/account-logout-2x.png"/><h:commandLink style="color:white" action="#{login.cerrar()}" value="LogOut" />
+                                        <h:graphicImage url="/resources/icon/account-logout-2x.png"/><h:commandLink style="color:white" action="#{login.cerrar()}" value="#{bundle.logout}" />
                                     </h:form>
                                 </c:when>
                                 <c:otherwise>
-                                    <h:graphicImage url="/resources/icon/account-login-2x.png" />&nbsp;<a data-toggle="modal" data-target="#exampleModale" style="color:white">Login</a>                                   
+                                    <h:graphicImage url="/resources/icon/account-login-2x.png" />&nbsp;<a data-toggle="modal" data-target="#exampleModale" style="color:white">#{bundle.login}</a>                                   
                                 </c:otherwise>
                             </c:choose>
                         </li> 
@@ -82,7 +82,7 @@
 
                     <div class="modal-header">
 
-                        <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesion</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">#{bundle.login}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span class="stop" aria-hidden="true">x</span>
                         </button>
@@ -95,7 +95,7 @@
 
                             <div class="col-auto">
                                 <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                                <label for="exampleInputText1">Usuario</label>
+                                <label for="exampleInputText1">#{bundle.usuario}</label>
                                 <div class="input-group mb-2">
 
                                     <div class="input-group-prepend">
@@ -107,13 +107,13 @@
                             </div>
 
                             <div class="col-md-7 mb-3">
-                                <label for="exampleInputPassword1">Clave</label>
+                                <label for="exampleInputPassword1">#{bundle.clave}</label>
                                 <h:inputSecret value="${login.usu.clave}" class="form-control" id="validationCustom05"/> <br />
                             </div>        
 
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
-                                <h:commandButton action="${login.validar()}" value="Iniciar Sesion" class="btn btn-primary" />
+                                <h:commandButton action="${login.validar()}" value="#{bundle.login}" class="btn btn-primary" />
                             </div>
 
                         </h:form>
@@ -135,7 +135,7 @@
 
                     <div class="modal-header">
 
-                        <h5 class="modal-title" id="exampleModalLabel">Registrate</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">#{bundle.regis}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span class="stop" aria-hidden="true">x</span>
                         </button>
@@ -148,7 +148,7 @@
 
                             <div class="col-auto">
                                 <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                                <label for="exampleInputText1">Usuario</label>
+                                <label for="exampleInputText1">#{bundle.usuario}</label>
                                 <div class="input-group mb-2">
 
                                     <div class="input-group-prepend">
@@ -160,7 +160,7 @@
                             </div> <br/>
 
                             <div class="col-md-7 mb-3">
-                                <label for="exampleInputPassword1">Clave</label>
+                                <label for="exampleInputPassword1">#{bundle.clave}</label>
                                 <h:inputSecret value="${usuario.usu.clave}" class="form-control" id="validationCustom05"/>
                             </div>
 
@@ -175,13 +175,12 @@
 
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
-                                <h:commandButton action="${usuario.ingresar()}" value="Registrar" class="btn btn-primary" />
+                                <h:commandButton action="${usuario.ingresar()}" value="#{bundle.regis}" class="btn btn-primary" />
                             </div>
 
                         </h:form>
 
                     </div>
-
 
                 </div>
             </div>

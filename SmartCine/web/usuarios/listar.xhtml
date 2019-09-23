@@ -1,46 +1,42 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:b="http://bootsfaces.net/ui"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
-    <h:head>
-        <title>Usuarios - Listar</title>
-    </h:head>
-    <h:body>
-        <b:navBar brand="SmartCine" brand-href="../admin.xhtml" fluid="false">
-            <!-- Following line is needed for TBS 3.0.1 (panel content overflow issue) -->
-            <b:navbarLinks pull="right"><b:navLink value="    " href="#"></b:navLink></b:navbarLinks>
-            <b:navbarLinks pull="right" styleClass="hidden-xs">
-                <b:navbarLinks>
-                    
-                </b:navbarLinks>
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
 
-            </b:navbarLinks>
-        </b:navBar>
-        <b:container>
-            <header>
-                <h1>Usuarios</h1>
-                <h2>Listar</h2>
-            </header> <br/>
-            <b:container>
-                <h:form>
-                    <b:dataTable value="#{usuario.listar()}" var="usu">
-                        <b:dataTableColumn value="#{usu.usuario}" label="Usuario" />
-                        <b:dataTableColumn value="#{usu.clave}" label="Clave"/>
-                        <b:dataTableColumn value="#{usu.rol}" label="Rol"/>
-                        <b:dataTableColumn label="Opcion 1" orderable="false" >
-                            <b:commandButton action="#{usuario.editar(usu)}" value="Editar"  look="warning"/>
-                        </b:dataTableColumn>
-                        <b:dataTableColumn label="Opcion 2" orderable="false">
-                            <b:commandButton action="#{usuario.destruir(usu)}" value="Eliminar" look="danger"/>
-                        </b:dataTableColumn>
-                    </b:dataTable>
-                    <b:button outcome="/usuarios/ingresar" value="Ingresar" look="success" />
-                </h:form>  
-            </b:container>
-        </b:container>
-    </h:body>
+    <body>
+
+        <ui:composition template="./../layauts/adminNav.xhtml">
+
+            <ui:define name="title">Usuarios - Listar</ui:define>
+
+            <ui:define name="contenido">
+                <b:container>
+                    <header>
+                        <h1>Usuarios</h1>
+                        <h2>Listar</h2>
+                    </header> <br/>
+                    <b:container>
+                        <h:form>
+                            <b:dataTable value="#{usuario.listar()}" var="usu">
+                                <b:dataTableColumn value="#{usu.usuario}" label="Usuario" />
+                                <b:dataTableColumn value="#{usu.clave}" label="Clave"/>
+                                <b:dataTableColumn value="#{usu.rol}" label="Rol"/>
+                                <b:dataTableColumn label="Opcion 1" orderable="false" >
+                                    <b:commandButton action="#{usuario.editar(usu)}" value="Editar"  look="warning"/>
+                                </b:dataTableColumn>
+                                <b:dataTableColumn label="Opcion 2" orderable="false">
+                                    <b:commandButton action="#{usuario.destruir(usu)}" value="Eliminar" look="danger"/>
+                                </b:dataTableColumn>
+                            </b:dataTable>
+                            <b:button outcome="/usuarios/ingresar" value="Ingresar" look="success" />
+                        </h:form>  
+                    </b:container>
+                </b:container>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
 </html>
-
