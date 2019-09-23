@@ -1,453 +1,264 @@
+<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:c="http://java.sun.com/jsp/jstl/core"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:b="http://bootsfaces.net/ui"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-    <head>
-
-        <meta charset="UTF-8" />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-        <title>SmartCine</title>
-        <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-        <!-- Custom styles for this template -->
-        <link href="recursos/css/modern-business.css" rel="stylesheet" />
-    </head>
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <body>
 
-        <!-- Navigation -->
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <ui:composition template="./layauts/nav.xhtml">
 
-            <div class="container">
-                <a class="navbar-brand" href="index.xhtml">SmartCine</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon" />
-                </button>
+            <ui:define name="title">SmartCine</ui:define>
 
-                <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ui:define name="contenido">
+                <header>
 
-                    <ul class="navbar-nav ml-auto">
-                        <c:choose>
-                            <c:when test="#{login.existSession()}">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="recursos/estrenos.xhtml">Estrenos</a>
-                                </li>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="recursos/proximamente.xhtml">Proximamente</a>
-                                </li>
+                        <ol class="carousel-indicators">
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="recursos/sucursales.xhtml">Sucursales</a>
-                                </li>
-                            </c:when>
-                            <c:otherwise>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" />
 
-                            </c:otherwise>
-                        </c:choose>
-                    </ul>
-                    <ul class="navbar-nav ml-auto">
-                        <li><img src="recursos/icon/person-2x.png"><a data-toggle="modal" data-target="#exampleModal2" style="color:white"><span></span> Sign Up  </a></img></li> &nbsp;&nbsp;&nbsp;
-                        <li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1" />
 
-                            <c:choose>
-                                <c:when test="#{login.existSession()}">
-                                    <h:form>
-                                        <img src="recursos/icon/account-logout-2x.png"><h:commandLink style="color:white" action="#{login.cerrar()}" value="LogOut" /></img>
-                                    </h:form>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2" />
 
-                                </c:when>
-                                <c:otherwise>
-                                    <img src="recursos/icon/account-login-2x.png"><a data-toggle="modal" data-target="#exampleModale" style="color:white"><span></span> Login</a></img>
-                                </c:otherwise>
-                            </c:choose>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="3" />
 
+                            <li data-target="#carouselExampleIndicators" data-slide-to="4" />
 
-                        </li> 
+                            <li data-target="#carouselExampleIndicators" data-slide-to="5" />
+                        </ol>
 
-                    </ul>
-                </div>
+                        <div class="carousel-inner" role="listbox">
+                            <!-- Slide One - Set the background image for this slide in the line below -->
 
-            </div>
+                            <div class="carousel-item active" style="background-image: url(resources/img/img1.jpg);">
+                                <img src="" alt="" />
 
-        </nav>
+                                <div class="carousel-caption d-none d-md-block">
 
-        <header>
-
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-
-                <ol class="carousel-indicators">
-
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" />
-
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1" />
-
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2" />
-
-                    <li data-target="#carouselExampleIndicators" data-slide-to="3" />
-
-                    <li data-target="#carouselExampleIndicators" data-slide-to="4" />
-
-                    <li data-target="#carouselExampleIndicators" data-slide-to="5" />
-                </ol>
-
-                <div class="carousel-inner" role="listbox">
-                    <!-- Slide One - Set the background image for this slide in the line below -->
-
-                    <div class="carousel-item active" style="background-image: url(recursos/img/img1.jpg);">
-                        <img src="" alt="" />
-
-                        <div class="carousel-caption d-none d-md-block">
-
-                            <h3></h3>
-                        </div>
-                    </div>
-                    <!-- Slide Two - Set the background image for this slide in the line below -->
-
-                    <div class="carousel-item" style="background-image: url(recursos/img/img2.jpg);">
-
-                        <div class="carousel-caption d-none d-md-block">
-
-                            <h3></h3>
-                        </div>
-                    </div>
-                    <!-- Slide Three - Set the background image for this slide in the line below -->
-
-                    <div class="carousel-item" style="background-image: url(recursos/img/img3.jpg);">
-
-                        <div class="carousel-caption d-none d-md-block">
-
-                        </div>
-                    </div>
-                    <!-- Slide Three - Set the background image for this slide in the line below -->
-
-                    <div class="carousel-item" style="background-image: url(recursos/img/img4.jpg);">
-
-                        <div class="carousel-caption d-none d-md-block">
-
-                        </div>
-                    </div>
-                    <!-- Slide Three - Set the background image for this slide in the line below -->
-
-                    <div class="carousel-item" style="background-image: url(recursos/img/img5.jpg);">
-
-                        <div class="carousel-caption d-none d-md-block">
-
-                        </div>
-                    </div>
-                    <!-- Slide Three - Set the background image for this slide in the line below -->
-
-                    <div class="carousel-item" style="background-image: url(recursos/img/img6.jpg);">
-
-                        <div class="carousel-caption d-none d-md-block">
-
-                            <h3></h3>
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true" />
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true" />
-                    <span class="sr-only">Next</span>
-                </a>
-            </div> <br/><br/>
-        </header>
-
-        <c:choose>
-            <c:when test="#{login.existSession()}">
-                <div class="container">
-
-                    <h1 style="font-family: cursive">Promociones: </h1><br />
-                    <!-- Content Row -->
-
-                    <div class="row">
-
-                        <div class="col-lg-4 mb-4">
-
-                            <div class="card h-100">
-
-                                <h3 class="card-header bg-primary text-white">Combo Basic</h3>
-
-                                <div class="card-body">
-
-                                    <div class="display-4"><img src="recursos/img/combos/1.jpg" alt="" /></div>   
-
-                                    <div class="display-4">$5.00</div>
+                                    <h3></h3>
                                 </div>
+                            </div>
+                            <!-- Slide Two - Set the background image for this slide in the line below -->
 
-                                <ul class="list-group list-group-flush">
+                            <div class="carousel-item" style="background-image: url(resources/img/img2.jpg);">
 
-                                    <li class="list-group-item">Pepsi 16 onz.</li>
+                                <div class="carousel-caption d-none d-md-block">
 
-                                    <li class="list-group-item">Refil Gratis</li>
+                                    <h3></h3>
+                                </div>
+                            </div>
+                            <!-- Slide Three - Set the background image for this slide in the line below -->
 
-                                    <li class="list-group-item">Hot-Dog</li>
+                            <div class="carousel-item" style="background-image: url(resources/img/img3.jpg);">
 
-                                    <li class="list-group-item">
-                                        <a href="#" class="btn btn-secondary">Cupon</a>
-                                    </li>
-                                </ul>
+                                <div class="carousel-caption d-none d-md-block">
+
+                                </div>
+                            </div>
+                            <!-- Slide Three - Set the background image for this slide in the line below -->
+
+                            <div class="carousel-item" style="background-image: url(resources/img/img4.jpg);">
+
+                                <div class="carousel-caption d-none d-md-block">
+
+                                </div>
+                            </div>
+                            <!-- Slide Three - Set the background image for this slide in the line below -->
+
+                            <div class="carousel-item" style="background-image: url(resources/img/img5.jpg);">
+
+                                <div class="carousel-caption d-none d-md-block">
+
+                                </div>
+                            </div>
+                            <!-- Slide Three - Set the background image for this slide in the line below -->
+
+                            <div class="carousel-item" style="background-image: url(resources/img/img6.jpg);">
+
+                                <div class="carousel-caption d-none d-md-block">
+
+                                    <h3></h3>
+                                </div>
                             </div>
                         </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true" />
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true" />
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div> <br/><br/>
+                </header>
 
-                        <div class="col-lg-4 mb-4">
+                <c:choose>
+                    <c:when test="#{login.existSession()}">
+                        <div class="container">
 
-                            <div class="card card-outline-primary h-100">
+                            <h1 style="font-family: cursive">Promociones: </h1><br />
+                            <!-- Content Row -->
 
-                                <h3 class="card-header bg-primary text-white">Combo Plus</h3>
+                            <div class="row">
 
-                                <div class="card-body">
+                                <div class="col-lg-4 mb-4">
 
-                                    <div class="display-4"><img src="recursos/img/combos/2.jpg" alt="" /></div>
+                                    <div class="card h-100">
 
-                                    <div class="display-4">12.50</div>
+                                        <h3 class="card-header bg-primary text-white">Combo Basic</h3>
+
+                                        <div class="card-body">
+
+                                            <div class="display-4"><img src="resources/img/combos/1.jpg" alt="" /></div>   
+
+                                            <div class="display-4">$5.00</div>
+                                        </div>
+
+                                        <ul class="list-group list-group-flush">
+
+                                            <li class="list-group-item">Pepsi 16 onz.</li>
+
+                                            <li class="list-group-item">Refil Gratis</li>
+
+                                            <li class="list-group-item">Hot-Dog</li>
+
+                                            <li class="list-group-item">
+                                                <a href="#" class="btn btn-secondary">Cupon</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
 
-                                <ul class="list-group list-group-flush">
+                                <div class="col-lg-4 mb-4">
 
-                                    <li class="list-group-item">2 Pepsi 16 onz</li>
+                                    <div class="card card-outline-primary h-100">
 
-                                    <li class="list-group-item">2 Hot-Dog</li>
+                                        <h3 class="card-header bg-primary text-white">Combo Plus</h3>
 
-                                    <li class="list-group-item">Palomitas Medianas y 2 Chocolates</li>
+                                        <div class="card-body">
 
-                                    <li class="list-group-item">
-                                        <a href="#" class="btn btn-secondary">Cupon</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                                            <div class="display-4"><img src="resources/img/combos/2.jpg" alt="" /></div>
 
-                        <div class="col-lg-4 mb-4">
+                                            <div class="display-4">12.50</div>
+                                        </div>
 
-                            <div class="card h-100">
+                                        <ul class="list-group list-group-flush">
 
-                                <h3 class="card-header bg-primary text-white">Combo Ultra</h3>
+                                            <li class="list-group-item">2 Pepsi 16 onz</li>
 
-                                <div class="card-body">
+                                            <li class="list-group-item">2 Hot-Dog</li>
 
-                                    <div class="display-4"><img src="recursos/img/combos/3.jpg" width="100%" alt="" /></div>
+                                            <li class="list-group-item">Palomitas Medianas y 2 Chocolates</li>
 
-                                    <div class="display-4">$15.50</div>
+                                            <li class="list-group-item">
+                                                <a href="#" class="btn btn-secondary">Cupon</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
 
-                                <ul class="list-group list-group-flush">
+                                <div class="col-lg-4 mb-4">
 
-                                    <li class="list-group-item">Pepsi 16 onz</li>
+                                    <div class="card h-100">
 
-                                    <li class="list-group-item">2 Hot-Dog XL</li>
+                                        <h3 class="card-header bg-primary text-white">Combo Ultra</h3>
 
-                                    <li class="list-group-item">Palomitas XXL y 2 Chocolates</li>
+                                        <div class="card-body">
 
-                                    <li class="list-group-item">
-                                        <a href="" class="btn btn-secondary">Cupon</a>
-                                    </li>
-                                </ul>
+                                            <div class="display-4"><img src="resources/img/combos/3.jpg" width="100%" alt="" /></div>
+
+                                            <div class="display-4">$15.50</div>
+                                        </div>
+
+                                        <ul class="list-group list-group-flush">
+
+                                            <li class="list-group-item">Pepsi 16 onz</li>
+
+                                            <li class="list-group-item">2 Hot-Dog XL</li>
+
+                                            <li class="list-group-item">Palomitas XXL y 2 Chocolates</li>
+
+                                            <li class="list-group-item">
+                                                <a href="" class="btn btn-secondary">Cupon</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
+                            <!-- /.row -->
                         </div>
-                    </div>
-                    <!-- /.row -->
-                </div>
-            </c:when>
-            <c:otherwise>
-                <div class="container">
-                    <h1 style="font-family: cursive">Premier:</h1> <br/>
-                    <div class="row">
-                        <ui:repeat value="#{peliculas.listar()}" var="pelicula">
-                            <div class="col-lg-4 col-sm-6 portfolio-item">
+                    </c:when>
+                    <c:otherwise>
+                        <div class="container">
+                            <h1 style="font-family: cursive">Premier:</h1> <br/>
+                            <div class="row">
+                                <ui:repeat value="#{peliculas.listar()}" var="pelicula">
+                                    <div class="col-lg-4 col-sm-6 portfolio-item">
 
-                                <div class="card h-100">
-                                    <a href="#"><img class="card-img-top" src="recursos/${pelicula.imagen}" alt="" /></a>
+                                        <div class="card h-100">
+                                            <a href="#"><img class="card-img-top" src="recursos/${pelicula.imagen}" alt="" /></a>
 
-                                    <div class="card-body">
+                                            <div class="card-body">
 
-                                        <h4 class="card-title">
-                                            <a href="reservacion.html">#{pelicula.titulo}</a>
-                                        </h4>
+                                                <h4 class="card-title">
+                                                    <a href="reservacion.html">#{pelicula.titulo}</a>
+                                                </h4>
 
-                                        <p class="card-text">#{pelicula.sinopsis}</p>
+                                                <p class="card-text">#{pelicula.sinopsis}</p>
 
-                                        <h:form>
-                                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">Trailer</button>
-                                        </h:form>
+                                                <h:form>
+                                                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal#{pelicula.id}">Trailer</button>
+                                                </h:form>
 
-                                        <!-- Modal -->
+                                                <!-- Modal -->
 
-                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="exampleModal#{pelicula.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-                                            <div class="modal-dialog" role="document">
+                                                    <div class="modal-dialog" role="document">
 
-                                                <div class="modal-content">
+                                                        <div class="modal-content">
 
-                                                    <div class="modal-header">
+                                                            <div class="modal-header">
 
-                                                        <h5 class="modal-title" id="exampleModalLabel">IT Capitulo Final Trailer</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span class="stop" aria-hidden="true">x</span>
-                                                        </button>
-                                                    </div>
+                                                                <h5 class="modal-title" id="exampleModalLabel">#{pelicula.titulo}</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span class="stop" aria-hidden="true">x</span>
+                                                                </button>
+                                                            </div>
 
-                                                    <div class="modal-body">
+                                                            <div class="modal-body">
 
-                                                        <!-- 16:9 aspect ratio -->
+                                                                <!-- 16:9 aspect ratio -->
 
-                                                        <div class="embed-responsive embed-responsive-16by9">
-                                                            <iframe class="embed-responsive-item popup-youtube-player" src="https://www.youtube.com/embed/woh3bk8DXVo?enablejsapi=1&amp;version=3&amp;playerapiid=ytplayer " frameborder="0" allowfullscreen="true" allowscriptaccess="always" />
+                                                                <div class="embed-responsive embed-responsive-16by9">
+                                                                    <iframe class="embed-responsive-item popup-youtube-player" src="#{pelicula.trailer}" frameborder="0" allowfullscreen="true" allowscriptaccess="always" />
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
+
+                                                            </div>
                                                         </div>
-
-                                                    </div>
-
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
-
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </ui:repeat>
                             </div>
-                        </ui:repeat>
-                    </div>
-                </div> <br/>
-            </c:otherwise>
-        </c:choose>
+                        </div> <br/>
+                    </c:otherwise>
+                </c:choose>
+            </ui:define>
 
-
-
-        <!-- Modal Iniciar Sesion -->
-
-        <div class="modal fade" id="exampleModale" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-            <div class="modal-dialog" role="document">
-
-                <div class="modal-content">
-
-                    <div class="modal-header">
-
-                        <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesion</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span class="stop" aria-hidden="true">x</span>
-                        </button>
-                    </div>
-
-                    <div class="modal-body">
-
-                        <h:form class="form-horizontal">
-
-
-                            <div class="col-auto">
-                                <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                                <label for="exampleInputText1">Usuario</label>
-                                <div class="input-group mb-2">
-
-                                    <div class="input-group-prepend">
-
-                                        <div class="input-group-text">@</div>
-                                        <h:inputText value="${login.usu.usuario}" class="form-control" id="inlineFormInputGroup" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-7 mb-3">
-                                <label for="exampleInputPassword1">Clave</label>
-                                <h:inputSecret value="${login.usu.clave}" class="form-control" id="validationCustom05"/> <br />
-                            </div>        
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
-                                <h:commandButton action="${login.validar()}" value="Iniciar Sesion" class="btn btn-primary" />
-                            </div>
-
-                        </h:form>
-
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-
-        <!-- Registrarse -->
-
-        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-            <div class="modal-dialog" role="document">
-
-                <div class="modal-content">
-
-                    <div class="modal-header">
-
-                        <h5 class="modal-title" id="exampleModalLabel">Registrate</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span class="stop" aria-hidden="true">x</span>
-                        </button>
-                    </div>
-
-                    <div class="modal-body">
-
-                        <h:form class="form-horizontal">
-
-
-                            <div class="col-auto">
-                                <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                                <label for="exampleInputText1">Usuario</label>
-                                <div class="input-group mb-2">
-
-                                    <div class="input-group-prepend">
-
-                                        <div class="input-group-text">@</div>
-                                        <h:inputText value="${usuario.usu.usuario}" class="form-control" id="inlineFormInputGroup" />
-                                    </div>
-                                </div>
-                            </div> <br/>
-
-                            <div class="col-md-7 mb-3">
-                                <label for="exampleInputPassword1">Clave</label>
-                                <h:inputSecret value="${usuario.usu.clave}" class="form-control" id="validationCustom05"/>
-                            </div>
-                           
-                           
-                            
-                            <div class="col-md-7 mb-3" style="visibility:hidden">
-                                <label for="exampleInputPassword2">Rol</label>
-                                <h:selectOneMenu value="${usuario.usu.rol}">
-                                    <f:selectItem itemValue="Estandar"/>
-                                </h:selectOneMenu>
-                            </div> 
-                            
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
-                                <h:commandButton action="${usuario.ingresar()}" value="Registrar" class="btn btn-primary" />
-                            </div>
-
-                        </h:form>
-
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Bootstrap core JavaScript -->
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        </ui:composition>
 
     </body>
 </html>

@@ -1,385 +1,343 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-
-        <meta charset="UTF-8" />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-        <title>Proximamente - SmartCine</title>
-        <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-        <!-- Custom styles for this template -->
-        <link href="css/modern-business.css" rel="stylesheet" />
-    </head>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
     <body>
-        <!-- Navigation -->
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
 
-            <div class="container">
-                <a class="navbar-brand" href="../index.xhtml">SmartCine</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon" />
-                </button>
+        <ui:composition template="./../layauts/nav.xhtml">
 
-                <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ui:define name="title">Proximamente - SmartCine</ui:define>
 
-                    <ul class="navbar-nav ml-auto">
+            <ui:define name="contenido">
+                <div class="container">
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="estrenos.xhtml">Estrenos</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="proximamente.xhtml">Proximamente</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="sucursales.xhtml">Sucursales</a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </nav> 
-
-        <div class="container">
-
-            <h1 class="my-4">Proximamente</h1>
+                    <h1 class="my-4">Proximamente</h1>
 
 
-            <div class="row">
+                    <div class="row">
 
-                <div class="col-lg-4 mb-5">
+                        <div class="col-lg-4 mb-5">
 
-                    <div class="card h-100">
+                            <div class="card h-100">
 
-                        <h4 class="card-header">Joker</h4>
+                                <h4 class="card-header">Joker</h4>
 
-                        <div class="card h-100">
-                            <img src="img/img-1.jpg" width="100%" height="100%" alt="" />
-                        </div>
-
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
-                                Trailer
-                            </button>
-                            <button type="button" class="btn btn-secondary">Reservar</button>
-                        </div>
-
-                        <!-- Modal -->
-
-                        <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-                            <div class="modal-dialog" role="document">
-
-                                <div class="modal-content">
-
-                                    <div class="modal-header">
-
-                                        <h5 class="modal-title" id="exampleModalLabel">Joker</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">�</span>
-                                        </button>
-                                    </div>
-
-                                    <div class="modal-body">
-
-                                        <!-- 16:9 aspect ratio -->
-
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zAGVQLHvwOY" />
-                                        </div>
-
-                                    </div>
-
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
-                                        <button type="button" class="btn btn-primary">Reservar</button>
-                                    </div>
+                                <div class="card h-100">
+                                    <img src="../resources/img/img-1.jpg" width="100%" height="100%" alt="" />
                                 </div>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
 
-                <div class="col-lg-4 mb-5">
+                                <div class="card-footer">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
+                                        Trailer
+                                    </button>
+                                    <button type="button" class="btn btn-secondary">Reservar</button>
+                                </div>
 
-                    <div class="card h-100">
+                                <!-- Modal -->
 
-                        <h4 class="card-header">Historias de Miedo...</h4>
+                                <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-                        <div class="card h-100">
-                            <img src="img/img-2.jpg" width="100%" height="100%" alt="" />
-                        </div>
+                                    <div class="modal-dialog" role="document">
 
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
-                                Trailer
-                            </button>
-                            <button type="button" class="btn btn-secondary">Reservar</button>
-                        </div>
+                                        <div class="modal-content">
 
-                        <!-- Modal -->
+                                            <div class="modal-header">
 
-                        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <h5 class="modal-title" id="exampleModalLabel">Joker</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">X</span>
+                                                </button>
+                                            </div>
 
-                            <div class="modal-dialog" role="document">
+                                            <div class="modal-body">
 
-                                <div class="modal-content">
+                                                <!-- 16:9 aspect ratio -->
 
-                                    <div class="modal-header">
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zAGVQLHvwOY" />
+                                                </div>
 
-                                        <h5 class="modal-title" id="exampleModalLabel">Historias de miedo...</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">�</span>
-                                        </button>
-                                    </div>
+                                            </div>
 
-                                    <div class="modal-body">
-
-                                        <!-- 16:9 aspect ratio -->
-
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OwshkT4C3RM" />
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
+                                                <button type="button" class="btn btn-primary">Reservar</button>
+                                            </div>
                                         </div>
                                     </div>
-
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
-                                        <button type="button" class="btn btn-primary">Reservar</button>
-                                    </div>
-                                </div>
+                                </div> 
                             </div>
-                        </div> 
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-5">
-
-                    <div class="card h-100">
-
-                        <h4 class="card-header">Feliz D�a de tu Muerte 2</h4>
-
-                        <div class="card h-100">
-                            <img src="img/img-3.jpg" width="100%" height="100%" alt="" />
                         </div>
 
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">
-                                Trailer
-                            </button>
-                            <button type="button" class="btn btn-secondary">Reservar</button>
-                        </div>
+                        <div class="col-lg-4 mb-5">
 
-                        <!-- Modal -->
+                            <div class="card h-100">
 
-                        <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <h4 class="card-header">Historias de Miedo...</h4>
 
-                            <div class="modal-dialog" role="document">
+                                <div class="card h-100">
+                                    <img src="../resources/img/img-2.jpg" width="100%" height="100%" alt="" />
+                                </div>
 
-                                <div class="modal-content">
+                                <div class="card-footer">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+                                        Trailer
+                                    </button>
+                                    <button type="button" class="btn btn-secondary">Reservar</button>
+                                </div>
 
-                                    <div class="modal-header">
+                                <!-- Modal -->
 
-                                        <h5 class="modal-title" id="exampleModalLabel">Feliz D�a de tu Muerte 2</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">�</span>
-                                        </button>
-                                    </div>
+                                <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-                                    <div class="modal-body">
+                                    <div class="modal-dialog" role="document">
 
-                                        <!-- 16:9 aspect ratio -->
+                                        <div class="modal-content">
 
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/brRaLFmSNMI" />
+                                            <div class="modal-header">
+
+                                                <h5 class="modal-title" id="exampleModalLabel">Historias de miedo...</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">X</span>
+                                                </button>
+                                            </div>
+
+                                            <div class="modal-body">
+
+                                                <!-- 16:9 aspect ratio -->
+
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OwshkT4C3RM" />
+                                                </div>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
+                                                <button type="button" class="btn btn-primary">Reservar</button>
+                                            </div>
                                         </div>
-
                                     </div>
-
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
-                                        <button type="button" class="btn btn-primary">Reservar</button>
-                                    </div>
-                                </div>
+                                </div> 
                             </div>
-                        </div> 
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-5">
-
-                    <div class="card h-100">
-
-                        <h4 class="card-header">X-Men: Dark Phoenix</h4>
-
-                        <div class="card h-100">
-                            <img src="img/img-4.jpg" width="100%" height="100%" alt="" />
                         </div>
 
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal4">
-                                Trailer
-                            </button>
-                            <button type="button" class="btn btn-secondary">Reservar</button>
-                        </div>
+                        <div class="col-lg-4 mb-5">
 
-                        <!-- Modal -->
+                            <div class="card h-100">
 
-                        <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <h4 class="card-header">Feliz Dia de tu Muerte 2</h4>
 
-                            <div class="modal-dialog" role="document">
+                                <div class="card h-100">
+                                    <img src="../resources/img/img-3.jpg" width="100%" height="100%" alt="" />
+                                </div>
 
-                                <div class="modal-content">
+                                <div class="card-footer">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">
+                                        Trailer
+                                    </button>
+                                    <button type="button" class="btn btn-secondary">Reservar</button>
+                                </div>
 
-                                    <div class="modal-header">
+                                <!-- Modal -->
 
-                                        <h5 class="modal-title" id="exampleModalLabel">X-Men: Dark Phoenix</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">�</span>
-                                        </button>
-                                    </div>
+                                <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-                                    <div class="modal-body">
+                                    <div class="modal-dialog" role="document">
 
-                                        <!-- 16:9 aspect ratio -->
+                                        <div class="modal-content">
 
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1-q8C_c-nlM" />
+                                            <div class="modal-header">
+
+                                                <h5 class="modal-title" id="exampleModalLabel">Feliz D�a de tu Muerte 2</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">X</span>
+                                                </button>
+                                            </div>
+
+                                            <div class="modal-body">
+
+                                                <!-- 16:9 aspect ratio -->
+
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/brRaLFmSNMI" />
+                                                </div>
+
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
+                                                <button type="button" class="btn btn-primary">Reservar</button>
+                                            </div>
                                         </div>
-
                                     </div>
-
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
-                                        <button type="button" class="btn btn-primary">Reservar</button>
-                                    </div>
-                                </div>
+                                </div> 
                             </div>
-                        </div> 
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-5">
-
-                    <div class="card h-100">
-
-                        <h4 class="card-header">Zombieland: Double Tap</h4>
-
-                        <div class="card h-100">
-                            <img src="img/img-5.jpg" width="100%" height="100%" alt="" />
                         </div>
 
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal5">
-                                Trailer
-                            </button>
-                            <button type="button" class="btn btn-secondary">Reservar</button>
-                        </div>
+                        <div class="col-lg-4 mb-5">
 
-                        <!-- Modal -->
+                            <div class="card h-100">
 
-                        <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <h4 class="card-header">X-Men: Dark Phoenix</h4>
 
-                            <div class="modal-dialog" role="document">
+                                <div class="card h-100">
+                                    <img src="../resources/img/img-4.jpg" width="100%" height="100%" alt="" />
+                                </div>
 
-                                <div class="modal-content">
+                                <div class="card-footer">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal4">
+                                        Trailer
+                                    </button>
+                                    <button type="button" class="btn btn-secondary">Reservar</button>
+                                </div>
 
-                                    <div class="modal-header">
+                                <!-- Modal -->
 
-                                        <h5 class="modal-title" id="exampleModalLabel">Zombieland: Double Tap</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">�</span>
-                                        </button>
-                                    </div>
+                                <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-                                    <div class="modal-body">
+                                    <div class="modal-dialog" role="document">
 
-                                        <!-- 16:9 aspect ratio -->
+                                        <div class="modal-content">
 
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZlW9yhUKlkQ" />
+                                            <div class="modal-header">
+
+                                                <h5 class="modal-title" id="exampleModalLabel">X-Men: Dark Phoenix</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">X</span>
+                                                </button>
+                                            </div>
+
+                                            <div class="modal-body">
+
+                                                <!-- 16:9 aspect ratio -->
+
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1-q8C_c-nlM" />
+                                                </div>
+
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
+                                                <button type="button" class="btn btn-primary">Reservar</button>
+                                            </div>
                                         </div>
-
                                     </div>
-
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
-                                        <button type="button" class="btn btn-primary">Reservar</button>
-                                    </div>
-                                </div>
+                                </div> 
                             </div>
-                        </div> 
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-5">
-
-                    <div class="card h-100">
-
-                        <h4 class="card-header">Rambo V</h4>
-
-                        <div class="card h-100">
-                            <img src="img/img-6.jpg" width="100%" height="100%" alt="" />
                         </div>
 
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal6">
-                                Trailer
-                            </button>
-                            <button type="button" class="btn btn-secondary">Reservar</button>
-                        </div>
+                        <div class="col-lg-4 mb-5">
 
-                        <!-- Modal -->
+                            <div class="card h-100">
 
-                        <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <h4 class="card-header">Zombieland: Double Tap</h4>
 
-                            <div class="modal-dialog" role="document">
+                                <div class="card h-100">
+                                    <img src="../resources/img/img-5.jpg" width="100%" height="100%" alt="" />
+                                </div>
 
-                                <div class="modal-content">
+                                <div class="card-footer">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal5">
+                                        Trailer
+                                    </button>
+                                    <button type="button" class="btn btn-secondary">Reservar</button>
+                                </div>
 
-                                    <div class="modal-header">
+                                <!-- Modal -->
 
-                                        <h5 class="modal-title" id="exampleModalLabel">Rambo V</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">�</span>
-                                        </button>
-                                    </div>
+                                <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-                                    <div class="modal-body">
+                                    <div class="modal-dialog" role="document">
 
-                                        <!-- 16:9 aspect ratio -->
+                                        <div class="modal-content">
 
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wWfq7kI-GZI" />
+                                            <div class="modal-header">
+
+                                                <h5 class="modal-title" id="exampleModalLabel">Zombieland: Double Tap</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">X</span>
+                                                </button>
+                                            </div>
+
+                                            <div class="modal-body">
+
+                                                <!-- 16:9 aspect ratio -->
+
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZlW9yhUKlkQ" />
+                                                </div>
+
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
+                                                <button type="button" class="btn btn-primary">Reservar</button>
+                                            </div>
                                         </div>
-
                                     </div>
-
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
-                                        <button type="button" class="btn btn-primary">Reservar</button>
-                                    </div>
-                                </div>
+                                </div> 
                             </div>
-                        </div> 
+                        </div>
+
+                        <div class="col-lg-4 mb-5">
+
+                            <div class="card h-100">
+
+                                <h4 class="card-header">Rambo V</h4>
+
+                                <div class="card h-100">
+                                    <img src="../resources/img/img-6.jpg" width="100%" height="100%" alt="" />
+                                </div>
+
+                                <div class="card-footer">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal6">
+                                        Trailer
+                                    </button>
+                                    <button type="button" class="btn btn-secondary">Reservar</button>
+                                </div>
+
+                                <!-- Modal -->
+
+                                <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                                    <div class="modal-dialog" role="document">
+
+                                        <div class="modal-content">
+
+                                            <div class="modal-header">
+
+                                                <h5 class="modal-title" id="exampleModalLabel">Rambo V</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">X</span>
+                                                </button>
+                                            </div>
+
+                                            <div class="modal-body">
+
+                                                <!-- 16:9 aspect ratio -->
+
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wWfq7kI-GZI" />
+                                                </div>
+
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
+                                                <button type="button" class="btn btn-primary">Reservar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>  
+                </div>  
+            </ui:define>
 
-        <!-- Bootstrap core JavaScript -->
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        </ui:composition>
 
     </body>
 </html>

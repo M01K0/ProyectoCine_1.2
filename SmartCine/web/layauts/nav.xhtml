@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+        <h:outputStylesheet name="./css/modern-business.css"/>
+        <title><ui:insert name="title"></ui:insert></title>
+    </h:head>
+
+    <h:body>
+        <!-- Navigation -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+            <div class="container">
+                <h:link class="navbar-brand" outcome="/index.xhtml" value="SmartCine" />
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" />
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                    <ul class="navbar-nav ml-auto">
+                        <c:choose>
+                            <c:when test="#{login.existSession()}">
+                                <li class="nav-item">
+                                    <h:link class="nav-link" outcome="/recursos/estrenos.xhtml" value="Estrenos" />
+                                </li>
+
+                                <li class="nav-item">
+                                    <h:link class="nav-link" outcome="/recursos/proximamente.xhtml" value="Proximamente" />
+                                </li>
+
+                                <li class="nav-item">
+                                    <h:link class="nav-link" outcome="/recursos/sucursales.xhtml" value="Sucursales" />
+                                </li>
+                            </c:when>
+                            <c:otherwise>
+
+                            </c:otherwise>
+                        </c:choose>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li><h:graphicImage url="/resources/icon/person-2x.png"/>&nbsp;<a data-toggle="modal" data-target="#exampleModales" style="color:white">Sign Up</a></li> &nbsp;&nbsp;&nbsp;   
+                        <li>                           
+                            <c:choose>
+                                <c:when test="#{login.existSession()}">
+                                    <h:form>
+                                        <h:graphicImage url="/resources/icon/account-logout-2x.png"/><h:commandLink style="color:white" action="#{login.cerrar()}" value="LogOut" />
+                                    </h:form>
+                                </c:when>
+                                <c:otherwise>
+                                    <h:graphicImage url="/resources/icon/account-login-2x.png" />&nbsp;<a data-toggle="modal" data-target="#exampleModale" style="color:white">Login</a>                                   
+                                </c:otherwise>
+                            </c:choose>
+                        </li> 
+                    </ul>
+                </div>
+
+            </div>
+
+        </nav>
+
+        <ui:insert name="contenido">
+            Contenido
+        </ui:insert>
+
+
+        <!-- Modal Iniciar Sesion -->
+
+        <div class="modal fade" id="exampleModale" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+            <div class="modal-dialog" role="document">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesion</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span class="stop" aria-hidden="true">x</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <h:form class="form-horizontal">
+
+
+                            <div class="col-auto">
+                                <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                <label for="exampleInputText1">Usuario</label>
+                                <div class="input-group mb-2">
+
+                                    <div class="input-group-prepend">
+
+                                        <div class="input-group-text">@</div>
+                                        <h:inputText value="${login.usu.usuario}" class="form-control" id="inlineFormInputGroup" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-7 mb-3">
+                                <label for="exampleInputPassword1">Clave</label>
+                                <h:inputSecret value="${login.usu.clave}" class="form-control" id="validationCustom05"/> <br />
+                            </div>        
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
+                                <h:commandButton action="${login.validar()}" value="Iniciar Sesion" class="btn btn-primary" />
+                            </div>
+
+                        </h:form>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Registrarse -->
+
+        <div class="modal fade" id="exampleModales" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+            <div class="modal-dialog" role="document">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="exampleModalLabel">Registrate</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span class="stop" aria-hidden="true">x</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <h:form class="form-horizontal">
+
+
+                            <div class="col-auto">
+                                <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                <label for="exampleInputText1">Usuario</label>
+                                <div class="input-group mb-2">
+
+                                    <div class="input-group-prepend">
+
+                                        <div class="input-group-text">@</div>
+                                        <h:inputText value="${usuario.usu.usuario}" class="form-control" id="inlineFormInputGroup" />
+                                    </div>
+                                </div>
+                            </div> <br/>
+
+                            <div class="col-md-7 mb-3">
+                                <label for="exampleInputPassword1">Clave</label>
+                                <h:inputSecret value="${usuario.usu.clave}" class="form-control" id="validationCustom05"/>
+                            </div>
+
+
+
+                            <div class="col-md-7 mb-3" style="visibility:hidden">
+                                <label for="exampleInputPassword2">Rol</label>
+                                <h:selectOneMenu value="${usuario.usu.rol}">
+                                    <f:selectItem itemValue="Estandar"/>
+                                </h:selectOneMenu>
+                            </div> 
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
+                                <h:commandButton action="${usuario.ingresar()}" value="Registrar" class="btn btn-primary" />
+                            </div>
+
+                        </h:form>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bootstrap core JavaScript -->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </h:body>
+
+</html>

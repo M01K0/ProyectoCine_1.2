@@ -65,7 +65,7 @@ public class Login implements Serializable {
     public String cerrar() {
         HttpSession session = SesionUtil.getSession();
         session.invalidate();
-        return "index?faces-redirect=true";
+        return "/index?faces-redirect=true";
     }
     
     

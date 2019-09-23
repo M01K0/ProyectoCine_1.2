@@ -62,6 +62,8 @@ public class Peliculas implements Serializable {
     private Clasificaciones idClasificacion;
     @Column(name = "imagen")
     private String imagen;
+    @Column(name = "trailer")
+    private String trailer;
 
     public Peliculas() {
     }
@@ -115,9 +117,15 @@ public class Peliculas implements Serializable {
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
-    
-    
 
+    public String getTrailer() {
+        return trailer;
+    }
+
+    public void setTrailer(String trailer) {
+        this.trailer = trailer;
+    }
+    
     @XmlTransient
     public List<Funciones> getFuncionesList() {
         return funcionesList;
