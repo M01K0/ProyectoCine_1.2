@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:b="http://bootsfaces.net/ui"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <body>
 
@@ -18,24 +19,34 @@
                         <h2>Listar</h2> <br/>
                     </header>
                     <b:container>
-                        <h:form>
-                            <b:dataTable value="#{peliculas.listar()}" var="pel">
-                                <b:dataTableColumn value="#{pel.titulo}" label="Titulo" />
-                                <b:dataTableColumn value="#{pel.duracion}" label="Duracion"/>
-                                <b:dataTableColumn value="#{pel.sinopsis}" label="Sinopsis"  />
-                                <b:dataTableColumn value="#{pel.idClasificacion.nombre}" label="Clasificacion"/>
-                                <b:dataTableColumn value="#{pel.idGenero.descripcion}" label="Genero" />
-                                <b:dataTableColumn label="Opcion 1" orderable="false" >
-                                    <b:commandButton action="#{peliculas.editar(pel)}" value="Editar"  look="warning"/>
-                                </b:dataTableColumn>
-                                <b:dataTableColumn label="Opcion 2" orderable="false">
-                                    <b:commandButton action="#{peliculas.destruir(pel)}" value="Eliminar" look="danger"/>
-                                </b:dataTableColumn>
-                            </b:dataTable>
-
-                            <b:button outcome="/peliculas/ingresar" value="Ingresar" look="success" />
-
-                        </h:form>
+                        <c:choose>
+                            <c:when test="#{login.existSession()}">
+                                <h:form>
+                                    <b:dataTable value="#{peliculas.listar()}" var="pel">
+                                        <b:dataTableColumn value="#{pel.titulo}" label="Titulo" />
+                                        <b:dataTableColumn value="#{pel.duracion}" label="Duracion"/>
+                                        <b:dataTableColumn value="#{pel.sinopsis}" label="Sinopsis"  />
+                                        <b:dataTableColumn value="#{pel.idClasificacion.nombre}" label="Clasificacion"/>
+                                        <b:dataTableColumn value="#{pel.idGenero.descripcion}" label="Genero" />
+                                        <b:dataTableColumn label="Opcion 1" orderable="false" >
+                                            <b:commandButton action="#{peliculas.editar(pel)}" value="Editar"  look="warning"/>
+                                        </b:dataTableColumn>
+                                        <b:dataTableColumn label="Opcion 2" orderable="false">
+                                            <b:commandButton action="#{peliculas.destruir(pel)}" value="Eliminar" look="danger"/>
+                                        </b:dataTableColumn>
+                                    </b:dataTable>
+                                    <b:button outcome="/peliculas/ingresar" value="Ingresar" look="success" />
+                                </h:form>
+                            </c:when>
+                            <c:otherwise>
+                                <h:form>
+                                    <h1><h:link outcome="/index.xhtml" value="¡No eres Administrador!"/></h1> <br/>
+                                </h:form>
+                                <p style="color: red; font-size: 20px">
+                                    Si no esta logueado no tendra acceso a este contenido. 
+                                </p>
+                            </c:otherwise>
+                        </c:choose>
                     </b:container>
                 </b:container><br/>
             </ui:define>

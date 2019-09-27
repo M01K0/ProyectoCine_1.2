@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:b="http://bootsfaces.net/ui">
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
         <title>Clasificaciones - Editar</title>
     </h:head>
@@ -13,17 +14,27 @@
                 <h2>Editar</h2> <br/>
             </header>
             <b:container>
-                <h:form>
-                    <b:row>
-                        Nombre: <h:inputText value="#{cl.nombre}"/> <br/><br/><br/>
-                        Edad Minima: <h:inputText value="#{cl.edadMinima}"/> <br/><br/><br/>
-                        Descripcion: <h:inputText value="#{cl.descripcion}"/> <br/><br/><br/>
-                        <b:commandButton action="#{clasificaciones.actualizar(cl)}" value="Editar" look="success"/>
-                    </b:row>
+                <c:choose>
+                    <c:when test="#{login.existSession()}">
+                        <h:form>
+                            <b:row>
+                                Nombre: <h:inputText value="#{cl.nombre}"/> <br/><br/><br/>
+                                Edad Minima: <h:inputText value="#{cl.edadMinima}"/> <br/><br/><br/>
+                                Descripcion: <h:inputText value="#{cl.descripcion}"/> <br/><br/><br/>
+                                <b:commandButton action="#{clasificaciones.actualizar(cl)}" value="Editar" look="success"/>
+                            </b:row>
 
-                </h:form>
-
-
+                        </h:form>
+                    </c:when>
+                    <c:otherwise>
+                        <h:form>
+                            <h1><h:link outcome="/index.xhtml" value="¡No eres Administrador!"/></h1> <br/>
+                        </h:form>
+                        <p style="color: red; font-size: 20px">
+                            Si no esta logueado no tendra acceso a este contenido. 
+                        </p>
+                    </c:otherwise>
+                </c:choose>
             </b:container>
 
         </b:container>

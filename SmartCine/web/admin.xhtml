@@ -3,12 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-      xmlns:b="http://bootsfaces.net/ui">
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
 
     <body>
 
         <ui:composition template="./layauts/adminNav.xhtml">
-            
+
             <ui:define name="title">#{bundle.nameCine}</ui:define>
 
             <ui:define name="contenido">
@@ -118,8 +119,10 @@
                             </b:panelGrid>
                         </c:when>
                         <c:otherwise>
-                            <h2><a href="index.xhtml">Acceso Denegado</a></h2> <br/>
-                            <p style="color: red">
+                            <h:form>
+                                <h1><h:link outcome="/index.xhtml" value="¡No estas Logueado!"/></h1> <br/>
+                            </h:form>
+                            <p style="color: red; font-size: 20px">
                                 Si no esta logueado no tendra acceso a este contenido. 
                             </p>
                         </c:otherwise>
