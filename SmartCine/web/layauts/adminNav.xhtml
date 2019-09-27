@@ -12,7 +12,7 @@
     </h:head>
 
     <h:body>
-        <b:navBar brand="SmartCine" brand-href="admin.xhtml" fluid="false">
+        <b:navBar brand="SmartCine" brand-href="" fluid="false">
             <!-- Following line is needed for TBS 3.0.1 (panel content overflow issue) -->
             <b:navbarLinks pull="right"><b:navLink value="    " href="#"></b:navLink></b:navbarLinks>
             <b:navbarLinks pull="right" styleClass="hidden-xs">
@@ -20,8 +20,8 @@
                     <c:choose>
                         <c:when test="#{login.existSession()}">
                             <h:form>
-                                <br/><h:graphicImage url="/resources/icon/account-logout-2x.png"/><h:commandLink action="#{login.cerrar()}" value="&nbsp;#{bundle.logout}" /> <br/>
-                                
+                                <br/><h:graphicImage url="/resources/icon/account-logout-2x.png"/><h:commandLink action="#{login.cerrar()}" value="&nbsp;#{bundle.logout}"/> <br/>
+
                             </h:form>
 
                         </c:when>
@@ -29,9 +29,8 @@
 
                         </c:otherwise>
                     </c:choose>
-                </b:navbarLinks>
-
-            </b:navbarLinks>
+                </b:navbarLinks>              
+            </b:navbarLinks>     
         </b:navBar>
 
         <ui:insert name="contenido">
