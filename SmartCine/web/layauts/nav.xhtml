@@ -41,7 +41,16 @@
                                     <h:link class="nav-link" outcome="/recursos/sucursales.xhtml" value="#{bundle.sucu}" />
                                 </li>
                             </c:when>
-                            <c:otherwise>
+                            <c:otherwise>   
+                                <li class="nav-item">
+                                    <h:link class="nav-link" outcome="/recursos/promociones.xhtml" value="#{bundle.promo}" />
+                                </li>
+                                <li class="nav-item">
+                                    <h:link class="nav-link" outcome="/recursos/sucursales.xhtml" value="#{bundle.sucu}" />
+                                </li>
+                                <li class="nav-item">
+                                    <h:link class="nav-link" outcome="/recursos/proximamente.xhtml" value="#{bundle.prox}" />
+                                </li>
 
                             </c:otherwise>
                         </c:choose>
@@ -185,7 +194,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Bootstrap core JavaScript -->
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

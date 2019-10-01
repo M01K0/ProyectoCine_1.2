@@ -20,28 +20,29 @@ import sv.com.smartcine.entidades.Usuarios;
 @ManagedBean(name = "login")
 @SessionScoped
 public class Login implements Serializable {
+
     UsuariosJpaController usuDAO;
     Usuarios usu;
-    
+
     public Login() {
         usuDAO = new UsuariosJpaController(Persistence.createEntityManagerFactory("SmartCinePU"));
         usu = new Usuarios();
     }
-    
-    public String validar(){
+
+    public String validar() {
         usu = usuDAO.buscarUsuario(usu.getUsuario(), usu.getClave());
         String val = "";
         if (usu != null) {
             HttpSession session = SesionUtil.getSession();
             session.setAttribute("user", usu);
-            switch(usu.getRol()){
-                case "Administrador": 
+            switch (usu.getRol()) {
+                case "Administrador":
                     val = "/faces/admin?faces-redirect=true";
-                     break;
+                    break;
                 case "Estandar":
                     val = "/faces/index?faces-redirect=true";
                     break;
-                
+
             }
             return val;
         } else {
@@ -57,16 +58,21 @@ public class Login implements Serializable {
     public void setUsu(Usuarios usu) {
         this.usu = usu;
     }
-    
-    public boolean existSession(){
+
+    public boolean existSession() {
         return (SesionUtil.getUserId() != null);
     }
-    
+
     public String cerrar() {
         HttpSession session = SesionUtil.getSession();
         session.invalidate();
         return "/index?faces-redirect=true";
     }
-    
-    
+
+    public boolean tipoRol() {
+       HttpSession session = SesionUtil.getSession();
+            session.setAttribute("user", usu);
+        return (usu.getRol().equals("Administrador"));
+    }
+
 }

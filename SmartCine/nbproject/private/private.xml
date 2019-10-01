@@ -3,7 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/recursos/cartelera/pelicula.xhtml</file>
+            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/recursos/estrenos.xhtml</file>
+            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/BlundleSmartCine.properties</file>
+            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/peliculas/editar.xhtml</file>
+            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/admin.xhtml</file>
+            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/sv/com/smartcine/controladores/CotroladorPeliculas.java</file>
+            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/usuarios/editar.xhtml</file>
+            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/index.xhtml</file>
+            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/usuarios/listar.xhtml</file>
+            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/recursos/promociones.xhtml</file>
+            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/sv/com/smartcine/controladores/SesionUtil.java</file>
+            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/sv/com/smartcine/controladores/Login.java</file>
+            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/layauts/nav.xhtml</file>
+            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/sv/com/smartcine/controladores/ControladorFunciones.java</file>
+            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/sv/com/smartcine/dao/UsuariosJpaController.java</file>
+            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/clasificaciones/editar.xhtml</file>
+            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/usuarios/ingresar.xhtml</file>
         </group>
     </open-files>
 </project-private>

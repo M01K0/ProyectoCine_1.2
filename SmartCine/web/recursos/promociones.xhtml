@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <body>
+
+        <ui:composition template="./../layauts/nav.xhtml">
+
+            <ui:define name="title">Promociones - SmartCine</ui:define>
+
+            <ui:define name="contenido">
+                
+                <div class="container"><br/>
+                    <h1 style="font-family: cursive">#{bundle.promo}</h1><br />
+                    <!-- Content Row -->
+
+                    <div class="row">
+
+                        <div class="col-lg-4 mb-4">
+
+                            <div class="card h-100">
+
+                                <h3 class="card-header bg-primary text-white">#{bundle.comboB}</h3>
+
+                                <div class="card-body">
+
+                                    <div class="display-4"><img src="../resources/img/combos/1.jpg" alt="" /></div>   
+
+                                    <div class="display-4">$5.00</div>
+                                </div>
+
+                                <ul class="list-group list-group-flush">
+
+                                    <li class="list-group-item">Pepsi 16 onz.</li>
+
+                                    <li class="list-group-item">Refil Gratis</li>
+
+                                    <li class="list-group-item">Hot-Dog</li>
+
+                                    <li class="list-group-item">
+                                        <a href="#" class="btn btn-secondary">Cupon</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 mb-4">
+
+                            <div class="card card-outline-primary h-100">
+
+                                <h3 class="card-header bg-primary text-white">#{bundle.comboP}</h3>
+
+                                <div class="card-body">
+
+                                    <div class="display-4"><img src="../resources/img/combos/2.jpg" alt="" /></div>
+
+                                    <div class="display-4">12.50</div>
+                                </div>
+
+                                <ul class="list-group list-group-flush">
+
+                                    <li class="list-group-item">2 Pepsi 16 onz</li>
+
+                                    <li class="list-group-item">2 Hot-Dog</li>
+
+                                    <li class="list-group-item">Palomitas Medianas y 2 Chocolates</li>
+
+                                    <li class="list-group-item">
+                                        <a href="#" class="btn btn-secondary">Cupon</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 mb-4">
+
+                            <div class="card h-100">
+
+                                <h3 class="card-header bg-primary text-white">#{bundle.comboU}</h3>
+
+                                <div class="card-body">
+
+                                    <div class="display-4"><img src="../resources/img/combos/3.jpg" width="100%" alt="" /></div>
+
+                                    <div class="display-4">$15.50</div>
+                                </div>
+
+                                <ul class="list-group list-group-flush">
+
+                                    <li class="list-group-item">Pepsi 16 onz</li>
+
+                                    <li class="list-group-item">2 Hot-Dog XL</li>
+
+                                    <li class="list-group-item">Palomitas XXL y 2 Chocolates</li>
+
+                                    <li class="list-group-item">
+                                        <a href="" class="btn btn-secondary">Cupon</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+
+    </body>
+</html>
