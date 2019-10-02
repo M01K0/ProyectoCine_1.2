@@ -11,14 +11,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.persistence.Persistence;
-import javax.servlet.http.HttpSession;
 import sv.com.smartcine.dao.UsuariosJpaController;
 import sv.com.smartcine.entidades.Usuarios;
 
-/**
- *
- * @author william.valdezfgkss
- */
 @ManagedBean(name = "usuario")
 @RequestScoped
 public class ControladorUsuario {

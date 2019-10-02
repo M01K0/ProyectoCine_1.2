@@ -18,10 +18,6 @@ import javax.persistence.EntityManagerFactory;
 import sv.com.smartcine.dao.exceptions.NonexistentEntityException;
 import sv.com.smartcine.entidades.Clasificaciones;
 
-/**
- *
- * @author william.valdezfgkss
- */
 public class ClasificacionesJpaController implements Serializable {
 
     public ClasificacionesJpaController(EntityManagerFactory emf) {

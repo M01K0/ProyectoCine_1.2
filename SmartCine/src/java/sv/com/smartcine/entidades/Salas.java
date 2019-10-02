@@ -22,10 +22,6 @@ import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-/**
- *
- * @author william.valdezfgkss
- */
 @Entity
 @Table(name = "salas")
 @XmlRootElement

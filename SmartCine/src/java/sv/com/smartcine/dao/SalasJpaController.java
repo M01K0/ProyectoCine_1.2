@@ -20,10 +20,6 @@ import sv.com.smartcine.dao.exceptions.NonexistentEntityException;
 import sv.com.smartcine.entidades.Asientos;
 import sv.com.smartcine.entidades.Salas;
 
-/**
- *
- * @author william.valdezfgkss
- */
 public class SalasJpaController implements Serializable {
 
     public SalasJpaController(EntityManagerFactory emf) {

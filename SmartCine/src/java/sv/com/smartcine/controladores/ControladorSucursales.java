@@ -14,10 +14,6 @@ import javax.persistence.Persistence;
 import sv.com.smartcine.dao.SucursalesJpaController;
 import sv.com.smartcine.entidades.Sucursales;
 
-/**
- *
- * @author william.valdezfgkss
- */
 @ManagedBean(name = "sucursales")
 @RequestScoped
 public class ControladorSucursales {

@@ -27,10 +27,6 @@ import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-/**
- *
- * @author william.valdezfgkss
- */
 @Entity
 @Table(name = "funciones")
 @XmlRootElement
@@ -175,5 +171,5 @@ public class Funciones implements Serializable {
     public String toString() {
         return "sv.com.smartcine.entidades.Funciones[ id=" + id + " ]";
     }
-    
+
 }

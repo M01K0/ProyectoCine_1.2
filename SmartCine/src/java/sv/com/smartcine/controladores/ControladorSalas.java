@@ -15,10 +15,6 @@ import sv.com.smartcine.dao.SalasJpaController;
 import sv.com.smartcine.entidades.Salas;
 import sv.com.smartcine.entidades.Sucursales;
 
-/**
- *
- * @author william.valdezfgkss
- */
 @ManagedBean(name = "salas")
 @RequestScoped
 public class ControladorSalas {

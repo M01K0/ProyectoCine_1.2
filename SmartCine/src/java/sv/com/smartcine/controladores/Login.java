@@ -13,10 +13,6 @@ import javax.servlet.http.HttpSession;
 import sv.com.smartcine.dao.UsuariosJpaController;
 import sv.com.smartcine.entidades.Usuarios;
 
-/**
- *
- * @author nehe.sandovalfgkss
- */
 @ManagedBean(name = "login")
 @SessionScoped
 public class Login implements Serializable {

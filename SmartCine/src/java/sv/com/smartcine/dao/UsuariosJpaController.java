@@ -19,10 +19,6 @@ import sv.com.smartcine.dao.exceptions.IllegalOrphanException;
 import sv.com.smartcine.dao.exceptions.NonexistentEntityException;
 import sv.com.smartcine.entidades.Usuarios;
 
-/**
- *
- * @author william.valdezfgkss
- */
 public class UsuariosJpaController implements Serializable {
 
     public UsuariosJpaController(EntityManagerFactory emf) {

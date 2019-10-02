@@ -16,10 +16,6 @@ import sv.com.smartcine.entidades.Clasificaciones;
 import sv.com.smartcine.entidades.Genero;
 import sv.com.smartcine.entidades.Peliculas;
 
-/**
- *
- * @author william.valdezfgkss
- */
 @ManagedBean(name = "peliculas")
 @RequestScoped
 public class CotroladorPeliculas {

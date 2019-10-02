@@ -14,10 +14,6 @@ import javax.persistence.Persistence;
 import sv.com.smartcine.dao.ClasificacionesJpaController;
 import sv.com.smartcine.entidades.Clasificaciones;
 
-/**
- *
- * @author kenia.mendozafgkss
- */
 @ManagedBean(name = "clasificaciones")
 @RequestScoped
 public class ControladorClasificaciones {

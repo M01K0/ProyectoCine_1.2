@@ -18,10 +18,6 @@ import javax.persistence.EntityManagerFactory;
 import sv.com.smartcine.dao.exceptions.NonexistentEntityException;
 import sv.com.smartcine.entidades.Sucursales;
 
-/**
- *
- * @author william.valdezfgkss
- */
 public class SucursalesJpaController implements Serializable {
 
     public SucursalesJpaController(EntityManagerFactory emf) {

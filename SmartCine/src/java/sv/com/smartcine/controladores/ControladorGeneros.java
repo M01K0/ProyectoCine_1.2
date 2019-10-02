@@ -14,10 +14,6 @@ import javax.persistence.Persistence;
 import sv.com.smartcine.dao.GeneroJpaController;
 import sv.com.smartcine.entidades.Genero;
 
-/**
- *
- * @author kenia.mendozafgkss
- */
 @ManagedBean(name = "genero")
 @RequestScoped
 public class ControladorGeneros {

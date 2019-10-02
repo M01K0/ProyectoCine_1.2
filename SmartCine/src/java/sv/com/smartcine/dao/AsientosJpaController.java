@@ -20,10 +20,6 @@ import sv.com.smartcine.dao.exceptions.IllegalOrphanException;
 import sv.com.smartcine.dao.exceptions.NonexistentEntityException;
 import sv.com.smartcine.entidades.Asientos;
 
-/**
- *
- * @author william.valdezfgkss
- */
 public class AsientosJpaController implements Serializable {
 
     public AsientosJpaController(EntityManagerFactory emf) {

@@ -18,10 +18,6 @@ import javax.persistence.EntityManagerFactory;
 import sv.com.smartcine.dao.exceptions.NonexistentEntityException;
 import sv.com.smartcine.entidades.Genero;
 
-/**
- *
- * @author william.valdezfgkss
- */
 public class GeneroJpaController implements Serializable {
 
     public GeneroJpaController(EntityManagerFactory emf) {

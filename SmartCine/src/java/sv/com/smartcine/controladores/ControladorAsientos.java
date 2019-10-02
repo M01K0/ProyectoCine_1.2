@@ -15,11 +15,6 @@ import sv.com.smartcine.dao.AsientosJpaController;
 import sv.com.smartcine.entidades.Asientos;
 import sv.com.smartcine.entidades.Salas;
 
-
-/**
- *
- * @author HP
- */
 @ManagedBean(name = "asientos")
 @RequestScoped
 public class ControladorAsientos {

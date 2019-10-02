@@ -18,10 +18,6 @@ import sv.com.smartcine.entidades.Asientos;
 import sv.com.smartcine.entidades.DetalleReservaciones;
 import sv.com.smartcine.entidades.Reservaciones;
 
-/**
- *
- * @author william.valdezfgkss
- */
 public class DetalleReservacionesJpaController implements Serializable {
 
     public DetalleReservacionesJpaController(EntityManagerFactory emf) {

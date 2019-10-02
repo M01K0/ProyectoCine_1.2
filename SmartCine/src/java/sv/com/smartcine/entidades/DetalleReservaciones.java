@@ -19,10 +19,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- *
- * @author william.valdezfgkss
- */
 @Entity
 @Table(name = "detalle_reservaciones")
 @XmlRootElement

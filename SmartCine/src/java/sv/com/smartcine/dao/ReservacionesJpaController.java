@@ -22,10 +22,6 @@ import sv.com.smartcine.dao.exceptions.IllegalOrphanException;
 import sv.com.smartcine.dao.exceptions.NonexistentEntityException;
 import sv.com.smartcine.entidades.Reservaciones;
 
-/**
- *
- * @author william.valdezfgkss
- */
 public class ReservacionesJpaController implements Serializable {
 
     public ReservacionesJpaController(EntityManagerFactory emf) {

@@ -16,7 +16,7 @@
                 <b:container>
                     <h1 style="font-family: monospace">Mantenimiento SmartCine</h1> <br/>
                     <c:choose>
-                        <c:when test="#{login.tipoRol()}">
+                        <c:when test="#{login.existSession()}">
                             <b:panelGrid colSpans="6,6" columns="2">
                                 <b:panel look="primary" title="Navigation">
                                     <b:listLinks>

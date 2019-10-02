@@ -16,10 +16,6 @@ import sv.com.smartcine.entidades.Funciones;
 import sv.com.smartcine.entidades.Peliculas;
 import sv.com.smartcine.entidades.Salas;
 
-/**
- *
- * @author william.valdezfgkss
- */
 @ManagedBean(name = "funciones")
 @RequestScoped
 public class ControladorFunciones {

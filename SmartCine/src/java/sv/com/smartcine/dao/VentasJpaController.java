@@ -18,10 +18,6 @@ import javax.persistence.EntityManagerFactory;
 import sv.com.smartcine.dao.exceptions.NonexistentEntityException;
 import sv.com.smartcine.entidades.Ventas;
 
-/**
- *
- * @author william.valdezfgkss
- */
 public class VentasJpaController implements Serializable {
 
     public VentasJpaController(EntityManagerFactory emf) {

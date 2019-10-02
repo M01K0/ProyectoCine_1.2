@@ -21,10 +21,6 @@ import sv.com.smartcine.dao.exceptions.IllegalOrphanException;
 import sv.com.smartcine.dao.exceptions.NonexistentEntityException;
 import sv.com.smartcine.entidades.Funciones;
 
-/**
- *
- * @author william.valdezfgkss
- */
 public class FuncionesJpaController implements Serializable {
 
     public FuncionesJpaController(EntityManagerFactory emf) {
