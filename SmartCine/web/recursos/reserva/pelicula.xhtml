@@ -42,7 +42,9 @@
                                         <li class="list-group-item">Duracion: <h:outputText value="#{pel.duracion}" /> </li>
 
                                         <li class="list-group-item">
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal-Reservacion" >Reservar</button>
+                                            <h:form>
+                                                <h:commandButton action="#{funciones.mostrarPel(pel)}" value="Reservar" class="btn btn-primary" />
+                                            </h:form>
                                         </li>
                                     </ul>
                                 </div>
@@ -58,46 +60,7 @@
                         </c:otherwise>
                     </c:choose>
                 </div>
-
-                <!-- Modal Reservacion -->
-
-                <div class="modal fade" id="Modal-Reservacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-                    <div class="modal-dialog" role="document">
-
-                        <div class="modal-content">
-
-                            <div class="modal-header">
-
-                                <h5 class="modal-title" id="exampleModalLabel">Reservar</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span class="stop" aria-hidden="true">x</span>
-                                </button>
-                            </div>
-
-                            <div class="modal-body">
-
-                                <h:form class="form-horizontal">
-                                    <label for="titulo" style="font-family: serif; font-size: 20px">Sucursal:</label> 
-                                    
-                                    <h:selectOneMenu id="idSucursal" value="#{salas.sala.idSucursal.id}" class="form-control">
-                                        <f:selectItems value="#{sucursales.listar()}" var="sucu" itemLabel="#{sucu.nombre}" itemValue="#{sucu.id}" />
-                                    </h:selectOneMenu> <br/>
-
-                                    <label for="titulo" style="font-family: serif; font-size: 20px">Pelicula:</label> 
-                                    <h:outputText value="#{pel.titulo}" class="form-control" />
-
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary">Siguiente</button>
-                                    </div>
-                                </h:form>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </ui:define>
-
         </ui:composition>
 
     </body>

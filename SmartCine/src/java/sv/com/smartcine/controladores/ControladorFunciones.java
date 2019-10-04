@@ -75,6 +75,18 @@ public class ControladorFunciones {
             return null;
         }
     }
+    
+    public List<Funciones> listarXIdPel(Integer id){
+        
+        return funDAO.porIdPel(id);     
+    }
+    
+    public String mostrarPel(Peliculas p) {
+        Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+        objetos.put("pel", p);
+        
+        return "/faces/recursos/reserva/InfoReserva?faces-redirect=true";
+    }
 
     public Funciones getFun() {
         return fun;

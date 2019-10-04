@@ -74,7 +74,7 @@ public class CotroladorPeliculas {
     public String mostrar(Peliculas u) {
         Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
         objetos.put("pel", u);
-        return "/faces/recursos/cartelera/pelicula?faces-redirect=true";
+        return "/faces/recursos/reserva/pelicula?faces-redirect=true";
     }
 
     public Peliculas listPe() {
