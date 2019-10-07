@@ -37,7 +37,8 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Funciones.findByFechaHoraFin", query = "SELECT f FROM Funciones f WHERE f.fechaHoraFin = :fechaHoraFin")
     , @NamedQuery(name = "Funciones.findByFormato", query = "SELECT f FROM Funciones f WHERE f.formato = :formato")
     , @NamedQuery(name = "Funciones.findByPrecio", query = "SELECT f FROM Funciones f WHERE f.precio = :precio")
-    , @NamedQuery(name = "Funciones.findByidPelicula", query = "SELECT f FROM Funciones f WHERE f.idPelicula.id = :idPelicula")})
+    , @NamedQuery(name = "Funciones.findByidPelicula", query = "SELECT f FROM Funciones f WHERE f.idPelicula.id = :idPelicula")
+    , @NamedQuery(name = "Funciones.findByidPel", query = "SELECT f FROM Funciones f WHERE f.idPelicula.id = :idPelicula")})
 
 public class Funciones implements Serializable {
 

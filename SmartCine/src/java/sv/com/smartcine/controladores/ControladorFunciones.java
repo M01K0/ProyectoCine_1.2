@@ -76,8 +76,7 @@ public class ControladorFunciones {
         }
     }
     
-    public List<Funciones> listarXIdPel(Integer id){
-        
+    public List<Funciones> listarXIdPel(Integer id){ 
         return funDAO.porIdPel(id);     
     }
     
@@ -87,7 +86,11 @@ public class ControladorFunciones {
         
         return "/faces/recursos/reserva/InfoReserva?faces-redirect=true";
     }
-
+    
+    public Funciones pelId(Integer id){
+        return funDAO.porId(id);
+    }
+    
     public Funciones getFun() {
         return fun;
     }

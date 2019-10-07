@@ -12,38 +12,59 @@
             <ui:define name="title">SmartCine - Reservacion</ui:define>
 
             <ui:define name="contenido">
-                <h1>Detalle Reservacion</h1>
-                <ui:repeat value="#{funciones.listarXIdPel(pel.id)}" var="funcion">
-                    <div class="container">
-                        <h:form class="form-horizontal">
+                <div class="container"> <br/><br/>
+                    <div class="row portfolio-item">
+                        <div class="col-lg-5"> 
+                            <h1 style="font-family: cursive">#{pel.titulo}</h1> <br/>
+                            <img class="img-fluid rounded mb-4" src="../../resources/img/imgReserv/img#{pel.id}.jpg" alt="" />
+                        </div>
 
+                        <div class="form-group col-md-5"> 
+                            <label style="font-size: 22px">Sucursal:</label> 
+                            <h:selectOneMenu class="form-control">
+                                <f:selectItems value="#{sucursales.listar()}" var="suc" itemLabel="#{suc.nombre}" itemValue="#{suc.id}" />
+                            </h:selectOneMenu> <br/>                          
 
-                            <div class="col-auto">
-                                <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                                <label for="exampleInputText1">#{bundle.usuario}</label>
-                                <div class="input-group mb-2">
+                            <label style="font-size: 22px">Genero:</label> 
+                            <h:outputText class="form-control" value="#{pel.idGenero.descripcion}"/> <br/>
+                            
+                            <label style="font-size: 22px">Clasificacion:</label> 
+                            <h:outputText class="form-control" value='"#{pel.idClasificacion.nombre}"'/> <br/>
+                            
+                            <label style="font-size: 22px">Duracion:</label> 
+                            <h:outputText class="form-control" value="#{pel.duracion}"/> <br/>
+                            
+                            <ui:repeat value="#{funciones.pelId(pel.id)}" var="id">
+                                <label style="font-size: 22px">Formato:</label> 
+                                <h:outputText class="form-control" value="#{id.formato}"/> <br/>
 
-                                    <div class="input-group-prepend">
+                                <label style="font-size: 22px">Precio:</label> 
+                                <h:outputText class="form-control" value="$#{id.precio}"/> <br/>       
+                            </ui:repeat>
 
-                                        <div class="input-group-text">@</div>
-                                        <h:outputText value="#{funcion.fechaHoraInicio}" class="form-control" id="inlineFormInputGroup" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-7 mb-3">
-                                <label for="exampleInputPassword1">#{bundle.clave}</label>
-                                <h:inputSecret value="${login.usu.clave}" class="form-control" id="validationCustom05"/> <br />
-                            </div>        
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
-                                <h:commandButton action="${login.validar()}" value="#{bundle.login}" class="btn btn-primary" />
-                            </div>
-
-                        </h:form>
+                            <label style="font-size: 22px">Fecha y Hora:</label> 
+                            <h:selectOneMenu class="form-control">
+                                <f:selectItems value="#{funciones.listarXIdPel(pel.id)}" var="func" itemLabel="#{func.fechaHoraInicio}" itemValue="#{func.id}" />
+                            </h:selectOneMenu> <br/>
+                            <h:form>
+                                <h:commandButton  value="Siguiente" class="btn btn-primary"/>
+                            </h:form>
+                        </div>
                     </div>
-                </ui:repeat>
+                </div>
+
+                    <!--
+                    <ui:repeat value="#{funciones.listarXIdPel(pel.id)}" var="funcion">
+                        <div class="container">
+                            <h:form class="form-horizontal">
+                                <div class="col-md-7 mb-3">
+                                    <label for="exampleInputPassword1">#{bundle.clave}</label>
+                                    <h:outputText value="#{funcion.fechaHoraInicio}" class="form-control" id="validationCustom05"/> <br />
+                                </div>        
+                            </h:form>
+                        </div>
+                    </ui:repeat>
+                    -->
             </ui:define>
 
         </ui:composition>

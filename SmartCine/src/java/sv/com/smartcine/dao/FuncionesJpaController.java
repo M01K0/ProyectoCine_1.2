@@ -263,4 +263,14 @@ public class FuncionesJpaController implements Serializable {
         }
     }
     
+    public Funciones porId(Integer idPel){
+        EntityManager em = getEntityManager();
+        
+        try {
+            return em.createNamedQuery("Funciones.findByidPel", Funciones.class).setParameter("idPelicula",idPel).getSingleResult();
+        } finally {
+            em.close();
+        }
+    }
+    
 }
