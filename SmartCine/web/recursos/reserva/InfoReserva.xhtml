@@ -14,12 +14,12 @@
             <ui:define name="contenido">
                 <div class="container"> <br/><br/>
                     <div class="row portfolio-item">
-                        <div class="col-lg-5"> 
+                        <div class="col-lg-6"> 
                             <h1 style="font-family: cursive">#{pel.titulo}</h1> <br/>
                             <img class="img-fluid rounded mb-4" src="../../resources/img/imgReserv/img#{pel.id}.jpg" alt="" />
                         </div>
 
-                        <div class="form-group col-md-5"> 
+                        <div class="form-group col-md-6"> <br/>
                             <label style="font-size: 22px">Sucursal:</label> 
                             <h:selectOneMenu class="form-control">
                                 <f:selectItems value="#{sucursales.listar()}" var="suc" itemLabel="#{suc.nombre}" itemValue="#{suc.id}" />
