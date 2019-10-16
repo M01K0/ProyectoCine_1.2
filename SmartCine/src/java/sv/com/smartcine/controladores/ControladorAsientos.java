@@ -56,6 +56,10 @@ public class ControladorAsientos {
         }
     }
     
+    public List<Asientos> listaXIdSal(Long id){
+        return asientoDAO.porIdSala(id);
+    }
+    
     public String ver(Asientos a){
         asient = a;
         return "ver?faces-redirect=true";

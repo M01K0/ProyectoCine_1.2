@@ -80,15 +80,15 @@ public class ControladorFunciones {
         return funDAO.porIdPel(id);     
     }
     
-    public String mostrarPel(Peliculas p) {
-        Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
-        objetos.put("pel", p);
-        
-        return "/faces/recursos/reserva/InfoReserva?faces-redirect=true";
+    public List<Funciones> listarXIdSal(Long id){ 
+        return funDAO.porIdSala(id);
     }
     
-    public Funciones pelId(Integer id){
-        return funDAO.porId(id);
+    public String mapeoFun(Funciones f) {
+        Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+        objetos.put("sall", f);
+        
+        return "/faces/recursos/reserva/asientos?faces-redirect=true";
     }
     
     public Funciones getFun() {

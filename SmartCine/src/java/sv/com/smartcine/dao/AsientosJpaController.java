@@ -225,4 +225,14 @@ public class AsientosJpaController implements Serializable {
         }
     }
     
+    public List<Asientos> porIdSala(Long idSal){
+        EntityManager em = getEntityManager();
+        
+        try {
+            return em.createNamedQuery("Asientos.findByIdSala", Asientos.class).setParameter("idSala",idSal).getResultList();
+        } finally {
+            em.close();
+        }
+    }
+    
 }

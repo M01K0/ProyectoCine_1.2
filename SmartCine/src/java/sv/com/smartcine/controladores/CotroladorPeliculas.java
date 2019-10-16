@@ -70,6 +70,20 @@ public class CotroladorPeliculas {
             return null;
         }
     }
+    
+    public String mostrarPel(Peliculas p) {
+        Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+        objetos.put("pel", p);
+        
+        return "/faces/recursos/reserva/InfoReserva?faces-redirect=true";
+    }
+    
+    public String mostrarPely(Peliculas p) {
+        Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+        objetos.put("pely", p);
+        
+        return "/faces/recursos/reserva/reservacion?faces-redirect=true";
+    }
 
     public Peliculas listPe() {
         id = getId();

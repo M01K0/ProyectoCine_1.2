@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../../layauts/nav.xhtml">
+
+            <ui:define name="title">#{bundle.reserva}</ui:define>
+
+            <ui:define name="contenido">
+                <div class="container"> <br />
+                    <h1>Funciones:</h1>
+                    <div class="row">
+                        <ui:repeat value="#{funciones.listarXIdPel(pely.id)}" var="XId">
+                            <div class="col-lg-6" style="padding-right: 30px; padding-top: 30px">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h2 style="text-align: center">#{XId.idSala.idSucursal.nombre}</h2>
+                                        <h:outputText  class="form-control" style="border: 0; font-size: 25px; text-align: center;" value="#{XId.fechaHoraInicio}">
+                                            <f:convertDateTime pattern="dd/MM/yyyy" type="date" timeZone="America/El_Salvador" />
+                                        </h:outputText> <br/>  
+
+                                        <div class="form-group col-md-8"> <br/> 
+                                            <label style="font-size: 22px">Titulo:</label> 
+                                            <h:outputText class="form-control" value="#{XId.idPelicula.titulo}"/> <br/>
+
+                                            <label style="font-size: 22px">Formato:</label> 
+                                            <h:outputText class="form-control" value="#{XId.formato}"/> <br/>
+
+                                            <label style="font-size: 22px">Precio:</label> 
+                                            <h:outputText class="form-control" value="$#{XId.precio}"/> <br/>
+
+                                            <label style="font-size: 22px">Fecha y Hora:</label>
+                                            <h:outputText  class="form-control" value="#{XId.fechaHoraInicio}">
+                                                <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" timeZone="America/El_Salvador" />
+                                            </h:outputText> <br/>
+
+                                            <label style="font-size: 22px">Sala:</label> 
+                                            <h:outputText class="form-control" value="#{XId.idSala.numero}"/> <br/>
+
+                                            <h:form>
+                                                <h:commandButton  value="Siguiente" action="#{funciones.mapeoFun(XId)}" class="btn btn-primary"/>
+                                            </h:form>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </ui:repeat> <br/>
+                    </div> <br/>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

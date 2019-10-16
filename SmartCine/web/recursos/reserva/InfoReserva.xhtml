@@ -12,59 +12,36 @@
             <ui:define name="title">SmartCine - Reservacion</ui:define>
 
             <ui:define name="contenido">
-                <div class="container"> <br/><br/>
-                    <div class="row portfolio-item">
-                        <div class="col-lg-6"> 
-                            <h1 style="font-family: cursive">#{pel.titulo}</h1> <br/>
+                <div class="container"> <br/>
+                    <div class="row portfolio-item"> 
+                        <div class="col-lg-6">  <br/> 
+                            <h1 style="font-family: cursive;">#{pel.titulo}</h1> <br/>
                             <img class="img-fluid rounded mb-4" src="../../resources/img/imgReserv/img#{pel.id}.jpg" alt="" />
                         </div>
 
-                        <div class="form-group col-md-6"> <br/>
-                            <label style="font-size: 22px">Sucursal:</label> 
-                            <h:selectOneMenu class="form-control">
-                                <f:selectItems value="#{sucursales.listar()}" var="suc" itemLabel="#{suc.nombre}" itemValue="#{suc.id}" />
-                            </h:selectOneMenu> <br/>                          
-
+                        <div class="form-group col-md-6"> <br/> <br/> 
+                            <label style="font-size: 22px">Titulo Original:</label> 
+                            <h:outputText class="form-control" value="#{pel.titulo}"/> <br/>
+                            
+                            <label style="font-size: 22px">Sinopsis:</label> 
+                            <h:inputTextarea class="form-control" disabled="true" rows="5" value="#{pel.sinopsis}"/> <br/>
+                            
                             <label style="font-size: 22px">Genero:</label> 
                             <h:outputText class="form-control" value="#{pel.idGenero.descripcion}"/> <br/>
-                            
+
                             <label style="font-size: 22px">Clasificacion:</label> 
                             <h:outputText class="form-control" value='"#{pel.idClasificacion.nombre}"'/> <br/>
-                            
+
                             <label style="font-size: 22px">Duracion:</label> 
                             <h:outputText class="form-control" value="#{pel.duracion}"/> <br/>
                             
-                            <ui:repeat value="#{funciones.pelId(pel.id)}" var="id">
-                                <label style="font-size: 22px">Formato:</label> 
-                                <h:outputText class="form-control" value="#{id.formato}"/> <br/>
-
-                                <label style="font-size: 22px">Precio:</label> 
-                                <h:outputText class="form-control" value="$#{id.precio}"/> <br/>       
-                            </ui:repeat>
-
-                            <label style="font-size: 22px">Fecha y Hora:</label> 
-                            <h:selectOneMenu class="form-control">
-                                <f:selectItems value="#{funciones.listarXIdPel(pel.id)}" var="func" itemLabel="#{func.fechaHoraInicio}" itemValue="#{func.id}" />
-                            </h:selectOneMenu> <br/>
                             <h:form>
-                                <h:commandButton  value="Siguiente" class="btn btn-primary"/>
+                                <h:commandButton  value="Siguiente" action="#{peliculas.mostrarPely(pel)}" class="btn btn-primary"/>
                             </h:form>
                         </div>
                     </div>
                 </div>
-
-                    <!--
-                    <ui:repeat value="#{funciones.listarXIdPel(pel.id)}" var="funcion">
-                        <div class="container">
-                            <h:form class="form-horizontal">
-                                <div class="col-md-7 mb-3">
-                                    <label for="exampleInputPassword1">#{bundle.clave}</label>
-                                    <h:outputText value="#{funcion.fechaHoraInicio}" class="form-control" id="validationCustom05"/> <br />
-                                </div>        
-                            </h:form>
-                        </div>
-                    </ui:repeat>
-                    -->
+                
             </ui:define>
 
         </ui:composition>
