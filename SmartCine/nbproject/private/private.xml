@@ -5,11 +5,9 @@
         <group>
             <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/sv/com/smartcine/controladores/CotroladorPeliculas.java</file>
             <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/recursos/reserva/asientos.xhtml</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/sv/com/smartcine/dao/FuncionesJpaController.java</file>
             <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/recursos/reserva/reservacion.xhtml</file>
             <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/sv/com/smartcine/entidades/Funciones.java</file>
             <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/recursos/estrenos.xhtml</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/sv/com/smartcine/controladores/ControladorFunciones.java</file>
             <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/sv/com/smartcine/controladores/ControladorAsientos.java</file>
             <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/sv/com/smartcine/entidades/Asientos.java</file>
             <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/sv/com/smartcine/dao/AsientosJpaController.java</file>
