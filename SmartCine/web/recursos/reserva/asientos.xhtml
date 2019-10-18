@@ -15,31 +15,29 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5 col-lg-1">
-                            <c:forEach items="#{asientos.listaXIdSal(sall.idSala.id)}" var="asy" begin="0" end="4">
+                            <c:forEach items="#{asientos.listaXIdSal(sall.idSala.id)}" var="asy">
                                 <label style="font-size: 22px; margin-left: 20px">#{asy.codigo}</label>
-                                <input type="checkbox"></input>
+                                
+                                <c:choose>
+                                    <c:when test="${asy.estado.trim() == 'Disponible'}">
+                                      <input type="checkbox" name="asientos[]" id="#{asy.id}" />
+                                    </c:when>
+                                    <c:when test="${asy.estado.trim() == 'Ocupado'}">
+                                        <input type="checkbox" checked="checked" disabled="disabled" />
+                                    </c:when>
+                                </c:choose>
+                                
+                                
                             </c:forEach> <br/> <br/>
                         </div>
                     </div>
                     
-                    <div class="row">
-                        <div class="col-lg-5 col-md-1">
-                            <c:forEach items="#{asientos.listaXIdSal(sall.idSala.id)}" var="asy" begin="5" end="9">
-                                <label style="font-size: 22px; margin-left: 20px">#{asy.codigo}</label>
-                                <input type="checkbox"></input>
-                            </c:forEach> <br/> <br/>
-                        </div>
-                    </div>
-
-
-                    <c:forEach items="#{asientos.listaXIdSal(sall.idSala.id)}" var="asy" begin="10" end="19">
-                        <label style="font-size: 22px; margin-left: 20px">#{asy.codigo}</label>
-                        <input type="checkbox"></input>
-                    </c:forEach>
+                    <button type="buttom" class="btn btn-success" id="guardar">Comprar</button>
                 </div>
             </ui:define>
 
         </ui:composition>
 
+        
     </body>
 </html>

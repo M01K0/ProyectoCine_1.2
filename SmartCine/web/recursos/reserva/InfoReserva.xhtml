@@ -11,28 +11,25 @@
 
             <ui:define name="title">SmartCine - Reservacion</ui:define>
 
-            <ui:define name="contenido">
-                <div class="container"> <br/>
+            <ui:define name="contenido"> <br/>
+                <div class="container"> 
                     <div class="row portfolio-item"> 
-                        <div class="col-lg-6">  <br/> 
-                            <h1 style="font-family: cursive;">#{pel.titulo}</h1> <br/>
+                        <div class="col-lg-4">
+                            <h1 style="font-family: cursive; text-align: center">#{pel.titulo}</h1> <br/>
                             <img class="img-fluid rounded mb-4" src="../../resources/img/imgReserv/img#{pel.id}.jpg" alt="" />
                         </div>
 
-                        <div class="form-group col-md-6"> <br/> <br/> 
-                            <label style="font-size: 22px">Titulo Original:</label> 
-                            <h:outputText class="form-control" value="#{pel.titulo}"/> <br/>
-                            
-                            <label style="font-size: 22px">Sinopsis:</label> 
+                        <div class="form-group col-md-5" style="padding-left: 60px; padding-top: 75px">                           
+                            <label style="font-size: 20px">Sinopsis:</label> 
                             <h:inputTextarea class="form-control" disabled="true" rows="5" value="#{pel.sinopsis}"/> <br/>
                             
-                            <label style="font-size: 22px">Genero:</label> 
+                            <label style="font-size: 20px">Genero:</label> 
                             <h:outputText class="form-control" value="#{pel.idGenero.descripcion}"/> <br/>
 
-                            <label style="font-size: 22px">Clasificacion:</label> 
+                            <label style="font-size: 20px">Clasificacion:</label> 
                             <h:outputText class="form-control" value='"#{pel.idClasificacion.nombre}"'/> <br/>
 
-                            <label style="font-size: 22px">Duracion:</label> 
+                            <label style="font-size: 20px">Duracion:</label> 
                             <h:outputText class="form-control" value="#{pel.duracion}"/> <br/>
                             
                             <h:form>
@@ -45,6 +42,5 @@
             </ui:define>
 
         </ui:composition>
-
     </body>
 </html>

@@ -16,15 +16,15 @@
                     <h1>Funciones:</h1>
                     <div class="row">
                         <ui:repeat value="#{funciones.listarXIdPel(pely.id)}" var="XId">
-                            <div class="col-lg-6" style="padding-right: 30px; padding-top: 30px">
+                            <div class="col-lg-4" style="padding-right: 30px; padding-top: 30px">
                                 <div class="card h-100">
                                     <div class="card-body">
                                         <h2 style="text-align: center">#{XId.idSala.idSucursal.nombre}</h2>
-                                        <h:outputText  class="form-control" style="border: 0; font-size: 25px; text-align: center;" value="#{XId.fechaHoraInicio}">
+                                        <h:outputText  class="form-control" style="border: 0; font-size: 22px; text-align: center;" value="#{XId.fechaHoraInicio}">
                                             <f:convertDateTime pattern="dd/MM/yyyy" type="date" timeZone="America/El_Salvador" />
-                                        </h:outputText> <br/>  
+                                        </h:outputText> 
 
-                                        <div class="form-group col-md-8"> <br/> 
+                                        <div class="form-group col-md-12"> <br/> 
                                             <label style="font-size: 22px">Titulo:</label> 
                                             <h:outputText class="form-control" value="#{XId.idPelicula.titulo}"/> <br/>
 
@@ -43,7 +43,7 @@
                                             <h:outputText class="form-control" value="#{XId.idSala.numero}"/> <br/>
 
                                             <h:form>
-                                                <h:commandButton  value="Siguiente" action="#{funciones.mapeoFun(XId)}" class="btn btn-primary"/>
+                                                <h:commandButton  value="Reservar" action="#{funciones.mapeoFun(XId)}" class="btn btn-primary"/>
                                             </h:form>
                                         </div>
                                     </div> 
