@@ -163,17 +163,22 @@
                                     <div class="input-group-prepend">
 
                                         <div class="input-group-text">@</div>
-                                        <h:inputText value="${usuario.usu.usuario}" class="form-control" id="inlineFormInputGroup" />
+                                        <h:inputText value="${usuario.usu.usuario}" class="form-control" id="usu" />
                                     </div>
                                 </div>
                             </div> <br/>
 
                             <div class="col-md-7 mb-3">
-                                <label for="exampleInputPassword1">#{bundle.clave}</label>
-                                <h:inputSecret value="${usuario.usu.clave}" class="form-control" id="validationCustom05"/>
+                                <label>#{bundle.clave}</label>
+                                <h:inputSecret value="${usuario.usu.clave}" class="form-control" id="clave" />
                             </div>
 
-
+                            <div class="col-md-7 mb-3">
+                                <label>#{bundle.confirmarC}</label>
+                                <h:inputSecret class="form-control" id="confirmar"/>
+                            </div>
+                            
+                            <p id="mensaje"></p>
 
                             <div class="col-md-7 mb-3" style="visibility:hidden">
                                 <label for="exampleInputPassword2">Rol</label>
@@ -184,7 +189,7 @@
 
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
-                                <h:commandButton action="${usuario.ingresar()}" value="#{bundle.regis}" class="btn btn-primary" />
+                                <h:commandButton id="ingresar" action="${usuario.ingresar()}" value="#{bundle.regis}" class="btn btn-primary" />
                             </div>
 
                         </h:form>
@@ -202,28 +207,54 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        
+
         <script>
-            $('#guardar').on('click', function(){
-                
-                if(confirm("realmente desea reservar esos asientos")){
-                   var asientos = document.getElementsByName("asientos[]");
+            $('#guardar').on('click', function () {
+
+                if (confirm("realmente desea reservar esos asientos")) {
+                    var asientos = document.getElementsByName("asientos[]");
                     var ids = [];
 
-                    $.each(asientos, function( i, v ) {
-                         if($(this).prop("checked")){ // verifica si el asiento fue checkeado/seleccionado
-                             ids.push($(this).attr("id")); // agrega el ID a un arreglo
-                         } 
+                    $.each(asientos, function (i, v) {
+                        if ($(this).prop("checked")) { // verifica si el asiento fue checkeado/seleccionado
+                            ids.push($(this).attr("id")); // agrega el ID a un arreglo
+                        }
                     });
 
-                   // solo para verificar los IDs que se enviaran  la reserva
-                   $.each(ids, function( i, v ) {
-                         alert(v);
-                   }); 
+                    // solo para verificar los IDs que se enviaran  la reserva
+                    $.each(ids, function (i, v) {
+                        alert(v);
+                    });
                 }
-               
+
             });
         </script>
+        
+        <script>
+            $('#ingresar').on('click', function () { // changed
+                var correo = $('#usu').val();
+                var clave = $('#clave').val();
+                var clave2 = $("#confirmar").val();
+
+                if (clave === "" || clave2 === "" || correo === "") {
+                    $('#mensaje').attr('style', 'color: red');
+                    $('#mensaje').text('Los campos no deben estar vacios');
+                } else {
+
+                    if (clave === clave2) {
+                        $('#mensaje').attr('style', 'color: green');
+                        $('#mensaje').text('Clave Correcta');
+                        recordar();
+                    } else {
+                        $('#mensaje').attr('style', 'color: red');
+                        $('#mensaje').text('Clave Incorrecta');
+                    }
+                }
+
+
+            });
+        </script>
+
     </h:body>
 
 </html>
