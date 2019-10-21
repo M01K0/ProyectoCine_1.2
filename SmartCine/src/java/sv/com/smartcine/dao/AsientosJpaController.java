@@ -235,4 +235,14 @@ public class AsientosJpaController implements Serializable {
         }
     }
     
+    public int updateEstado(Long id){
+        EntityManager em = getEntityManager();
+        
+        try {
+            return em.createNamedQuery("AsientosUpdate", Asientos.class).setParameter("id",id).executeUpdate();
+        } finally {
+            em.close();
+        }
+    }
+    
 }

@@ -74,6 +74,12 @@ public class ControladorAsientos {
         }
     }
     
+    public String estado(Long id){
+        asientoDAO.updateEstado(id);
+        
+        return "/faces/recursos/reserva/ticket?faces-redirect=true";
+    }
+    
     public Asientos getAsient() {
         return asient;
     }

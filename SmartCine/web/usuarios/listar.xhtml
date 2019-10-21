@@ -24,7 +24,9 @@
                                 <h:form>
                                     <b:dataTable value="#{usuario.listar()}" var="usu">
                                         <b:dataTableColumn value="#{usu.usuario}" label="Usuario" />
-                                        <b:dataTableColumn value="#{usu.clave}" label="Clave"/>
+                                        <b:dataTableColumn label="Clave">
+                                            <h:outputText value="#{usu.clave}" style="visibility: hidden"/>
+                                        </b:dataTableColumn>
                                         <b:dataTableColumn value="#{usu.rol}" label="Rol"/>
                                         <b:dataTableColumn label="Opcion 1" orderable="false" >
                                             <b:commandButton action="#{usuario.editar(usu)}" value="Editar"  look="warning"/>

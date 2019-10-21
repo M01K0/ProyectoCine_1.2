@@ -14,30 +14,32 @@
             <ui:define name="contenido"> <br/>
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-5 col-lg-1">
-                            <c:forEach items="#{asientos.listaXIdSal(sall.idSala.id)}" var="asy">
-                                <label style="font-size: 22px; margin-left: 20px">#{asy.codigo}</label>
+
+                        <c:forEach items="#{asientos.listaXIdSal(sall.idSala.id)}" var="asy">                         
+                            <div class="col-sm-1 img-fluid img-thumbnail" style="margin: 5px;"> <br/>
+                                <h1 style="font-size: 18px;text-align: center">#{asy.codigo}</h1>
+                                <img src="../../resources/img/asiento.png" width="100%" class="rounded mx-auto d-block"/> 
                                 
+
                                 <c:choose>
                                     <c:when test="${asy.estado.trim() == 'Disponible'}">
-                                      <input type="checkbox" name="asientos[]" id="#{asy.id}" />
+                                        <input type="checkbox" name="asientos[]" id="#{asy.id}"/>
                                     </c:when>
                                     <c:when test="${asy.estado.trim() == 'Ocupado'}">
                                         <input type="checkbox" checked="checked" disabled="disabled" />
                                     </c:when>
                                 </c:choose>
-                                
-                                
-                            </c:forEach> <br/> <br/>
-                        </div>
+
+                            </div>
+                        </c:forEach> <br/> <br/>
+
                     </div>
                     
                     <button type="buttom" class="btn btn-success" id="guardar">Comprar</button>
+
                 </div>
             </ui:define>
 
         </ui:composition>
-
-        
     </body>
 </html>

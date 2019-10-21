@@ -64,11 +64,4 @@ public class Login implements Serializable {
         session.invalidate();
         return "/index?faces-redirect=true";
     }
-
-    public boolean tipoRol() {
-       HttpSession session = SesionUtil.getSession();
-            session.setAttribute("user", usu);
-        return (usu.getRol().equals("Administrador"));
-    }
-
 }
