@@ -43,7 +43,7 @@ public class Login implements Serializable {
             return val;
         } else {
             System.err.println("Usuario nulo");
-            return "index?faces-redirect=true";
+            return "null";
         }
     }
 

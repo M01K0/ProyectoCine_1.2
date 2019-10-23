@@ -11,6 +11,7 @@ import javax.faces.bean.ManagedBean;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.persistence.Persistence;
+import javax.servlet.http.HttpServletRequest;
 import sv.com.smartcine.dao.AsientosJpaController;
 import sv.com.smartcine.entidades.Asientos;
 import sv.com.smartcine.entidades.Salas;
@@ -22,6 +23,15 @@ public class ControladorAsientos {
     AsientosJpaController asientoDAO;
     private Asientos asient;
     private Salas sal;
+    private Integer[] ids;
+
+    public Integer[] getIds() {
+        return ids;
+    }
+
+    public void setIds(Integer[] ids) {
+        this.ids = ids;
+    }
 
     
     public ControladorAsientos() {
@@ -74,10 +84,13 @@ public class ControladorAsientos {
         }
     }
     
-    public String estado(Long id){
-        asientoDAO.updateEstado(id);
-        
-        return "/faces/recursos/reserva/ticket?faces-redirect=true";
+    public void estado(){        
+        System.out.println(getIds());
+        /*for(Integer id: getIds()){
+            System.out.println("ID: "+id);
+        }*/
+        // asientoDAO.updateEstado(id);
+        //System.out.println("ID: "+getIds());
     }
     
     public Asientos getAsient() {

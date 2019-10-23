@@ -110,15 +110,23 @@
                                     <div class="input-group-prepend">
 
                                         <div class="input-group-text">@</div>
-                                        <h:inputText value="${login.usu.usuario}" class="form-control" id="inlineFormInputGroup" />
+                                        <h:inputText value="${login.usu.usuario}" class="form-control" id="usua" required="true" label="Requerido" />                                      
+                                    </div>
+
+                                    <div class="col-md-7 mb-3">
+                                        <h:message for="usua" style="color: red"/>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-md-7 mb-3">
                                 <label for="exampleInputPassword1">#{bundle.clave}</label>
-                                <h:inputSecret value="${login.usu.clave}" class="form-control" id="validationCustom05"/> <br />
-                            </div>        
+                                <h:inputSecret value="${login.usu.clave}" class="form-control" id="pass" required="true" label="Requerida"/>
+                            </div> 
+
+                            <div class="col-md-7 mb-3">
+                                <h:message for="pass" style="color: red"/>
+                            </div>
 
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary stop" data-dismiss="modal">Cerrar</button>
@@ -163,22 +171,21 @@
                                     <div class="input-group-prepend">
 
                                         <div class="input-group-text">@</div>
-                                        <h:inputText value="${usuario.usu.usuario}" class="form-control" id="usu" />
+                                        <h:inputText value="${usuario.usu.usuario}" class="form-control" id="usu" required="true" label="Requerido"/>
+                                    </div>
+                                    <div class="col-md-7 mb-3">
+                                        <h:message for="usu" style="color: red"/>
                                     </div>
                                 </div>
                             </div> <br/>
 
                             <div class="col-md-7 mb-3">
                                 <label>#{bundle.clave}</label>
-                                <h:inputSecret value="${usuario.usu.clave}" class="form-control" id="clave" />
+                                <h:inputSecret value="${usuario.usu.clave}" class="form-control" id="clave" required="true" label="Requerido"/>
                             </div>
-
                             <div class="col-md-7 mb-3">
-                                <label>#{bundle.confirmarC}</label>
-                                <h:inputSecret class="form-control" id="confirmar"/>
+                                <h:message for="clave" style="color: red"/>
                             </div>
-                            
-                            <p id="mensaje"></p>
 
                             <div class="col-md-7 mb-3" style="visibility:hidden">
                                 <label for="exampleInputPassword2">Rol</label>
@@ -209,27 +216,36 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
         <script>
-            $('#guardar').on('click', function () {
+            $(document).ready(function () {
+                $('#guardar').on('click', function () {
 
-                if (confirm("realmente desea reservar esos asientos")) {
-                    var asientos = document.getElementsByName("asientos[]");
-                    var ids = [];
+                    if (confirm("realmente desea reservar esos asientos")) {
+                        var asientos = document.getElementsByName("asientos[]");
+                        var ids = [];
 
-                    $.each(asientos, function (i, v) {
-                        if ($(this).prop("checked")) { // verifica si el asiento fue checkeado/seleccionado
-                            ids.push($(this).attr("id")); // agrega el ID a un arreglo
+                        $.each(asientos, function (i, v) {
+                            if ($(this).prop("checked")) { // verifica si el asiento fue checkeado/seleccionado
+                                ids.push($(this).attr("id")); // agrega el ID a un arreglo
+                            }
+                        });
+
+                        // solo para verificar los IDs que se enviaran  la reserva
+                        $.each(ids, function (i, v) {
+                            alert(v);
+                        });
+
+                        if (ids.length > 0) {
+                            $('#ids').val(ids);
+
+                            alert($('#ids').val());
+                            $('#form-asientos').submit();
                         }
-                    });
+                    }
 
-                    // solo para verificar los IDs que se enviaran  la reserva
-                    $.each(ids, function (i, v) {
-                        alert(v);
-                    });
-                }
-
+                });
             });
         </script>
-        
+
         <script>
             $('#ingresar').on('click', function () { // changed
                 var correo = $('#usu').val();

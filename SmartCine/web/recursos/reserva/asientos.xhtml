@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <body>
 
@@ -35,8 +36,25 @@
 
                     </div>
                     
-                    <button type="buttom" class="btn btn-success" id="guardar">Comprar</button>
+                    
+                        <button type="buttom" class="btn btn-success" id="guardar">Comprar</button>
 
+                        <form action="" method="POST" id="form-asientos">
+                            <input type="hidden" id="ids" name="ids[]" />
+                        </form>
+                    
+                    
+                    <!--
+                    <h:form>
+                        <h:panelGrid columnClasses="3">
+                            <h:inputText id="txtIds" value="#{asientos.ids}" ></h:inputText>
+                            <h:commandButton id="guardar" value="Comprar" action="#{asientos.estado()}">
+                                    <f:ajax execute="ids" render="txtIds" ></f:ajax>
+                                </h:commandButton>
+                            <input type="text" id="ids"  />
+                        </h:panelGrid>
+                    </h:form>
+                    -->
                 </div>
             </ui:define>
 
