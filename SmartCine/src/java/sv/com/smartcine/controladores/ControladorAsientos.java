@@ -11,7 +11,6 @@ import javax.faces.bean.ManagedBean;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.persistence.Persistence;
-import javax.servlet.http.HttpServletRequest;
 import sv.com.smartcine.dao.AsientosJpaController;
 import sv.com.smartcine.entidades.Asientos;
 import sv.com.smartcine.entidades.Salas;
@@ -25,15 +24,6 @@ public class ControladorAsientos {
     private Salas sal;
     private Integer[] ids;
 
-    public Integer[] getIds() {
-        return ids;
-    }
-
-    public void setIds(Integer[] ids) {
-        this.ids = ids;
-    }
-
-    
     public ControladorAsientos() {
         asientoDAO = new AsientosJpaController(Persistence.createEntityManagerFactory("SmartCinePU"));
         asient = new Asientos();
@@ -84,13 +74,18 @@ public class ControladorAsientos {
         }
     }
     
-    public void estado(){        
-        System.out.println(getIds());
+    public void estado(){       
+         System.out.println("ENTRAAAAAAAAAAAAAAAAAAAAAA");
+        for(Integer id : ids){
+            System.out.println("ID: "+id);
+            //asientoDAO.updateEstado(id);
+        }
+        
+         
         /*for(Integer id: getIds()){
             System.out.println("ID: "+id);
-        }*/
-        // asientoDAO.updateEstado(id);
-        //System.out.println("ID: "+getIds());
+        }
+        */
     }
     
     public Asientos getAsient() {
@@ -107,6 +102,14 @@ public class ControladorAsientos {
 
     public void setSal(Salas sal) {
         this.sal = sal;
+    }
+    
+     public Integer[] getIds() {
+        return ids;
+    }
+
+    public void setIds(Integer[] ids) {
+        this.ids = ids;
     }
 
 }

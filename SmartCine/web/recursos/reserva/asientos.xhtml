@@ -4,7 +4,8 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <body>
 
@@ -19,8 +20,7 @@
                         <c:forEach items="#{asientos.listaXIdSal(sall.idSala.id)}" var="asy">                         
                             <div class="col-sm-1 img-fluid img-thumbnail" style="margin: 5px;"> <br/>
                                 <h1 style="font-size: 18px;text-align: center">#{asy.codigo}</h1>
-                                <img src="../../resources/img/asiento.png" width="100%" class="rounded mx-auto d-block"/> 
-                                
+                                <img src="../../resources/img/asiento.png" width="100%" class="rounded mx-auto d-block"/>                             
 
                                 <c:choose>
                                     <c:when test="${asy.estado.trim() == 'Disponible'}">
@@ -35,29 +35,15 @@
                         </c:forEach> <br/> <br/>
 
                     </div>
-                    
-                    
-                        <button type="buttom" class="btn btn-success" id="guardar">Comprar</button>
-
-                        <form action="" method="POST" id="form-asientos">
-                            <input type="hidden" id="ids" name="ids[]" />
-                        </form>
-                    
-                    
-                    <!--
-                    <h:form>
-                        <h:panelGrid columnClasses="3">
-                            <h:inputText id="txtIds" value="#{asientos.ids}" ></h:inputText>
-                            <h:commandButton id="guardar" value="Comprar" action="#{asientos.estado()}">
-                                    <f:ajax execute="ids" render="txtIds" ></f:ajax>
-                                </h:commandButton>
-                            <input type="text" id="ids"  />
-                        </h:panelGrid>
+                    <h:form id="formId">
+                        <h:inputText id="ids" value="#{asientos.ids}" />
+                        <h:commandButton value="Comprar" onclick="comprar();" action="#{asientos.estado()}">
+                            <f:ajax execute = "ids" render = "output-ids" />
+                        </h:commandButton>
+                        <h:inputHidden id="output-ids" value="#{asientos.ids}" />
                     </h:form>
-                    -->
                 </div>
             </ui:define>
-
         </ui:composition>
     </body>
 </html>
