@@ -5,6 +5,7 @@
  */
 package sv.com.smartcine.controladores;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +15,7 @@ import javax.faces.context.FacesContext;
 import javax.persistence.Persistence;
 import sv.com.smartcine.dao.AsientosJpaController;
 import sv.com.smartcine.entidades.Asientos;
+import sv.com.smartcine.entidades.Funciones;
 import sv.com.smartcine.entidades.Salas;
 
 @ManagedBean(name = "asientos")
@@ -24,75 +26,75 @@ public class ControladorAsientos {
     private Asientos asient;
     private Salas sal;
     private String ids;
-   
 
     public ControladorAsientos() {
         asientoDAO = new AsientosJpaController(Persistence.createEntityManagerFactory("SmartCinePU"));
         asient = new Asientos();
     }
-    
-    
-    public List<Asientos> listar(){
+
+    public List<Asientos> listar() {
         return asientoDAO.findAsientosEntities();
     }
-    
-    public String ingresar(){
+
+    public String ingresar() {
         asientoDAO.create(asient);
         return "listar?faces-redirect=true";
     }
-    
-    
-    public String editar(Asientos a){
+
+    public String editar(Asientos a) {
         Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
         objetos.put("as", a);
-        return "editar?faces-redirect=true"; 
+        return "editar?faces-redirect=true";
     }
-    
-    public String actualizar(Asientos a){
+
+    public String actualizar(Asientos a) {
         try {
             asientoDAO.edit(a);
             return "listar?faces-redirect=true";
         } catch (Exception e) {
-            
+
             return null;
         }
     }
-    
-    public List<Asientos> listaXIdSal(Long id){
+
+    public List<Asientos> listaXIdSal(Long id) {
         return asientoDAO.porIdSala(id);
     }
-    
-    public String ver(Asientos a){
+
+    public String ver(Asientos a) {
         asient = a;
         return "ver?faces-redirect=true";
     }
-    
-    public String destruir(Asientos a){
+
+    public String destruir(Asientos a) {
         try {
             asientoDAO.destroy(a.getId());
-        return "listar?faces-redirect=true";
+            return "listar?faces-redirect=true";
         } catch (Exception e) {
             return null;
         }
     }
-    
-    public void estado() {
-        if(!getIds().equals("")){
+
+    public void estado() throws IOException {
+        if (!getIds().equals("")) {
             String[] idsArray = getIds().split(",");
-                      
-            for(int i = 0; i < idsArray.length; i++){
+
+            for (int i = 0; i < idsArray.length; i++) {
                 Long id = Long.parseLong(idsArray[i]);
-                try{
-                    asient=asientoDAO.findAsientos(id);
+                try {
+                    asient = asientoDAO.findAsientos(id);
                     asient.setEstado("Ocupado");
                     asientoDAO.edit(asient);
-                }catch(Exception e){
-                    
+                } catch (Exception e) {
+
                 }
-            }            
-        }
+            }
+            
+            FacesContext.getCurrentInstance().getExternalContext().redirect("asientos.xhtml");
+            
+        }      
     }
-    
+
     public Asientos getAsient() {
         return asient;
     }
@@ -100,7 +102,7 @@ public class ControladorAsientos {
     public void setAsient(Asientos asient) {
         this.asient = asient;
     }
-    
+
     public Salas getSal() {
         return sal;
     }
@@ -116,9 +118,5 @@ public class ControladorAsientos {
     public void setIds(String ids) {
         this.ids = ids;
     }
-    
-    
-    
-    
 
 }

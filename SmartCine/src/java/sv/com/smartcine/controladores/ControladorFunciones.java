@@ -91,6 +91,13 @@ public class ControladorFunciones {
         return "/faces/recursos/reserva/asientos?faces-redirect=true";
     }
     
+     public String FunTicked(Funciones f) {
+        Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+        objetos.put("inf", f);
+        
+        return "/faces/recursos/reserva/ticked?faces-redirect=true";
+    }
+    
     public Funciones getFun() {
         return fun;
     }

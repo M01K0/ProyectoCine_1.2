@@ -56,12 +56,21 @@
                         </c:choose>
                     </ul>
                     <ul class="navbar-nav ml-auto">
-                        <li><h:graphicImage url="/resources/icon/person-2x.png"/>&nbsp;<a data-toggle="modal" data-target="#exampleModales" style="color:white">#{bundle.regis}</a></li> &nbsp;&nbsp;&nbsp;   
+                        <li>
+                            <c:choose>
+                                <c:when test="#{login.existSession()}">
+                                    
+                                </c:when>
+                                <c:otherwise>
+                                    <h:graphicImage url="/resources/icon/person-2x.png"/>&nbsp;<a data-toggle="modal" data-target="#exampleModales" style="color:white">#{bundle.regis}</a>&nbsp;&nbsp;&nbsp;   
+                                </c:otherwise>
+                            </c:choose>
+                        </li> 
                         <li>                           
                             <c:choose>
                                 <c:when test="#{login.existSession()}">
                                     <h:form>
-                                        <h:graphicImage url="/resources/icon/account-logout-2x.png"/><h:commandLink style="color:white" action="#{login.cerrar()}" value="#{bundle.logout}" />
+                                        <h:graphicImage url="/resources/icon/account-logout-2x.png"/>&nbsp;<h:commandLink style="color:white" action="#{login.cerrar()}" value="#{bundle.logout}" />
                                     </h:form>
                                 </c:when>
                                 <c:otherwise>

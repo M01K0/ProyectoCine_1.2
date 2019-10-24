@@ -36,8 +36,8 @@
 
                     </div>
                     <h:form>
-                        <h:inputHidden id="ids" value="#{asientos.ids}" />
-                        <h:commandButton id="guardar" value="Comprar" onclick="comprar()"  >
+                        <h:inputHidden id="ids" value="#{asientos.ids}" /> <br/>
+                        <h:commandButton id="guardar" value="Reservar" onclick="comprar()" class="btn btn-danger">
                             <f:ajax execute="ids" render="#{asientos.ids}" listener="#{asientos.estado()}" />
                         </h:commandButton>
                     </h:form>
