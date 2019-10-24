@@ -90,8 +90,12 @@ public class ControladorAsientos {
                 }
             }
             
-            FacesContext.getCurrentInstance().getExternalContext().redirect("asientos.xhtml");
+            FacesContext.getCurrentInstance().getExternalContext().redirect("ticket.xhtml");
             
+        }else{
+            
+             FacesContext.getCurrentInstance().getExternalContext().redirect("asientos.xhtml");
+             
         }      
     }
 
