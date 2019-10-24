@@ -35,12 +35,11 @@
                         </c:forEach> <br/> <br/>
 
                     </div>
-                    <h:form id="formId">
-                        <h:inputText id="ids" value="#{asientos.ids}" />
-                        <h:commandButton value="Comprar" onclick="comprar();" action="#{asientos.estado()}">
-                            <f:ajax execute = "ids" render = "output-ids" />
+                    <h:form>
+                        <h:inputHidden id="ids" value="#{asientos.ids}" />
+                        <h:commandButton id="guardar" value="Comprar" onclick="comprar()"  >
+                            <f:ajax execute="ids" render="#{asientos.ids}" listener="#{asientos.estado()}" />
                         </h:commandButton>
-                        <h:inputHidden id="output-ids" value="#{asientos.ids}" />
                     </h:form>
                 </div>
             </ui:define>

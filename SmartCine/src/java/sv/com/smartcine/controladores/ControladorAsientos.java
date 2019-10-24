@@ -5,6 +5,7 @@
  */
 package sv.com.smartcine.controladores;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import javax.faces.bean.ManagedBean;
@@ -22,7 +23,8 @@ public class ControladorAsientos {
     AsientosJpaController asientoDAO;
     private Asientos asient;
     private Salas sal;
-    private Integer[] ids;
+    private String ids;
+   
 
     public ControladorAsientos() {
         asientoDAO = new AsientosJpaController(Persistence.createEntityManagerFactory("SmartCinePU"));
@@ -74,18 +76,21 @@ public class ControladorAsientos {
         }
     }
     
-    public void estado(){       
-         System.out.println("ENTRAAAAAAAAAAAAAAAAAAAAAA");
-        for(Integer id : ids){
-            System.out.println("ID: "+id);
-            //asientoDAO.updateEstado(id);
+    public void estado() {
+        if(!getIds().equals("")){
+            String[] idsArray = getIds().split(",");
+                      
+            for(int i = 0; i < idsArray.length; i++){
+                Long id = Long.parseLong(idsArray[i]);
+                try{
+                    asient=asientoDAO.findAsientos(id);
+                    asient.setEstado("Ocupado");
+                    asientoDAO.edit(asient);
+                }catch(Exception e){
+                    
+                }
+            }            
         }
-        
-         
-        /*for(Integer id: getIds()){
-            System.out.println("ID: "+id);
-        }
-        */
     }
     
     public Asientos getAsient() {
@@ -103,13 +108,17 @@ public class ControladorAsientos {
     public void setSal(Salas sal) {
         this.sal = sal;
     }
-    
-     public Integer[] getIds() {
+
+    public String getIds() {
         return ids;
     }
 
-    public void setIds(Integer[] ids) {
+    public void setIds(String ids) {
         this.ids = ids;
     }
+    
+    
+    
+    
 
 }

@@ -1,21 +1,31 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-
-    <body>
-
-        <ui:composition template="./../../layauts/nav.xhtml">
-
-            <ui:define name="title">
-                title
-            </ui:define>
-
-            <ui:define name="contenido">
-                contenido
-            </ui:define>
-
-        </ui:composition>
-
-    </body>
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <b:container> <br/>
+            <h:form>
+                <b:dataTable value="" border="false" searching="false" 
+                             var="pel"
+                             pdf="true"
+                             columnVisibility="false"
+                             copy="true"
+                             row-style-class="#{car.enginePower>100?'light-power':'light'}, #{car.enginePower>100?'dark-power':'dark'} ">
+                    <b:dataTableColumn  label="Pelicula" /> 
+                    <b:dataTableColumn label="Sucursal" />
+                    <b:dataTableColumn label="Sala" />
+                    <b:dataTableColumn label="Fecha y Hora" />
+                    <b:dataTableColumn label="Precio" />
+                    <b:dataTableColumn label="Cantidad" />
+                    <b:dataTableColumn  label="Total" />
+                    <b:dataTableColumn  label="Codigo QR" />
+                </b:dataTable>
+            </h:form>
+        </b:container>
+    </h:body>
 </html>
+

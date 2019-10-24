@@ -235,7 +235,7 @@ public class AsientosJpaController implements Serializable {
         }
     }
     
-    public int updateEstado(Integer id){
+    public int updateEstado(Long id){
         EntityManager em = getEntityManager();
         
         try {
