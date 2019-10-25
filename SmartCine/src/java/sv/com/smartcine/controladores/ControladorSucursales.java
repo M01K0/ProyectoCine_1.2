@@ -25,22 +25,25 @@ public class ControladorSucursales {
         sucu = new Sucursales();
     }
     
+    // Metodo para listar Sucursales
     public List<Sucursales> listar(){
         return suDAO.findSucursalesEntities();
     }
     
+    // Metodo para ingresar Sucursales
     public String ingresar(){
         suDAO.create(sucu);
         return "listar?faces-redirect=true";
     }
     
-    //
+    // Metodo para mapear Sucursales
     public String editar(Sucursales s){
         Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
         objetos.put("sc", s);
         return "editar?faces-redirect=true"; 
     }
     
+    // Metodo para editar Sucursales
     public String actualizar(Sucursales s){
         try {
             suDAO.edit(s);
@@ -49,12 +52,8 @@ public class ControladorSucursales {
             return null;
         }
     }
-    
-    public String ver(Sucursales s){
-        sucu = s;
-        return "ver?faces-redirect=true";
-    }
-    
+   
+    // Metodo para eliminar Sucursales
     public String destruir(Sucursales s){
         try {
             suDAO.destroy(s.getId());

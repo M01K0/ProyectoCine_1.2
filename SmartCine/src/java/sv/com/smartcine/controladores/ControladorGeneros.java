@@ -27,22 +27,25 @@ public class ControladorGeneros {
         
     }
     
+    // Metodo para listar Generos
     public List<Genero> listar(){
         return generoDAO.findGeneroEntities();
     }
     
+    // Metodo para ingresar Generos
     public String ingresar(){
         generoDAO.create(gener);
         return "listar?faces-redirect=true";
     }
     
-    //
+    // Metodo para mapear Generos
     public String editar(Genero g){
         Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
         objetos.put("gn", g);
         return "editar?faces-redirect=true"; 
     }
     
+    // Metodo para editar Generos
     public String actualizar(Genero g){
         try {
             generoDAO.edit(g);
@@ -53,11 +56,7 @@ public class ControladorGeneros {
         }
     }
     
-    public String ver(Genero g){
-        gener = g;
-        return "ver?faces-redirect=true";
-    }
-    
+    // Metodo para eliminar Generos
     public String destruir(Genero g){
         try {
             generoDAO.destroy(g.getId());

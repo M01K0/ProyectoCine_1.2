@@ -25,22 +25,25 @@ public class ControladorUsuario {
         usu = new Usuarios();
     }
     
+    // Metodo para listar Usuarios
     public List<Usuarios> listar(){
         return usuDAO.findUsuariosEntities();
     }
     
+    // Metodo para ingresar Usuarios
     public String ingresar(){
         usuDAO.create(usu);
         return "listar?faces-redirect=true";
     }
     
-    
+    // Metodo para mapear Usuarios
     public String editar(Usuarios s){
         Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
         objetos.put("ss", s);
         return "editar?faces-redirect=true"; 
     }
     
+    // Metodo para editar Usuarios
     public String actualizar(Usuarios s){
         try {
             usuDAO.edit(s);
@@ -51,11 +54,7 @@ public class ControladorUsuario {
         }
     }
     
-    public String ver(Usuarios s){
-        usu = s;
-        return "ver?faces-redirect=true";
-    }
-    
+    // Metodo para eliminar Usuarios
     public String destruir(Usuarios s){
         try {
             usuDAO.destroy(s.getId());
@@ -65,7 +64,6 @@ public class ControladorUsuario {
         }
     }
     
-  
     public Usuarios getUsu() {
         return usu;
     }

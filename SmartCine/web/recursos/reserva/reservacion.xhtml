@@ -13,33 +13,33 @@
 
             <ui:define name="contenido">
                 <div class="container"> <br />
-                    <h1>Funciones:</h1>
+                    <h2>Funciones:</h2>
                     <div class="row">
                         <ui:repeat value="#{funciones.listarXIdPel(pely.id)}" var="XId">
-                            <div class="col-lg-4" style="padding-right: 30px; padding-top: 30px">
+                            <div class="col-md-4" style="padding-right: 30px; padding-top: 30px">
                                 <div class="card h-100">
                                     <div class="card-body">
-                                        <h2 style="text-align: center">#{XId.idSala.idSucursal.nombre}</h2>
-                                        <h:outputText  class="form-control" style="border: 0; font-size: 22px; text-align: center;" value="#{XId.fechaHoraInicio}">
+                                        <h3 style="text-align: center">#{XId.idSala.idSucursal.nombre}</h3>
+                                        <h:outputText  class="form-control" style="border: 0; font-size: 20px; text-align: center;" value="#{XId.fechaHoraInicio}">
                                             <f:convertDateTime pattern="dd/MM/yyyy" type="date" timeZone="America/El_Salvador" />
                                         </h:outputText> 
 
                                         <div class="form-group col-md-12"> <br/> 
-                                            <label style="font-size: 22px">Titulo:</label> 
+                                            <label style="font-size: 20px">Titulo:</label> 
                                             <h:outputText class="form-control" value="#{XId.idPelicula.titulo}"/> <br/>
 
-                                            <label style="font-size: 22px">Formato:</label> 
+                                            <label style="font-size: 20px">Formato:</label> 
                                             <h:outputText class="form-control" value="#{XId.formato}"/> <br/>
 
-                                            <label style="font-size: 22px">Precio:</label> 
+                                            <label style="font-size: 20px">Precio:</label> 
                                             <h:outputText class="form-control" value="$#{XId.precio}"/> <br/>
 
-                                            <label style="font-size: 22px">Fecha y Hora:</label>
+                                            <label style="font-size: 20px">Fecha y Hora:</label>
                                             <h:outputText  class="form-control" value="#{XId.fechaHoraInicio}">
                                                 <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" timeZone="America/El_Salvador" />
                                             </h:outputText> <br/>
 
-                                            <label style="font-size: 22px">Sala:</label> 
+                                            <label style="font-size: 20px">Sala:</label> 
                                             <h:outputText class="form-control" value="#{XId.idSala.numero}"/> <br/>
 
                                             <h:form>

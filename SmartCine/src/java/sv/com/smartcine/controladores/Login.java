@@ -25,6 +25,7 @@ public class Login implements Serializable {
         usu = new Usuarios();
     }
 
+    // Validacion de Inicio de Sesion
     public String validar() {
         usu = usuDAO.buscarUsuario(usu.getUsuario(), usu.getClave());
         String val = "";
@@ -46,6 +47,18 @@ public class Login implements Serializable {
             return "null";
         }
     }
+    
+    // Metodo para verificar si existe la Sesion
+    public boolean existSession() {
+        return (SesionUtil.getUserId() != null);
+    }
+
+    // Metodo para invalidar la Sesion
+    public String cerrar() {
+        HttpSession session = SesionUtil.getSession();
+        session.invalidate();
+        return "/index?faces-redirect=true";
+    }
 
     public Usuarios getUsu() {
         return usu;
@@ -54,14 +67,5 @@ public class Login implements Serializable {
     public void setUsu(Usuarios usu) {
         this.usu = usu;
     }
-
-    public boolean existSession() {
-        return (SesionUtil.getUserId() != null);
-    }
-
-    public String cerrar() {
-        HttpSession session = SesionUtil.getSession();
-        session.invalidate();
-        return "/index?faces-redirect=true";
-    }
+    
 }

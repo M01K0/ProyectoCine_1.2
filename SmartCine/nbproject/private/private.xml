@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/recursos/reserva/asientos.xhtml</file>
-            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/layauts/nav.xhtml</file>
-            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/sv/com/smartcine/controladores/ControladorAsientos.java</file>
-            <file>file:/C:/Users/nehe.sandovalfgkss/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/sv/com/smartcine/dao/AsientosJpaController.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/sv/com/smartcine/controladores/CotroladorPeliculas.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/recursos/reserva/asientos.xhtml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/web/layauts/nav.xhtml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/ProyectoCine_1.2/SmartCine/src/java/sv/com/smartcine/controladores/ControladorAsientos.java</file>
         </group>
     </open-files>
 </project-private>

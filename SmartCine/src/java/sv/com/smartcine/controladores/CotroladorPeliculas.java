@@ -31,22 +31,25 @@ public class CotroladorPeliculas {
         pel = new Peliculas();
     }
 
+    // Metodo para listar Peliculas
     public List<Peliculas> listar() {
         return pelDAO.findPeliculasEntities();
     }
 
+    // Metodo para ingresar Peliculas
     public String ingresar() {
         pelDAO.create(pel);
         return "listar?faces-redirect=true";
     }
 
-    //
+    // Metodo para mapear Peliculas
     public String editar(Peliculas p) {
         Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
         objetos.put("ps", p);
         return "editar?faces-redirect=true";
     }
 
+    // Metodo para editar Peliculas
     public String actualizar(Peliculas p) {
         try {
             pelDAO.edit(p);
@@ -57,11 +60,7 @@ public class CotroladorPeliculas {
         }
     }
 
-    public String ver(Peliculas p) {
-        pel = p;
-        return "ver?faces-redirect=true";
-    }
-
+    // Metodo para eliminar Peliculas
     public String destruir(Peliculas p) {
         try {
             pelDAO.destroy(p.getId());
@@ -71,6 +70,7 @@ public class CotroladorPeliculas {
         }
     }
     
+    // Metodo para mapear Peliculas
     public String mostrarPel(Peliculas p) {
         Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
         objetos.put("pel", p);
@@ -78,6 +78,7 @@ public class CotroladorPeliculas {
         return "/faces/recursos/reserva/InfoReserva?faces-redirect=true";
     }
     
+    // Metodo para mapear Peliculas
     public String mostrarPely(Peliculas p) {
         Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
         objetos.put("pely", p);

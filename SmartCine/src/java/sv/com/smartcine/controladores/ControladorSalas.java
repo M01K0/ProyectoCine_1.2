@@ -27,22 +27,25 @@ public class ControladorSalas {
         sala = new Salas();
     }
     
+    // Metodo para listar Salas
     public List<Salas> listar(){
         return salaDAO.findSalasEntities();
     }
     
+    // Metodo para ingresar Salas
     public String ingresar(){
         salaDAO.create(sala);
         return "listar?faces-redirect=true";
     }
     
-    //
+    // Metodo para mapear Salas
     public String editar(Salas s){
         Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
         objetos.put("sal", s);
         return "editar?faces-redirect=true"; 
     }
     
+    // Metodo para editar Salas
     public String actualizar(Salas s){
         try {
             salaDAO.edit(s);
@@ -52,11 +55,7 @@ public class ControladorSalas {
         }
     }
     
-    public String ver(Salas s){
-        sala = s;
-        return "ver?faces-redirect=true";
-    }
-    
+    // Metodo para eliminar Salas
     public String destruir(Salas s){
         try {
             salaDAO.destroy(s.getId());

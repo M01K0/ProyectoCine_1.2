@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:b="http://bootsfaces.net/ui"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Usuario - Editar</title>
     </h:head>
@@ -19,6 +20,10 @@
                         <h:form>
                             <b:row>
                                 Usuario: <h:inputText value="${ss.usuario}"/> <br/><br/><br/>
+                                Rol: <h:selectOneMenu value="#{ss.rol}">
+                                    <f:selectItem itemValue="Administrador"/>
+                                    <f:selectItem itemValue="Estandar"/>
+                                </h:selectOneMenu><br/><br/><br/>
                                 Clave: <h:inputSecret value="${ss.clave}" /> <br/><br/><br/>
                                 <b:commandButton action="${usuario.actualizar(ss)}" value="Editar" look="success" />
                             </b:row>

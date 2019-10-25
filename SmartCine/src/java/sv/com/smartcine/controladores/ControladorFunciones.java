@@ -24,35 +24,30 @@ public class ControladorFunciones {
     private Peliculas pelicula;
     private Salas sala;
 
-    public Salas getSala() {
-        return sala;
-    }
-
-    public void setSala(Salas sala) {
-        this.sala = sala;
-    }
-    
     public ControladorFunciones() {
         funDAO = new FuncionesJpaController(Persistence.createEntityManagerFactory("SmartCinePU"));
         fun = new Funciones();
     }
     
+    // Metodo para listar Funciones
     public List<Funciones> listar(){
         return funDAO.findFuncionesEntities();
     }
     
+    // Metodo para ingresar Funciones
     public String ingresar(){
         funDAO.create(fun);
         return "listar?faces-redirect=true";
     }
     
-    //
+    // Metodo para mapear Funciones
     public String editar(Funciones f){
         Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
         objetos.put("fs", f);
         return "editar?faces-redirect=true"; 
     }
     
+    // Metodo para editar Funciones
     public String actualizar(Funciones f){
         try {
             funDAO.edit(f);
@@ -62,11 +57,7 @@ public class ControladorFunciones {
         }
     }
     
-    public String ver(Funciones f){
-        fun = f;
-        return "ver?faces-redirect=true";
-    }
-    
+    // Metodo para eliminar Funciones
     public String destruir(Funciones f){
         try {
             funDAO.destroy(f.getId());
@@ -76,26 +67,22 @@ public class ControladorFunciones {
         }
     }
     
+    // Metodo para listar Funciones por Id Pelicula
     public List<Funciones> listarXIdPel(Integer id){ 
         return funDAO.porIdPel(id);     
     }
     
+    // Metodo para listar Funciones por Id Sala
     public List<Funciones> listarXIdSal(Long id){ 
         return funDAO.porIdSala(id);
     }
     
+    // Metodo para mapear Funciones 
     public String mapeoFun(Funciones f) {
         Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
         objetos.put("sall", f);
         
         return "/faces/recursos/reserva/asientos?faces-redirect=true";
-    }
-    
-     public String FunTicked(Funciones f) {
-        Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
-        objetos.put("inf", f);
-        
-        return "/faces/recursos/reserva/ticked?faces-redirect=true";
     }
     
     public Funciones getFun() {
@@ -113,5 +100,14 @@ public class ControladorFunciones {
     public void setPelicula(Peliculas pelicula) {
         this.pelicula = pelicula;
     }
+    
+    public Salas getSala() {
+        return sala;
+    }
+
+    public void setSala(Salas sala) {
+        this.sala = sala;
+    }
+    
     
 }

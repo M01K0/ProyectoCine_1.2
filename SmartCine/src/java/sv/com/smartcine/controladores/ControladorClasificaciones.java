@@ -26,22 +26,25 @@ public class ControladorClasificaciones {
         clasi = new Clasificaciones();
     }
     
+    // Metodo para listar Clasificaciones
     public List<Clasificaciones> listar(){
         return clasificDAO.findClasificacionesEntities();
     }
     
+    // Metodo para Ingresar Clasificaciones
     public String ingresar(){
         clasificDAO.create(clasi);
         return "listar?faces-redirect=true";
     }
     
-    
+    // Metodo para mapear Clasificaciones
     public String editar(Clasificaciones c){
         Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
         objetos.put("cl", c);
         return "editar?faces-redirect=true"; 
     }
     
+    // Metodo para editar Clasificaciones
     public String actualizar(Clasificaciones c){
         try {
             clasificDAO.edit(c);
@@ -52,11 +55,7 @@ public class ControladorClasificaciones {
         }
     }
     
-    public String ver(Clasificaciones c){
-        clasi = c;
-        return "ver?faces-redirect=true";
-    }
-    
+    // Metodo para eliminar Clasificaciones
     public String destruir(Clasificaciones c){
         try {
             clasificDAO.destroy(c.getId());

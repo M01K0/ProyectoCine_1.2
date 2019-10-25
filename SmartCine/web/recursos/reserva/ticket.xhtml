@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:b="http://bootsfaces.net/ui">
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Ticket</title>
     </h:head>
@@ -10,23 +11,27 @@
         <b:container> <br/>
             <h1>Ticket</h1> <br/>
             <h:form>
-                <b:dataTable value="" border="false" searching="false" 
+                <b:dataTable value="" searching="false" style="font-size: 17px; background-color: #17A589;" 
                              var="pel"
                              pdf="true"
-                             columnVisibility="false"
-                             copy="true"
+                             columnVisibility="false" 
                              row-style-class="#{car.enginePower>100?'light-power':'light'}, #{car.enginePower>100?'dark-power':'dark'} ">
-                    <b:dataTableColumn  label="Pelicula" /> 
-                    <b:dataTableColumn  label="Formato" /> 
-                    <b:dataTableColumn label="Sucursal" />
-                    <b:dataTableColumn label="Sala" />
-                    <b:dataTableColumn label="Fecha y Hora" />
-                    <b:dataTableColumn label="Precio" />
+                    <b:dataTableColumn value="#{inf.idPelicula.titulo}"  label="Pelicula" /> 
+                    <b:dataTableColumn value="#{inf.formato}" label="Formato" /> 
+                    <b:dataTableColumn value="#{inf.idSala.idSucursal.nombre}" label="Sucursal" />
+                    <b:dataTableColumn value="#{inf.idSala.numero}" label="Sala" />
+                    <b:dataTableColumn label="Fecha y Hora" >
+                        <h:outputText value="#{inf.fechaHoraInicio}">
+                            <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" timeZone="America/El_Salvador" />
+                        </h:outputText>
+                    </b:dataTableColumn>
+                    <b:dataTableColumn value="#{inf.precio}" label="Precio"/>
                     <b:dataTableColumn label="Cantidad" />
                     <b:dataTableColumn  label="Total" />
                     <b:dataTableColumn  label="Codigo QR" />
-                </b:dataTable>
-            </h:form>
+                </b:dataTable> 
+            </h:form> <br/>
+            <b:link outcome="/index" value="Finalizar" class="btn btn-danger" />
         </b:container>
     </h:body>
 </html>

@@ -32,21 +32,25 @@ public class ControladorAsientos {
         asient = new Asientos();
     }
 
+    // Metodo para Listar Asientos
     public List<Asientos> listar() {
         return asientoDAO.findAsientosEntities();
     }
 
+    // Metodo para ingresa Asientos
     public String ingresar() {
         asientoDAO.create(asient);
         return "listar?faces-redirect=true";
     }
 
+    // Metodo para mapear Asientos
     public String editar(Asientos a) {
         Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
         objetos.put("as", a);
         return "editar?faces-redirect=true";
     }
 
+    // Metodo para editar asientos 
     public String actualizar(Asientos a) {
         try {
             asientoDAO.edit(a);
@@ -57,15 +61,12 @@ public class ControladorAsientos {
         }
     }
 
+    // Metodo para listar Asientos por Id de la Sala
     public List<Asientos> listaXIdSal(Long id) {
         return asientoDAO.porIdSala(id);
     }
 
-    public String ver(Asientos a) {
-        asient = a;
-        return "ver?faces-redirect=true";
-    }
-
+    // Metodo para eliminar Asientos
     public String destruir(Asientos a) {
         try {
             asientoDAO.destroy(a.getId());
@@ -74,8 +75,9 @@ public class ControladorAsientos {
             return null;
         }
     }
-
-    public void estado() throws IOException {
+    
+    // Metodo para modificar el estado de Asientos
+    public void estado(Funciones f) throws IOException {
         if (!getIds().equals("")) {
             String[] idsArray = getIds().split(",");
 
@@ -90,13 +92,17 @@ public class ControladorAsientos {
                 }
             }
             
-            FacesContext.getCurrentInstance().getExternalContext().redirect("ticket.xhtml");
-            
-        }else{
-            
-             FacesContext.getCurrentInstance().getExternalContext().redirect("asientos.xhtml");
-             
-        }      
+            // Se mapea para obtener los datos para llenar el ticket
+            Map<String, Object> objetos = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+            objetos.put("inf", f);
+
+           FacesContext.getCurrentInstance().getExternalContext().redirect("ticket.xhtml");
+
+        } else {
+
+            FacesContext.getCurrentInstance().getExternalContext().redirect("asientos.xhtml");
+
+        }
     }
 
     public Asientos getAsient() {
